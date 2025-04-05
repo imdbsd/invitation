@@ -6,6 +6,11 @@
     --color-gray-blue-500: #4C585B;
 }
 
+.pt-cormorant {
+  font-family: "Cormorant";
+}
+
+
 .pt-serif-regular {
     font-family: "PT Serif", serif;
     font-weight: 400;
