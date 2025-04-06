@@ -1,20 +1,20 @@
 import ImageSlideshow from './ImageSlideshow';
 import heroImage from './assets/preweds/hero-image.png';
-import heroImageBig from './assets/preweds/hero-image-big.jpg';
+import bgImage2 from './assets/preweds/bg-image-2.jpg';
+import logo from './assets/logo.png';
 
 // max-w-[430px] // max width
 
 const Page = () => {
   return (
     <>
-      <section className="relative min-h-screen w-full bg-testpink bg-[#FFF1D5]">
+      <section className="relative min-h-screen w-full bg-testpink bg-yellow-beach">
         <div className="mx-auto w-full max-w-[430px] min-h-screen bg-primary relative overflow-hidden">
           <div className="w-full h-full bg-red-50 relative">
-            {/* <ImageSlideshow /> */}
             <div
               className="h-screen w-full bg-cover bg-[center_bottom_0px] absolute"
               style={{
-                backgroundImage: `url(${heroImageBig})`,
+                backgroundImage: `url(${heroImage})`,
                 backgroundPositionY: '-150px',
               }}
             ></div>
@@ -27,7 +27,7 @@ const Page = () => {
               }}
             >
               <div className="absolute top-0 bottom-0 left-0 right-0 items-center justify-center flex">
-                <div className="h-2/3 w-3/4 rounded-full border-[#FFF1D5] border-double border-[5px]" />
+                <div className="h-2/3 w-3/4 rounded-full border-yellow-beach border-double border-[5px]" />
               </div>
               <div className="absolute bottom-[75px] right-0 left-0 flex flex-col justify-center items-center z-10">
                 <h1 className="flex flex-col items-center text-[#4B3B2A] text-sm tracking-[2px] font-normal">
@@ -48,18 +48,38 @@ const Page = () => {
           </div>
         </div>
       </section>
-      <section className="w-full">
-        <div className="w-full max-w-[430px] border-double border-[2px] mx-auto">
-          <span className="font-cormorant">
-            Ihaiva stam ma vi yaustam, visvam ayur vyasnutam, kridantau putrair
-            naptrbhih, modamanau sve grhe.
-          </span>
-          <span>(Rg Veda X.85.42)</span>
-          <span>
-            Wahai pasangan suami-istri, semoga kalian tetap bersatu dan tidak
-            pernah terpisahkan. Semoga kalian mencapai hidup penuh kebahagiaan,
-            tinggal di rumah yang penuh kegembiraan bersama seluruh keturunanmu.
-          </span>
+      <section className="w-full min-h-screen md:min-h-[60vh] bg-yellow-beach relative">
+        <div
+          className="h-screen w-full bg-cover bg-[center_bottom_0px] absolute"
+          style={{
+            backgroundImage: `url(${bgImage2})`,
+            backgroundPositionY: '-150px',
+          }}
+        ></div>
+        <div className="w-full max-w-[430px]">
+          <img
+            src={logo}
+            width={500}
+            height={500}
+            alt="logo"
+            className="w-[150px] h-[150px] mx-auto"
+          />
+
+          <div>
+            <p className="font-cormorant italic text-center text-lg mb-2">
+              Ihaiva stam ma vi yaustam, visvam ayur vyasnutam, kridantau
+              putrair naptrbhih, modamanau sve grhe.
+            </p>
+            <p className="text-center font-cormorant text-lg mb-2">
+              (Rg Veda X.85.42)
+            </p>
+            <p className="">
+              Wahai pasangan suami-istri, semoga kalian tetap bersatu dan tidak
+              pernah terpisahkan. Semoga kalian mencapai hidup penuh
+              kebahagiaan, tinggal di rumah yang penuh kegembiraan bersama
+              seluruh keturunanmu.
+            </p>
+          </div>
         </div>
       </section>
     </>

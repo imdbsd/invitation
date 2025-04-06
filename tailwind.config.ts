@@ -5,7 +5,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif", "Cormorant"],
+        sans: ["Inter", "sans-serif"],
+        cormorant: ['Cormorant', 'serif']
       },
     },
   },
