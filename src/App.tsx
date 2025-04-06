@@ -18,12 +18,7 @@ const Page = () => {
                 backgroundPositionY: '-150px',
               }}
             ></div>
-            <div
-              className="h-screen w-full absolute top-0 left-0 z-10 bg-black opacity-30"
-              //  style={{
-              //   background: `linear-gradient(0deg, rgba(0, 0, 0, 0.30) 1%, rgba(0, 0, 0, 0.30) 100%), linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.80) 70.16%)`
-              // }}
-            ></div>
+            <div className="h-screen w-full absolute top-0 left-0 z-10 bg-black opacity-30"></div>
             <div
               className="h-screen w-full max-w-[430px] mx-auto relative z-20"
               style={{
@@ -31,21 +26,23 @@ const Page = () => {
                   'linear-gradient(to bottom, rgba(255, 241, 213, 0) 0%, rgba(255, 241, 213, 0.3) 70%, rgba(255, 241, 213, 1) 80%)',
               }}
             >
-              <div className='absolute top-0 bottom-0 left-0 right-0 items-center justify-center flex'>
-                <div className='h-2/3 w-3/4 rounded-full border-[#FFF1D5] border-double border-[5px]' />
+              <div className="absolute top-0 bottom-0 left-0 right-0 items-center justify-center flex">
+                <div className="h-2/3 w-3/4 rounded-full border-[#FFF1D5] border-double border-[5px]" />
               </div>
               <div className="absolute bottom-[75px] right-0 left-0 flex flex-col justify-center items-center z-10">
                 <h1 className="flex flex-col items-center text-[#4B3B2A] text-sm tracking-[2px] font-normal">
                   <span>THE WEDDING OF</span>
                 </h1>
-                <p className="block text-4xl text-[#4B3B2A] pt-cormorant">
+                <p className="block text-4xl text-[#4B3B2A] font-cormorant">
                   Apri & Surya
                 </p>
                 <p className="text-[#4B3B2A] text-center text-sm tracking-[2px] font-normal">
                   <span className="block">Kepada Yth.</span>
                   <span className="block">Bapak/ Ibu/ Saudara/ i</span>
                 </p>
-                <p className="pt-cormorant text-sm font-normal bg-white p-3 rounded-sm mt-4">Justin Bieber</p>{' '}
+                <p className="font-cormorant text-base font-normal bg-white p-3 rounded-sm mt-4">
+                  Justin Bieber
+                </p>{' '}
               </div>
             </div>
           </div>
@@ -53,7 +50,7 @@ const Page = () => {
       </section>
       <section className="w-full">
         <div className="w-full max-w-[430px] border-double border-[2px] mx-auto">
-          <span className=".pt-cormorant">
+          <span className="font-cormorant">
             Ihaiva stam ma vi yaustam, visvam ayur vyasnutam, kridantau putrair
             naptrbhih, modamanau sve grhe.
           </span>
