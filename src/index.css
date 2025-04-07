@@ -5,5 +5,8 @@
     --color-navy: #4C585B;
     --color-gray-blue-500: #4C585B;
     --color-yellow-beach: #FFF1D5;
-    --font-cormorant: "Cormorant";
+    --color-goldy: #FEBA17;
+    --font-cormorant: "Cormorant Upright", serif;
+    --font-pinyon-script: "Pinyon Script", cursive;
+    --font-monsieur-lad: "Monsieur La Doulaise", cursive;
 }
