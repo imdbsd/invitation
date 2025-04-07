@@ -107,14 +107,14 @@ const Page = () => {
               <p className="text-goldy text-3xl font-cormorant">
                 I Made Budi Surya Darma
               </p>
-              <p>Putra dari I Made Damiartha, SE. & Ni Ketut Bukti</p>
+              <p>Putra dari Bapak I Made Damiartha, SE. & Ibu Ni Ketut Bukti</p>
             </div>
             <p className="text-goldy text-3xl font-cormorant">&</p>
             <div className="text-center">
               <p className="text-goldy text-3xl font-cormorant">
                 Apriyanti Nurcahyani
               </p>
-              <p>-</p>
+              <p>Putri dari Bapak. Suwardi & Ibu Parnasih</p>
             </div>
           </div>
         </div>
