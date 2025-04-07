@@ -1,9 +1,9 @@
-import ImageSlideshow from './ImageSlideshow';
+import Countdown from './components/Countdown';
 import heroImage from './assets/preweds/hero-image.png';
 import bgImage2 from './assets/preweds/bg-image-2.jpg';
 import logo from './assets/logo.png';
 
-// max-w-[430px] // max width
+const target = 'Wed Jun 11 2025 00:00:00 GMT+0800';
 
 const Page = () => {
   return (
@@ -18,7 +18,7 @@ const Page = () => {
                 backgroundPositionY: '-150px',
               }}
             ></div>
-            <div className="h-screen w-full absolute top-0 left-0 z-10 bg-black opacity-30"></div>
+            {/* <div className="h-screen w-full absolute top-0 left-0 z-10 bg-black opacity-30"></div> */}
             <div
               className="h-screen w-full max-w-[430px] mx-auto relative z-20"
               style={{
@@ -49,36 +49,50 @@ const Page = () => {
         </div>
       </section>
       <section className="w-full min-h-screen md:min-h-[60vh] bg-yellow-beach relative">
-        <div
-          className="h-screen w-full bg-cover bg-[center_bottom_0px] absolute"
-          style={{
-            backgroundImage: `url(${bgImage2})`,
-            backgroundPositionY: '-150px',
-          }}
-        ></div>
-        <div className="w-full max-w-[430px]">
-          <img
-            src={logo}
-            width={500}
-            height={500}
-            alt="logo"
-            className="w-[150px] h-[150px] mx-auto"
-          />
+        <div className="mx-auto w-full max-w-[430px] min-h-screen relative overflow-hidden">
+          <div
+            className="h-screen w-full bg-cover bg-[center_bottom_0px] absolute"
+            style={{
+              backgroundImage: `url(${bgImage2})`,
+            }}
+          ></div>
+          <div
+            className="h-screen w-full max-w-[430px] mx-auto absolute"
+            style={{
+              background:
+                'linear-gradient(to bottom, rgba(255, 241, 213, 0.5) 0%)',
+            }}
+          ></div>
+          <div className="relative p-4 h-screen flex flex-col justify-around">
+            <img
+              src={logo}
+              width={500}
+              height={500}
+              alt="logo"
+              className="w-[150px] h-[150px] mx-auto"
+            />
 
-          <div>
-            <p className="font-cormorant italic text-center text-lg mb-2">
-              Ihaiva stam ma vi yaustam, visvam ayur vyasnutam, kridantau
-              putrair naptrbhih, modamanau sve grhe.
-            </p>
-            <p className="text-center font-cormorant text-lg mb-2">
-              (Rg Veda X.85.42)
-            </p>
-            <p className="">
-              Wahai pasangan suami-istri, semoga kalian tetap bersatu dan tidak
-              pernah terpisahkan. Semoga kalian mencapai hidup penuh
-              kebahagiaan, tinggal di rumah yang penuh kegembiraan bersama
-              seluruh keturunanmu.
-            </p>
+            <div>
+              <p className="font-cormorant italic text-center text-lg mb-2">
+                Ihaiva stam ma vi yaustam, visvam ayur vyasnutam, kridantau
+                putrair naptrbhih, modamanau sve grhe.
+              </p>
+              <p className="text-center font-cormorant text-lg mb-2">
+                (Rg Veda X.85.42)
+              </p>
+              <p className="font-cormorant">
+                Wahai pasangan suami-istri, semoga kalian tetap bersatu dan
+                tidak pernah terpisahkan. Semoga kalian mencapai hidup penuh
+                kebahagiaan, tinggal di rumah yang penuh kegembiraan bersama
+                seluruh keturunanmu.
+              </p>
+            </div>
+            <div>
+              <p className="text-center font-cormorant text-4xl italic">
+                Countdown
+              </p>
+              <Countdown startValue={target} />
+            </div>
           </div>
         </div>
       </section>
