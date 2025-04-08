@@ -49,7 +49,7 @@ const Page = () => {
           className="h-screen w-full mx-auto absolute"
           style={{
             background:
-              'linear-gradient(to bottom, rgba(255, 241, 213, 0.5) 0%)',
+              'rgba(255, 241, 213, 0.5) 0%',
           }}
         ></div>
         <div className="relative p-4 h-screen flex flex-col justify-around">
@@ -88,7 +88,7 @@ const Page = () => {
         <div
           className="h-screen w-full mx-auto absolute"
           style={{
-            background: 'linear-gradient(rgb(73 66 54 / 78%) 0%)',
+            background: 'rgb(73 66 54 / 78%) 0%',
           }}
         ></div>
         <div className="relative text-white p-4 h-screen w-full flex items-center flex-col justify-evenly">
