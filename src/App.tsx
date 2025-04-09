@@ -204,6 +204,150 @@ const Page = () => {
           </div>
         </div>
       </SectionWrapper>
+      <SectionWrapper containerClassName="bg-[#00000069]">
+        <div className="relative px-4 pt-4 pb-20 w-full min-h-screen flex items-center flex-col justify-evenly">
+          <h3 className="font-monsieur-lad text-4xl my-4 text-right w-full text-white">
+            <Separator position="right" color="bg-white">
+              <span className="font-serif mb-2 text-white ml-2">Wedding</span>
+            </Separator>
+            Gallery
+          </h3>
+          <div className="grid grid-cols-2 gap-3 w-full">
+            <div
+              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+              style={{
+                backgroundImage: `url(${coupleImage})`,
+              }}
+            />
+            <div
+              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+              style={{
+                backgroundImage: `url(${coupleImage})`,
+              }}
+            />
+            <div
+              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+              style={{
+                backgroundImage: `url(${coupleImage})`,
+              }}
+            />
+            <div
+              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+              style={{
+                backgroundImage: `url(${coupleImage})`,
+              }}
+            />
+            <div
+              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+              style={{
+                backgroundImage: `url(${coupleImage})`,
+              }}
+            />
+            <div
+              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+              style={{
+                backgroundImage: `url(${coupleImage})`,
+              }}
+            />
+            <div
+              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+              style={{
+                backgroundImage: `url(${coupleImage})`,
+              }}
+            />
+            <div
+              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+              style={{
+                backgroundImage: `url(${coupleImage})`,
+              }}
+            />
+            <div
+              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+              style={{
+                backgroundImage: `url(${coupleImage})`,
+              }}
+            />
+            <div
+              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+              style={{
+                backgroundImage: `url(${coupleImage})`,
+              }}
+            />
+            <div
+              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+              style={{
+                backgroundImage: `url(${coupleImage})`,
+              }}
+            />
+            <div
+              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+              style={{
+                backgroundImage: `url(${coupleImage})`,
+              }}
+            />
+            <div
+              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+              style={{
+                backgroundImage: `url(${coupleImage})`,
+              }}
+            />
+            <div
+              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+              style={{
+                backgroundImage: `url(${coupleImage})`,
+              }}
+            />
+            <div
+              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+              style={{
+                backgroundImage: `url(${coupleImage})`,
+              }}
+            />
+            <div
+              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+              style={{
+                backgroundImage: `url(${coupleImage})`,
+              }}
+            />
+            <div
+              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+              style={{
+                backgroundImage: `url(${coupleImage})`,
+              }}
+            />
+            <div
+              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+              style={{
+                backgroundImage: `url(${coupleImage})`,
+              }}
+            />
+            <div
+              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+              style={{
+                backgroundImage: `url(${coupleImage})`,
+              }}
+            />
+            <div
+              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+              style={{
+                backgroundImage: `url(${coupleImage})`,
+              }}
+            />
+            <div
+              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+              style={{
+                backgroundImage: `url(${coupleImage})`,
+              }}
+            />
+            <div
+              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+              style={{
+                backgroundImage: `url(${coupleImage})`,
+              }}
+            />
+          </div>
+        </div>
+      </SectionWrapper>
     </>
   );
 };

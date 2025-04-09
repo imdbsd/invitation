@@ -3,6 +3,7 @@ import {twMerge} from 'tailwind-merge';
 
 type Props = React.PropsWithChildren<
   React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+    containerClassName?: string;
     bgImage?: {src: string; className?: string};
   }
 >;
@@ -18,7 +19,12 @@ const SectionWrapper = (props: Props) => {
       )}
       {...rest}
     >
-      <div className="mx-auto w-full max-w-[430px] min-h-screen bg-yellow-beach relative overflow-hidden">
+      <div
+        className={twMerge(
+          'mx-auto w-full max-w-[430px] min-h-screen bg-yellow-beach relative overflow-hidden',
+          props.containerClassName
+        )}
+      >
         {bgImage ? (
           <div
             className={twMerge(
