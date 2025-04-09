@@ -3,6 +3,8 @@ import heroImage from './assets/preweds/hero-image.png';
 import bgImage2 from './assets/preweds/bg-image-2.jpg';
 import bgImage3 from './assets/preweds/bg-image-3.jpg';
 import coupleImage from './assets/preweds/mempelai.jpg';
+import cloudImage from './assets/cloudy.png';
+import event1 from './assets/preweds/assets-event1.jpg';
 import logo from './assets/logo.png';
 import SectionWrapper from './components/SectionWrapper';
 
@@ -48,8 +50,7 @@ const Page = () => {
         <div
           className="h-screen w-full mx-auto absolute"
           style={{
-            background:
-              'rgba(255, 241, 213, 0.5) 0%',
+            background: 'rgba(255, 241, 213, 0.5) 0%',
           }}
         ></div>
         <div className="relative p-4 h-screen flex flex-col justify-around">
@@ -77,8 +78,9 @@ const Page = () => {
             </p>
           </div>
           <div>
-            <p className="text-center font-cormorant text-4xl italic">
-              Countdown
+            <p className="text-center font-cormorant text-xl">Countdown to:</p>
+            <p className="text-center font-cormorant text-4xl italic font-bold">
+              11 Juni 2025
             </p>
             <Countdown startValue={dDate} />
           </div>
@@ -115,6 +117,97 @@ const Page = () => {
                 Apriyanti Nurcahyani
               </p>
               <p>Putri dari Bapak. Suwardi & Ibu Parnasih</p>
+            </div>
+          </div>
+        </div>
+      </SectionWrapper>
+      <SectionWrapper>
+        <div className="relative p-4 h-screen w-full flex items-center flex-col justify-evenly">
+          <h3 className="font-monsieur-lad text-4xl text-center my-2">
+            Wedding Event
+          </h3>
+          <img
+            src={cloudImage}
+            alt="cloud"
+            width={1024}
+            height={1024}
+            className="w-[150px] h-[150px] absolute top-1 left-5"
+          />
+          <img
+            src={cloudImage}
+            alt="cloud"
+            width={1024}
+            height={1024}
+            className="w-[150px] h-[150px] absolute top-[50%] right-5"
+          />
+          <img
+            src={cloudImage}
+            alt="cloud"
+            width={1024}
+            height={1024}
+            className="w-[150px] h-[150px] absolute bottom-1 left-20"
+          />
+          <div className="relative">
+            <div className="rounded w-full relative overflow-hidden">
+              <div
+                style={{
+                  backgroundImage: `url(${event1})`,
+                }}
+              />
+              <div className="flex flex-col items-center p-5 z-10">
+                <h4 className="font-cormorant text-2xl font-bold text-goldy">
+                  Pawiwahan & Resepsi Bali
+                </h4>
+                <span className="">Jumat</span>
+                <span>24 Januari 2025</span>
+                <span>16.00 - selesai</span>
+                <span>
+                  Kediaman Mempelai Pria Br. Metulis, Desa Dawan Kaler Kec.
+                  Dawan, Kab. Klungkung, Bali
+                </span>
+              </div>
+            </div>
+            <div className="rounded w-full relative overflow-hidden">
+              <div className="flex flex-col items-center p-5 z-10">
+                <h4 className="font-cormorant text-2xl font-bold text-goldy">
+                  Pawiwahan & Resepsi Bali
+                </h4>
+                <span className="">Jumat</span>
+                <span>24 Januari 2025</span>
+                <span>16.00 - selesai</span>
+                <span>
+                  Kediaman Mempelai Pria Br. Metulis, Desa Dawan Kaler Kec.
+                  Dawan, Kab. Klungkung, Bali
+                </span>
+              </div>
+            </div>
+            <div className="rounded w-full relative overflow-hidden">
+              <div className="flex flex-col items-center p-5 z-10">
+                <h4 className="font-cormorant text-2xl font-bold text-goldy">
+                  Pawiwahan & Resepsi Bali
+                </h4>
+                <span className="">Jumat</span>
+                <span>24 Januari 2025</span>
+                <span>16.00 - selesai</span>
+                <span>
+                  Kediaman Mempelai Pria Br. Metulis, Desa Dawan Kaler Kec.
+                  Dawan, Kab. Klungkung, Bali
+                </span>
+              </div>
+            </div>
+            <div className="rounded w-full relative overflow-hidden">
+              <div className="flex flex-col items-center p-5 z-10">
+                <h4 className="font-cormorant text-2xl font-bold text-goldy">
+                  Pawiwahan & Resepsi Bali
+                </h4>
+                <span className="">Jumat</span>
+                <span>24 Januari 2025</span>
+                <span>16.00 - selesai</span>
+                <span>
+                  Kediaman Mempelai Pria Br. Metulis, Desa Dawan Kaler Kec.
+                  Dawan, Kab. Klungkung, Bali
+                </span>
+              </div>
             </div>
           </div>
         </div>
