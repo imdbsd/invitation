@@ -9,7 +9,7 @@ type Props = React.PropsWithChildren<
 >;
 
 const SectionWrapper = (props: Props) => {
-  const {children, className, bgImage, ...rest} = props;
+  const {children, className, bgImage, containerClassName, ...rest} = props;
 
   return (
     <section
@@ -22,7 +22,7 @@ const SectionWrapper = (props: Props) => {
       <div
         className={twMerge(
           'mx-auto w-full max-w-[430px] min-h-screen bg-yellow-beach relative overflow-hidden',
-          props.containerClassName
+          containerClassName
         )}
       >
         {bgImage ? (

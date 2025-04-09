@@ -17,7 +17,7 @@ const Countdown = (props: Props) => {
       date={props.startValue}
       renderer={({days, hours, minutes, seconds}) => {
         return (
-          <section className="flex flex-wrap mt-4 [&>*:not(:last-child)]:mr-2">
+          <section className="flex flex-wrap [&>*:not(:last-child)]:mr-2">
             <CountdownCard label="Days" value={`${days}`} />
             <CountdownCard label="Hours" value={`${hours}`} />
             <CountdownCard label="Minutes" value={`${minutes}`} />

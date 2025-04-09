@@ -7,7 +7,7 @@ import cloudImage from './assets/cloudy.png';
 import event1 from './assets/preweds/assets-event1.jpg';
 import logo from './assets/logo.png';
 import SectionWrapper from './components/SectionWrapper';
-import {Clock, MapPin} from 'lucide-react';
+import {Clock, Calendar, MapPin} from 'lucide-react';
 import EventCard from './components/EventCard';
 import Separator from './components/Separator';
 
@@ -48,6 +48,7 @@ const Page = () => {
             </p>
           </div>
         </div>
+        {/* https://support.google.com/calendar/thread/81344786/how-do-i-generate-add-to-calendar-link-from-our-own-website?hl=en */}
       </SectionWrapper>
       <SectionWrapper className="md:min-h-[60vh]" bgImage={{src: bgImage2}}>
         <div
@@ -86,10 +87,22 @@ const Page = () => {
                 Countdown to:
               </p>
             </Separator>
-            <p className="text-center font-cormorant text-4xl italic font-bold">
-              11 Juni 2025
-            </p>
-            <Countdown startValue={dDate} />
+            <div className="[&>*:not(:last-child)]:mb-5">
+              <p className="text-center font-cormorant text-4xl italic font-bold">
+                11 Juni 2025
+              </p>
+              <div className="flex justify-center">
+                <a
+                  href="#"
+                  className="flex flex-row items-center bg-white p-2 rounded-sm text-xs font-poppins"
+                  target="_blank"
+                >
+                  <Calendar className="mr-2" width={16} height={16} />
+                  <span>Add to Calendar</span>
+                </a>
+              </div>
+              <Countdown startValue={dDate} />
+            </div>
           </div>
         </div>
       </SectionWrapper>
