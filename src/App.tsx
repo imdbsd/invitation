@@ -127,7 +127,7 @@ const Page = () => {
         </div>
       </SectionWrapper>
       <SectionWrapper>
-        <div className="relative p-4 w-full min-h-screen flex items-center flex-col justify-evenly">
+        <div className="relative px-4 pt-4 pb-20 w-full min-h-screen flex items-center flex-col justify-evenly">
           <img
             src={cloudImage}
             alt="cloud"
