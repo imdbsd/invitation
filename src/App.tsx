@@ -9,6 +9,7 @@ import logo from './assets/logo.png';
 import SectionWrapper from './components/SectionWrapper';
 import {Clock, MapPin} from 'lucide-react';
 import EventCard from './components/EventCard';
+import Separator from './components/Separator';
 
 const dDate = 'Wed Jun 11 2025 00:00:00 GMT+0800';
 
@@ -80,7 +81,11 @@ const Page = () => {
             </p>
           </div>
           <div>
-            <p className="text-center font-cormorant text-xl">Countdown to:</p>
+            <Separator>
+              <p className="text-center font-cormorant text-xl mx-2">
+                Countdown to:
+              </p>
+            </Separator>
             <p className="text-center font-cormorant text-4xl italic font-bold">
               11 Juni 2025
             </p>
@@ -96,9 +101,7 @@ const Page = () => {
           }}
         ></div>
         <div className="relative text-white p-4 h-screen w-full flex items-center flex-col justify-evenly">
-          <h3 className="font-monsieur-lad text-4xl text-center my-2">
-            Mempelai
-          </h3>
+          <h3 className="font-cormorant text-4xl text-center my-2">Mempelai</h3>
           <img
             src={coupleImage}
             alt="surya & apri"
@@ -124,34 +127,63 @@ const Page = () => {
         </div>
       </SectionWrapper>
       <SectionWrapper>
-        <div className="relative p-4 w-full flex items-center flex-col justify-evenly">
-          <h3 className="font-monsieur-lad text-4xl text-center my-2">
-            Wedding Event
+        <div className="relative p-4 w-full min-h-screen flex items-center flex-col justify-evenly">
+          <img
+            src={cloudImage}
+            alt="cloud"
+            width={1024}
+            height={1024}
+            className="w-[150px] h-[150px] absolute top-[10px] right-[-60px]"
+          />
+          <img
+            src={cloudImage}
+            alt="cloud"
+            width={1024}
+            height={1024}
+            className="w-[150px] h-[150px] absolute bottom-1 left-10"
+          />
+          <h3 className="font-monsieur-lad text-4xl my-4 w-full">
+            <Separator position="left">
+              <span className="font-serif mb-2">Wedding</span>
+            </Separator>
+            Event
           </h3>
-          <img
-            src={cloudImage}
-            alt="cloud"
-            width={1024}
-            height={1024}
-            className="w-[150px] h-[150px] absolute top-1 left-5"
-          />
-          <img
-            src={cloudImage}
-            alt="cloud"
-            width={1024}
-            height={1024}
-            className="w-[150px] h-[150px] absolute top-[50%] right-5"
-          />
-          <img
-            src={cloudImage}
-            alt="cloud"
-            width={1024}
-            height={1024}
-            className="w-[150px] h-[150px] absolute bottom-1 left-20"
-          />
-          <div className="relative">
+          <p className="font-poppins text-sm text-center mb-4 relative">
+            Tanpa mengurangi rasa hormat dengan ini kami mengundang
+            Bapak/Ibu/Saudara/i untuk hadir dalam acara Pernikahan Putra-Putri
+            kami pada
+          </p>
+          <div className="relative [&>*:not(:last-child)]:mb-10">
+            <Separator position="right">
+              <h4 className="font-cormorant text-4xl text-center mx-2.5 italic text-goldy">
+                Bali
+              </h4>
+            </Separator>
             <EventCard
               title="Pawiwahan"
+              bgImage={event1}
+              dayName="Rabu"
+              date="11 Juni 2025"
+              startAndEnd="07.00 - 12.00 WITA"
+              location="Kediaman Mempelai Pria Jl. Siligita No.1, Banjar, Peminge, Kabupaten Badung, Bali"
+              gMap="https://maps.app.goo.gl/DcMf4eq2qtz1kgzNA"
+            />
+            <EventCard
+              title="Resepsi"
+              bgImage={event1}
+              dayName="Rabu"
+              date="11 Juni 2025"
+              startAndEnd="12.00 - 17.00 WITA"
+              location="Kediaman Mempelai Pria Jl. Siligita No.1, Banjar, Peminge, Kabupaten Badung, Bali"
+              gMap="https://maps.app.goo.gl/DcMf4eq2qtz1kgzNA"
+            />
+            <Separator position="right">
+              <h4 className="font-cormorant text-4xl text-center mx-2.5 italic text-goldy">
+                Jakarta
+              </h4>
+            </Separator>
+            <EventCard
+              title="Resepsi"
               bgImage={event1}
               dayName="Rabu"
               date="11 Juni 2025"
@@ -159,73 +191,16 @@ const Page = () => {
               location="Kediaman Mempelai Pria Jl. Siligita No.1, Banjar, Peminge, Kabupaten Badung, Bali"
               gMap="https://maps.app.goo.gl/DcMf4eq2qtz1kgzNA"
             />
-            <div className="rounded-4xl w-full min-h-[350px] relative overflow-hidden flex">
-              <div
-                className="w-full h-full absolute bg-cover"
-                style={{
-                  backgroundImage: `url(${event1})`,
-                }}
-              />
-              <div
-                className="h-full w-full absolute"
-                style={{
-                  background: 'rgb(73 66 54 / 78%) 0%',
-                }}
-              />
-              <div className="relative flex flex-1 flex-col items-center px-3 py-5 z-10 font-poppins">
-                <h4 className="font-poppins text-2xl font-bold text-goldy mb-2">
-                  Pawiwahan
-                </h4>
-                <div className="[&>*:not(:last-child)]:mb-2 flex flex-1 flex-col items-center justify-evenly">
-                  <span className="text-white text-lg">Rabu</span>
-                  <span className="text-white text-lg">11 Juni 2025</span>
-                  <div className="flex flex-row text-sm items-center">
-                    <Clock className="text-white mr-2" width={16} height={16} />
-                    <span className="text-white text-sm">07.00 - 12.00</span>
-                  </div>
-                  <span className="text-white text-center text-sm">
-                    Kediaman Mempelai Pria Jl. Siligita No.1, Banjar, Peminge,
-                    Kabupaten Badung, Bali
-                  </span>
-                  <a
-                    href="https://maps.app.goo.gl/DcMf4eq2qtz1kgzNA"
-                    className="flex flex-row items-center bg-white p-2 rounded-sm text-xs font-poppins"
-                    target="_blank"
-                  >
-                    <MapPin className="mr-2" width={16} height={16} />
-                    <span>Google Map</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="rounded w-full relative overflow-hidden">
-              <div className="flex flex-col items-center p-5 z-10">
-                <h4 className="font-cormorant text-2xl font-bold text-goldy">
-                  Pawiwahan & Resepsi Bali
-                </h4>
-                <span className="">Jumat</span>
-                <span>24 Januari 2025</span>
-                <span>16.00 - selesai</span>
-                <span>
-                  Kediaman Mempelai Pria Br. Metulis, Desa Dawan Kaler Kec.
-                  Dawan, Kab. Klungkung, Bali
-                </span>
-              </div>
-            </div>
-            <div className="rounded w-full relative overflow-hidden">
-              <div className="flex flex-col items-center p-5 z-10">
-                <h4 className="font-cormorant text-2xl font-bold text-goldy">
-                  Pawiwahan & Resepsi Bali
-                </h4>
-                <span className="">Jumat</span>
-                <span>24 Januari 2025</span>
-                <span>16.00 - selesai</span>
-                <span>
-                  Kediaman Mempelai Pria Br. Metulis, Desa Dawan Kaler Kec.
-                  Dawan, Kab. Klungkung, Bali
-                </span>
-              </div>
-            </div>
+          </div>
+          <div className="[&>*:not(:last-child)]:mb-5 mt-5 relative">
+            <p className="font-poppins text-sm text-center">
+              Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila
+              Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan do'a restu
+              kepada kedua mempelai.
+            </p>
+            <p className="text-center font-bold">Keluarga Besar</p>
+            <p className="text-center font-bold">I Made Damiartha</p>
+            <p className="text-center font-bold">Suwardi</p>
           </div>
         </div>
       </SectionWrapper>
