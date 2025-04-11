@@ -7,9 +7,10 @@ import cloudImage from './assets/cloudy.png';
 import event1 from './assets/preweds/assets-event1.jpg';
 import logo from './assets/logo.png';
 import SectionWrapper from './components/SectionWrapper';
-import {Clock, Calendar, MapPin} from 'lucide-react';
+import {Calendar} from 'lucide-react';
 import EventCard from './components/EventCard';
 import Separator from './components/Separator';
+import Player from 'react-player/youtube';
 
 const dDate = 'Wed Jun 11 2025 00:00:00 GMT+0800';
 
@@ -127,7 +128,7 @@ const Page = () => {
               <p className="text-goldy text-3xl font-cormorant">
                 I Made Budi Surya Darma
               </p>
-              <p>Putra dari Bapak I Made Damiartha, SE. & Ibu Ni Ketut Bukti</p>
+              <p>Putra dari Bapak I Made Damiartha & Ibu Ni Ketut Bukti</p>
             </div>
             <p className="text-goldy text-3xl font-cormorant">&</p>
             <div className="text-center">
@@ -225,6 +226,16 @@ const Page = () => {
             </Separator>
             Gallery
           </h3>
+          <div className="w-full pt-[60.25%] rounded-xl overflow-hidden relative my-5">
+            <Player
+              url="https://youtu.be/L6SA8ml-j98"
+              width="100%"
+              height="100%"
+              className="absolute top-0 left-0"
+              muted
+              controls
+            />
+          </div>
           <div className="grid grid-cols-2 gap-3 w-full">
             <div
               className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
