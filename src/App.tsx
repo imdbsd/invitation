@@ -20,6 +20,7 @@ import gallery2 from './assets/gallery/gallery-2.jpg';
 import 'photoswipe/dist/photoswipe.css';
 
 import {Gallery, Item} from 'react-photoswipe-gallery';
+import ATMCard from './components/ATMCard';
 
 const dDate = 'Wed Jun 11 2025 00:00:00 GMT+0800';
 
@@ -300,35 +301,9 @@ const Page = () => {
           <button className="bg-black text-goldy px-6 py-3 rounded text-sm flex items-center justify-center gap-2 mx-auto">
             <Gift /> Kirim Hadiah
           </button>
-          <div className="my-5">
-            <div className="w-full h-[250px] rounded-xl relative bg-cover p-1 bg-white overflow-hidden">
-              <div
-                className="absolute top-0 left-0 right-0 bottom-0 m-1 rounded-xl"
-                style={{
-                  backgroundImage: `url(${CardBG})`,
-                  backgroundSize: '100% 250px',
-                }}
-              />
-              <div className="relative flex flex-col h-full">
-                <div className="flex justify-end w-full items-center flex-1">
-                  <img src={BCAImage} className="w-[100px] mr-3" />
-                </div>
-                <div className="flex justify-start w-full flex-1 items-center">
-                  <img src={Chip} className="w-[40px] ml-3" />
-                </div>
-                <div className="w-full text-left flex flex-col flex-1 justify-center pl-3">
-                  <div className="flex items-center">
-                    <p className="text-xs font-poppins tracking-[10px] mb-2">
-                      100101010176
-                    </p>
-                    <Copy width={14} height={14} onClick={() => {alert('copy')}}/>
-                  </div>
-                  <p className="text-xs font-poppins tracking-[2px]">
-                    a.n. I Made Budi Surya Darma
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="my-5 [&>*:not(:last-child)]:mb-5">
+            <ATMCard address="100101010176" name="I Made Budi Surya Darma" />
+            <ATMCard address="100101010176" name="I Made Budi Surya Darma" />
           </div>
           <p className="text-xs mt-4">Terimakasih.</p>
         </div>
