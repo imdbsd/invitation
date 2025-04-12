@@ -7,10 +7,13 @@ import cloudImage from './assets/cloudy.png';
 import event1 from './assets/preweds/assets-event1.jpg';
 import logo from './assets/logo.png';
 import SectionWrapper from './components/SectionWrapper';
-import {Calendar, Gift} from 'lucide-react';
+import {Calendar, Gift, Copy} from 'lucide-react';
 import EventCard from './components/EventCard';
 import Separator from './components/Separator';
 import Player from 'react-player/youtube';
+import CardBG from './assets/card-bg.webp';
+import BCAImage from './assets/logo-bca.png';
+import Chip from './assets/atm-chip.png';
 import gallery1 from './assets/gallery/gallery-1.jpg';
 import gallery2 from './assets/gallery/gallery-2.jpg';
 
@@ -297,7 +300,37 @@ const Page = () => {
           <button className="bg-black text-goldy px-6 py-3 rounded text-sm flex items-center justify-center gap-2 mx-auto">
             <Gift /> Kirim Hadiah
           </button>
-          <p className='text-xs mt-4'>Terimakasih.</p>
+          <div className="my-5">
+            <div className="w-full h-[250px] rounded-xl relative bg-cover p-1 bg-white overflow-hidden">
+              <div
+                className="absolute top-0 left-0 right-0 bottom-0 m-1 rounded-xl"
+                style={{
+                  backgroundImage: `url(${CardBG})`,
+                  backgroundSize: '100% 250px',
+                }}
+              />
+              <div className="relative flex flex-col h-full">
+                <div className="flex justify-end w-full items-center flex-1">
+                  <img src={BCAImage} className="w-[100px] mr-3" />
+                </div>
+                <div className="flex justify-start w-full flex-1 items-center">
+                  <img src={Chip} className="w-[40px] ml-3" />
+                </div>
+                <div className="w-full text-left flex flex-col flex-1 justify-center pl-3">
+                  <div className="flex items-center">
+                    <p className="text-xs font-poppins tracking-[10px] mb-2">
+                      100101010176
+                    </p>
+                    <Copy width={14} height={14} onClick={() => {alert('copy')}}/>
+                  </div>
+                  <p className="text-xs font-poppins tracking-[2px]">
+                    a.n. I Made Budi Surya Darma
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p className="text-xs mt-4">Terimakasih.</p>
         </div>
       </section>
     </>
