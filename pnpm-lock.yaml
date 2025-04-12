@@ -17,6 +17,9 @@ importers:
       lucide-react:
         specifier: ^0.487.0
         version: 0.487.0(react@19.0.0)
+      photoswipe:
+        specifier: ^5.4.4
+        version: 5.4.4
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -26,6 +29,9 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
+      react-photoswipe-gallery:
+        specifier: ^3.1.1
+        version: 3.1.1(photoswipe@5.4.4)(prop-types@15.8.1)(react@19.0.0)
       react-player:
         specifier: ^2.16.0
         version: 2.16.0(react@19.0.0)
@@ -1093,6 +1099,10 @@ packages:
     resolution: {integrity: sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==}
     engines: {node: '>=8'}
 
+  photoswipe@5.4.4:
+    resolution: {integrity: sha512-WNFHoKrkZNnvFFhbHL93WDkW3ifwVOXSW3w1UuZZelSmgXpIGiZSNlZJq37rR8YejqME2rHs9EhH9ZvlvFH2NA==}
+    engines: {node: '>= 0.12.0'}
+
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
@@ -1134,6 +1144,13 @@ packages:
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+
+  react-photoswipe-gallery@3.1.1:
+    resolution: {integrity: sha512-2hQkUkELwGDSnxdXeOGCySOLiK5vlUFZn9HhwmCXZz0jTqQwG6zy09M6M/JypYFa3md9zd/XW0aUD39dqltzsw==}
+    peerDependencies:
+      photoswipe: '>= 5.2.2'
+      prop-types: '>= 15.7.0'
+      react: '>= 16.8.0'
 
   react-player@2.16.0:
     resolution: {integrity: sha512-mAIPHfioD7yxO0GNYVFD1303QFtI3lyyQZLY229UEAp/a10cSW+hPcakg0Keq8uWJxT2OiT/4Gt+Lc9bD6bJmQ==}
@@ -2237,6 +2254,8 @@ snapshots:
 
   path-key@3.1.1: {}
 
+  photoswipe@5.4.4: {}
+
   picocolors@1.1.1: {}
 
   picomatch@2.3.1: {}
@@ -2273,6 +2292,12 @@ snapshots:
   react-fast-compare@3.2.2: {}
 
   react-is@16.13.1: {}
+
+  react-photoswipe-gallery@3.1.1(photoswipe@5.4.4)(prop-types@15.8.1)(react@19.0.0):
+    dependencies:
+      photoswipe: 5.4.4
+      prop-types: 15.8.1
+      react: 19.0.0
 
   react-player@2.16.0(react@19.0.0):
     dependencies:

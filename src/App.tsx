@@ -11,6 +11,12 @@ import {Calendar} from 'lucide-react';
 import EventCard from './components/EventCard';
 import Separator from './components/Separator';
 import Player from 'react-player/youtube';
+import gallery1 from './assets/gallery/gallery-1.jpg';
+import gallery2 from './assets/gallery/gallery-2.jpg';
+
+import 'photoswipe/dist/photoswipe.css';
+
+import {Gallery, Item} from 'react-photoswipe-gallery';
 
 const dDate = 'Wed Jun 11 2025 00:00:00 GMT+0800';
 
@@ -237,138 +243,94 @@ const Page = () => {
             />
           </div>
           <div className="grid grid-cols-2 gap-3 w-full">
-            <div
-              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-              style={{
-                backgroundImage: `url(${coupleImage})`,
-              }}
-            />
-            <div
-              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-              style={{
-                backgroundImage: `url(${coupleImage})`,
-              }}
-            />
-            <div
-              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-              style={{
-                backgroundImage: `url(${coupleImage})`,
-              }}
-            />
-            <div
-              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-              style={{
-                backgroundImage: `url(${coupleImage})`,
-              }}
-            />
-            <div
-              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-              style={{
-                backgroundImage: `url(${coupleImage})`,
-              }}
-            />
-            <div
-              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-              style={{
-                backgroundImage: `url(${coupleImage})`,
-              }}
-            />
-            <div
-              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-              style={{
-                backgroundImage: `url(${coupleImage})`,
-              }}
-            />
-            <div
-              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-              style={{
-                backgroundImage: `url(${coupleImage})`,
-              }}
-            />
-            <div
-              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-              style={{
-                backgroundImage: `url(${coupleImage})`,
-              }}
-            />
-            <div
-              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-              style={{
-                backgroundImage: `url(${coupleImage})`,
-              }}
-            />
-            <div
-              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-              style={{
-                backgroundImage: `url(${coupleImage})`,
-              }}
-            />
-            <div
-              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-              style={{
-                backgroundImage: `url(${coupleImage})`,
-              }}
-            />
-            <div
-              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-              style={{
-                backgroundImage: `url(${coupleImage})`,
-              }}
-            />
-            <div
-              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-              style={{
-                backgroundImage: `url(${coupleImage})`,
-              }}
-            />
-            <div
-              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-              style={{
-                backgroundImage: `url(${coupleImage})`,
-              }}
-            />
-            <div
-              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-              style={{
-                backgroundImage: `url(${coupleImage})`,
-              }}
-            />
-            <div
-              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-              style={{
-                backgroundImage: `url(${coupleImage})`,
-              }}
-            />
-            <div
-              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-              style={{
-                backgroundImage: `url(${coupleImage})`,
-              }}
-            />
-            <div
-              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-              style={{
-                backgroundImage: `url(${coupleImage})`,
-              }}
-            />
-            <div
-              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-              style={{
-                backgroundImage: `url(${coupleImage})`,
-              }}
-            />
-            <div
-              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-              style={{
-                backgroundImage: `url(${coupleImage})`,
-              }}
-            />
-            <div
-              className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-              style={{
-                backgroundImage: `url(${coupleImage})`,
-              }}
-            />
+            <Gallery withDownloadButton options={{zoom: true}}>
+              <Item
+                original={gallery1}
+                content={
+                  <div className="w-screen h-screen relative flex flex-col justify-center p-5">
+                    <img className="w-full" src={gallery1} />
+                    {/* <div
+                      className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+                      style={{
+                        backgroundImage: `url(${gallery1})`,
+                      }}
+                    /> */}
+                  </div>
+                }
+              >
+                {({ref, open}) => (
+                  <div
+                    ref={ref}
+                    onClick={open}
+                    className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+                    style={{
+                      backgroundImage: `url(${gallery1})`,
+                    }}
+                  />
+                )}
+              </Item>
+              <Item
+                original={gallery2}
+                content={
+                  <div className="w-screen h-screen relative flex flex-col justify-center p-5">
+                    <img className="w-full" src={gallery2} />
+                    {/* <div
+                      className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+                      style={{
+                        backgroundImage: `url(${gallery1})`,
+                      }}
+                    /> */}
+                  </div>
+                }
+              >
+                {({ref, open}) => (
+                  <div
+                    ref={ref}
+                    onClick={open}
+                    className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+                    style={{
+                      backgroundImage: `url(${gallery2})`,
+                    }}
+                  />
+                )}
+              </Item>
+              <Item original={coupleImage} width="1024" height="768">
+                {({ref, open}) => (
+                  <div
+                    ref={ref}
+                    onClick={open}
+                    className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+                    style={{
+                      backgroundImage: `url(${coupleImage})`,
+                    }}
+                  />
+                )}
+              </Item>
+              <Item original={coupleImage} width="1024" height="768">
+                {({ref, open}) => (
+                  <div
+                    ref={ref}
+                    onClick={open}
+                    className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+                    style={{
+                      backgroundImage: `url(${coupleImage})`,
+                    }}
+                  />
+                )}
+              </Item>
+              <Item original={coupleImage} width="1024" height="768">
+                {({ref, open}) => (
+                  <div
+                    ref={ref}
+                    onClick={open}
+                    className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+                    style={{
+                      backgroundImage: `url(${coupleImage})`,
+                    }}
+                  />
+                )}
+              </Item>
+            </Gallery>
           </div>
         </div>
       </SectionWrapper>
