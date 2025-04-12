@@ -7,7 +7,7 @@ import cloudImage from './assets/cloudy.png';
 import event1 from './assets/preweds/assets-event1.jpg';
 import logo from './assets/logo.png';
 import SectionWrapper from './components/SectionWrapper';
-import {Calendar} from 'lucide-react';
+import {Calendar, Gift} from 'lucide-react';
 import EventCard from './components/EventCard';
 import Separator from './components/Separator';
 import Player from 'react-player/youtube';
@@ -260,7 +260,7 @@ const Page = () => {
                   <div
                     ref={ref}
                     onClick={open}
-                    className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+                    className="cursor-pointer min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
                     style={{
                       backgroundImage: `url(${gallery1})`,
                     }}
@@ -272,45 +272,9 @@ const Page = () => {
                   <div
                     ref={ref}
                     onClick={open}
-                    className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+                    className="cursor-pointer min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
                     style={{
                       backgroundImage: `url(${gallery2})`,
-                    }}
-                  />
-                )}
-              </Item>
-              <Item original={coupleImage} width="1024" height="768">
-                {({ref, open}) => (
-                  <div
-                    ref={ref}
-                    onClick={open}
-                    className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-                    style={{
-                      backgroundImage: `url(${coupleImage})`,
-                    }}
-                  />
-                )}
-              </Item>
-              <Item original={coupleImage} width="1024" height="768">
-                {({ref, open}) => (
-                  <div
-                    ref={ref}
-                    onClick={open}
-                    className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-                    style={{
-                      backgroundImage: `url(${coupleImage})`,
-                    }}
-                  />
-                )}
-              </Item>
-              <Item original={coupleImage} width="1024" height="768">
-                {({ref, open}) => (
-                  <div
-                    ref={ref}
-                    onClick={open}
-                    className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-                    style={{
-                      backgroundImage: `url(${coupleImage})`,
                     }}
                   />
                 )}
@@ -319,6 +283,23 @@ const Page = () => {
           </div>
         </div>
       </SectionWrapper>
+      <section className="relative bg-yellow-beach w-full">
+        <div className="relative bg-[#F2EEE8] px-4 py-16 text-center overflow-hidden max-w-[430px] mx-auto">
+          <div className="absolute top-0 left-0 w-full border-l-transparent border-l-[100px] border-r-transparent border-r-[100px] border-t-[#dadada] border-t-[50px]" />
+          <h2 className="text-3xl font-cormorant italic font-medium mb-6">
+            Wedding Gift
+          </h2>
+          <p className="text-[#4B4B4B] max-w-xl mx-auto mb-8 text-sm font-poppins">
+            Doa Restu Anda merupakan karunia yang sangat berarti bagi kami. Dan
+            jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi
+            kado melalui:
+          </p>
+          <button className="bg-black text-goldy px-6 py-3 rounded text-sm flex items-center justify-center gap-2 mx-auto">
+            <Gift /> Kirim Hadiah
+          </button>
+          <p className='text-xs mt-4'>Terimakasih.</p>
+        </div>
+      </section>
     </>
   );
 };
