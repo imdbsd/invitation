@@ -243,21 +243,19 @@ const Page = () => {
             />
           </div>
           <div className="grid grid-cols-2 gap-3 w-full">
-            <Gallery withDownloadButton options={{zoom: true}}>
-              <Item
-                original={gallery1}
-                content={
-                  <div className="w-screen h-screen relative flex flex-col justify-center p-5">
-                    <img className="w-full" src={gallery1} />
-                    {/* <div
-                      className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-                      style={{
-                        backgroundImage: `url(${gallery1})`,
-                      }}
-                    /> */}
-                  </div>
-                }
-              >
+            <Gallery
+              withDownloadButton
+              options={{
+                zoom: true,
+                padding: {
+                  top: 60,
+                  bottom: 60,
+                  left: 20,
+                  right: 20,
+                },
+              }}
+            >
+              <Item original={gallery1} height={1080} width={1920}>
                 {({ref, open}) => (
                   <div
                     ref={ref}
@@ -269,20 +267,7 @@ const Page = () => {
                   />
                 )}
               </Item>
-              <Item
-                original={gallery2}
-                content={
-                  <div className="w-screen h-screen relative flex flex-col justify-center p-5">
-                    <img className="w-full" src={gallery2} />
-                    {/* <div
-                      className="min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-                      style={{
-                        backgroundImage: `url(${gallery1})`,
-                      }}
-                    /> */}
-                  </div>
-                }
-              >
+              <Item original={gallery2} width={1080} height={1920}>
                 {({ref, open}) => (
                   <div
                     ref={ref}
