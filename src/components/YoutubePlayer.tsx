@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Player, {YouTubePlayerProps} from 'react-player/youtube';
 import {twMerge} from 'tailwind-merge';
 import {useInView} from 'react-intersection-observer';
