@@ -26,7 +26,7 @@ const Page = () => {
     <>
       <SectionWrapper
         bgImage={{
-          src: '/asset-sections/hero-image.png',
+          src: '/galleries/gallery-3.jpg',
           className: 'bg-[center_-150px]',
         }}
       >
