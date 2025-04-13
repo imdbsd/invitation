@@ -1,4 +1,3 @@
-import * as React from 'react';
 import {Clock, MapPin} from 'lucide-react';
 
 interface Props {

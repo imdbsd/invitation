@@ -1,4 +1,3 @@
-import * as React from 'react';
 import {Gallery as BaseGallery, Item} from 'react-photoswipe-gallery';
 import {useInView} from 'react-intersection-observer';
 
