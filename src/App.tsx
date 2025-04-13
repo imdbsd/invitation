@@ -1,35 +1,32 @@
-import Countdown from './components/Countdown';
-import heroImage from './assets/preweds/hero-image.png';
-import bgImage2 from './assets/preweds/bg-image-2.jpg';
-import bgImage3 from './assets/preweds/bg-image-3.jpg';
-import coupleImage from './assets/preweds/mempelai.jpg';
-import cloudImage from './assets/cloudy.png';
-import event1 from './assets/preweds/assets-event1.jpg';
-import logo from './assets/logo.png';
+import * as React from 'react';
+import Skeleton from 'react-loading-skeleton';
 import SectionWrapper from './components/SectionWrapper';
-import {Calendar, Gift, Copy} from 'lucide-react';
+import {Calendar, Gift} from 'lucide-react';
 import EventCard from './components/EventCard';
 import Separator from './components/Separator';
-import Player from 'react-player/youtube';
-import CardBG from './assets/card-bg.webp';
-import BCAImage from './assets/logo-bca.png';
-import Chip from './assets/atm-chip.png';
-import gallery1 from './assets/gallery/gallery-1.jpg';
-import gallery2 from './assets/gallery/gallery-2.jpg';
 
-import 'photoswipe/dist/photoswipe.css';
-
-import {Gallery, Item} from 'react-photoswipe-gallery';
 import ATMCard from './components/ATMCard';
+import Gallery, {GalleryImages} from './components/Gallery';
+import YoutubePlayer from './components/YoutubePlayer';
+
+import 'react-loading-skeleton/dist/skeleton.css';
+
+const Countdown = React.lazy(() => import('./components/Countdown'));
 
 const dDate = 'Wed Jun 11 2025 00:00:00 GMT+0800';
 
+const images: GalleryImages = [
+  {src: '/galleries/gallery-1.jpg', width: 1920, height: 1080},
+  {src: '/galleries/gallery-2.jpg', width: 1080, height: 1920},
+];
+
 const Page = () => {
+  const [openGift, setOpenGift] = React.useState(false);
   return (
     <>
       <SectionWrapper
         bgImage={{
-          src: heroImage,
+          src: '/asset-sections/hero-image.png',
           className: 'bg-[center_-150px]',
         }}
       >
@@ -61,7 +58,10 @@ const Page = () => {
         </div>
         {/* https://support.google.com/calendar/thread/81344786/how-do-i-generate-add-to-calendar-link-from-our-own-website?hl=en */}
       </SectionWrapper>
-      <SectionWrapper className="md:min-h-[60vh]" bgImage={{src: bgImage2}}>
+      <SectionWrapper
+        className="md:min-h-[60vh]"
+        bgImage={{src: '/asset-sections/bg-image-2.jpg'}}
+      >
         <div
           className="h-screen w-full mx-auto absolute"
           style={{
@@ -70,7 +70,7 @@ const Page = () => {
         ></div>
         <div className="relative p-4 h-screen flex flex-col justify-around">
           <img
-            src={logo}
+            src={'/logo.png'}
             width={500}
             height={500}
             alt="logo"
@@ -112,12 +112,16 @@ const Page = () => {
                   <span>Add to Calendar</span>
                 </a>
               </div>
-              <Countdown startValue={dDate} />
+              <React.Suspense
+                fallback={<Skeleton height={80} baseColor="#dadada" />}
+              >
+                <Countdown startValue={dDate} />
+              </React.Suspense>
             </div>
           </div>
         </div>
       </SectionWrapper>
-      <SectionWrapper bgImage={{src: bgImage3}}>
+      <SectionWrapper bgImage={{src: '/asset-sections/bg-image-3.jpg'}}>
         <div
           className="h-screen w-full mx-auto absolute"
           style={{
@@ -127,7 +131,7 @@ const Page = () => {
         <div className="relative text-white p-4 h-screen w-full flex items-center flex-col justify-evenly">
           <h3 className="font-cormorant text-4xl text-center my-2">Mempelai</h3>
           <img
-            src={coupleImage}
+            src={'/asset-sections/mempelai.jpg'}
             alt="surya & apri"
             width={240}
             height={150}
@@ -153,14 +157,14 @@ const Page = () => {
       <SectionWrapper>
         <div className="relative px-4 pt-4 pb-20 w-full min-h-screen flex items-center flex-col justify-evenly">
           <img
-            src={cloudImage}
+            src={'/cloudy.png'}
             alt="cloud"
             width={1024}
             height={1024}
             className="w-[150px] h-[150px] absolute top-[10px] right-[-60px]"
           />
           <img
-            src={cloudImage}
+            src={'/cloudy.png'}
             alt="cloud"
             width={1024}
             height={1024}
@@ -185,7 +189,7 @@ const Page = () => {
             </Separator>
             <EventCard
               title="Pawiwahan"
-              bgImage={event1}
+              bgImage={'/asset-sections/assets-event1.jpg'}
               dayName="Rabu"
               date="11 Juni 2025"
               startAndEnd="07.00 - 12.00 WITA"
@@ -194,7 +198,7 @@ const Page = () => {
             />
             <EventCard
               title="Resepsi"
-              bgImage={event1}
+              bgImage={'/asset-sections/assets-event1.jpg'}
               dayName="Rabu"
               date="11 Juni 2025"
               startAndEnd="12.00 - 17.00 WITA"
@@ -208,7 +212,7 @@ const Page = () => {
             </Separator>
             <EventCard
               title="Resepsi"
-              bgImage={event1}
+              bgImage={'/asset-sections/assets-event1.jpg'}
               dayName="Rabu"
               date="11 Juni 2025"
               startAndEnd="07.00 - 12.00"
@@ -236,59 +240,14 @@ const Page = () => {
             </Separator>
             Gallery
           </h3>
-          <div className="w-full pt-[60.25%] rounded-xl overflow-hidden relative my-5">
-            <Player
-              url="https://youtu.be/L6SA8ml-j98"
-              width="100%"
-              height="100%"
-              className="absolute top-0 left-0"
-              muted
-              controls
-            />
+          <div className="w-full">
+            <YoutubePlayer url="https://youtu.be/L6SA8ml-j98" />
           </div>
-          <div className="grid grid-cols-2 gap-3 w-full">
-            <Gallery
-              withDownloadButton
-              options={{
-                zoom: true,
-                padding: {
-                  top: 60,
-                  bottom: 60,
-                  left: 20,
-                  right: 20,
-                },
-              }}
-            >
-              <Item original={gallery1} height={1080} width={1920}>
-                {({ref, open}) => (
-                  <div
-                    ref={ref}
-                    onClick={open}
-                    className="cursor-pointer min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-                    style={{
-                      backgroundImage: `url(${gallery1})`,
-                    }}
-                  />
-                )}
-              </Item>
-              <Item original={gallery2} width={1080} height={1920}>
-                {({ref, open}) => (
-                  <div
-                    ref={ref}
-                    onClick={open}
-                    className="cursor-pointer min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
-                    style={{
-                      backgroundImage: `url(${gallery2})`,
-                    }}
-                  />
-                )}
-              </Item>
-            </Gallery>
-          </div>
+          <Gallery images={images} />
         </div>
       </SectionWrapper>
-      <section className="relative bg-yellow-beach w-full">
-        <div className="relative bg-[#F2EEE8] px-4 py-16 text-center overflow-hidden max-w-[430px] mx-auto">
+      <SectionWrapper className="min-h-0" containerClassName="min-h-0">
+        <div className="relative bg-[#F2EEE8] px-4 py-16 text-center">
           <div className="absolute top-0 left-0 w-full border-l-transparent border-l-[100px] border-r-transparent border-r-[100px] border-t-[#dadada] border-t-[50px]" />
           <h2 className="text-3xl font-cormorant italic font-medium mb-6">
             Wedding Gift
@@ -298,16 +257,23 @@ const Page = () => {
             jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi
             kado melalui:
           </p>
-          <button className="bg-black text-goldy px-6 py-3 rounded text-sm flex items-center justify-center gap-2 mx-auto">
+          <button
+            className="bg-black text-goldy px-6 py-3 rounded text-sm flex items-center justify-center gap-2 mx-auto"
+            onClick={() => {
+              setOpenGift((open) => (open === false ? true : open));
+            }}
+          >
             <Gift /> Kirim Hadiah
           </button>
-          <div className="my-5 [&>*:not(:last-child)]:mb-5">
-            <ATMCard address="100101010176" name="I Made Budi Surya Darma" />
-            <ATMCard address="100101010176" name="I Made Budi Surya Darma" />
-          </div>
+          {openGift ? (
+            <div className="my-5 [&>*:not(:last-child)]:mb-5">
+              <ATMCard address="100101010176" name="I Made Budi Surya Darma" />
+              <ATMCard address="100101010176" name="I Made Budi Surya Darma" />
+            </div>
+          ) : null}
           <p className="text-xs mt-4">Terimakasih.</p>
         </div>
-      </section>
+      </SectionWrapper>
     </>
   );
 };

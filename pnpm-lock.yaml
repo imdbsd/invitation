@@ -29,6 +29,12 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
+      react-intersection-observer:
+        specifier: ^9.16.0
+        version: 9.16.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react-loading-skeleton:
+        specifier: ^3.5.0
+        version: 3.5.0(react@19.0.0)
       react-photoswipe-gallery:
         specifier: ^3.1.1
         version: 3.1.1(photoswipe@5.4.4)(prop-types@15.8.1)(react@19.0.0)
@@ -1151,8 +1157,22 @@ packages:
   react-fast-compare@3.2.2:
     resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
 
+  react-intersection-observer@9.16.0:
+    resolution: {integrity: sha512-w9nJSEp+DrW9KmQmeWHQyfaP6b03v+TdXynaoA964Wxt7mdR3An11z4NNCQgL4gKSK7y1ver2Fq+JKH6CWEzUA==}
+    peerDependencies:
+      react: ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^17.0.0 || ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+
+  react-loading-skeleton@3.5.0:
+    resolution: {integrity: sha512-gxxSyLbrEAdXTKgfbpBEFZCO/P153DnqSCQau2+o6lNy1jgMRr2MmRmOzMmyrwSaSYLRB8g7b0waYPmUjz7IhQ==}
+    peerDependencies:
+      react: '>=16.8.0'
 
   react-photoswipe-gallery@3.1.1:
     resolution: {integrity: sha512-2hQkUkELwGDSnxdXeOGCySOLiK5vlUFZn9HhwmCXZz0jTqQwG6zy09M6M/JypYFa3md9zd/XW0aUD39dqltzsw==}
@@ -2314,7 +2334,17 @@ snapshots:
 
   react-fast-compare@3.2.2: {}
 
+  react-intersection-observer@9.16.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+    dependencies:
+      react: 19.0.0
+    optionalDependencies:
+      react-dom: 19.0.0(react@19.0.0)
+
   react-is@16.13.1: {}
+
+  react-loading-skeleton@3.5.0(react@19.0.0):
+    dependencies:
+      react: 19.0.0
 
   react-photoswipe-gallery@3.1.1(photoswipe@5.4.4)(prop-types@15.8.1)(react@19.0.0):
     dependencies:
