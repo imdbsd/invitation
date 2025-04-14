@@ -1,20 +1,16 @@
-import * as React from 'react';
-import Skeleton from 'react-loading-skeleton';
 import SectionWrapper from './components/SectionWrapper';
-import {Calendar} from 'lucide-react';
-import EventCard from './components/EventCard';
-import Separator from './components/Separator';
+import SectionEvent from './components/SectionEvent';
+import SectionGallery from './components/SectionGallery';
+import SectionGift from './components/SectionGift';
 
-import GallerySection from './components/GallerySection';
-import GiftSection from './components/GiftSection';
+import useSearchParams from './hooks/useSearchParams';
 
 import 'react-loading-skeleton/dist/skeleton.css';
-
-const Countdown = React.lazy(() => import('./components/Countdown'));
-
-const dDate = 'Wed Jun 11 2025 00:00:00 GMT+0800';
+import SectionGreeting from './components/SectionGreeting';
 
 const Page = () => {
+  const params = useSearchParams<'to'>();
+  const guest = params?.to || '-';
   return (
     <>
       <SectionWrapper
@@ -45,75 +41,13 @@ const Page = () => {
               <span className="block">Bapak/ Ibu/ Saudara/ i</span>
             </p>
             <p className="font-cormorant text-base font-normal bg-white p-3 rounded-sm mt-4">
-              Justin Bieber
+              {guest}
             </p>
           </div>
         </div>
         {/* https://support.google.com/calendar/thread/81344786/how-do-i-generate-add-to-calendar-link-from-our-own-website?hl=en */}
       </SectionWrapper>
-      <SectionWrapper
-        className="md:min-h-[60vh]"
-        bgImage={{src: '/asset-sections/bg-image-2.jpg'}}
-      >
-        <div
-          className="h-screen w-full mx-auto absolute"
-          style={{
-            background: 'rgba(255, 241, 213, 0.5) 0%',
-          }}
-        ></div>
-        <div className="relative p-4 h-screen flex flex-col justify-around">
-          <img
-            src={'/logo.png'}
-            width={500}
-            height={500}
-            alt="logo"
-            className="w-[150px] h-[150px] mx-auto"
-          />
-
-          <div>
-            <p className="font-cormorant italic text-center text-lg mb-2">
-              Ihaiva stam ma vi yaustam, visvam ayur vyasnutam, kridantau
-              putrair naptrbhih, modamanau sve grhe.
-            </p>
-            <p className="text-center font-cormorant text-lg mb-2">
-              (Rg Veda X.85.42)
-            </p>
-            <p className="font-cormorant">
-              Wahai pasangan suami-istri, semoga kalian tetap bersatu dan tidak
-              pernah terpisahkan. Semoga kalian mencapai hidup penuh
-              kebahagiaan, tinggal di rumah yang penuh kegembiraan bersama
-              seluruh keturunanmu.
-            </p>
-          </div>
-          <div>
-            <Separator>
-              <p className="text-center font-cormorant text-xl mx-2">
-                Countdown to:
-              </p>
-            </Separator>
-            <div className="[&>*:not(:last-child)]:mb-5">
-              <p className="text-center font-cormorant text-4xl italic font-bold">
-                11 Juni 2025
-              </p>
-              <div className="flex justify-center">
-                <a
-                  href="#"
-                  className="flex flex-row items-center bg-white p-2 rounded-sm text-xs font-poppins"
-                  target="_blank"
-                >
-                  <Calendar className="mr-2" width={16} height={16} />
-                  <span>Add to Calendar</span>
-                </a>
-              </div>
-              <React.Suspense
-                fallback={<Skeleton height={80} baseColor="#dadada" />}
-              >
-                <Countdown startValue={dDate} />
-              </React.Suspense>
-            </div>
-          </div>
-        </div>
-      </SectionWrapper>
+      <SectionGreeting />
       <SectionWrapper bgImage={{src: '/asset-sections/bg-image-3.jpg'}}>
         <div
           className="h-screen w-full mx-auto absolute"
@@ -147,86 +81,9 @@ const Page = () => {
           </div>
         </div>
       </SectionWrapper>
-      <SectionWrapper>
-        <div className="relative px-4 pt-4 pb-20 w-full min-h-screen flex items-center flex-col justify-evenly">
-          <img
-            src={'/cloudy.png'}
-            alt="cloud"
-            width={1024}
-            height={1024}
-            className="w-[150px] h-[150px] absolute top-[10px] right-[-60px]"
-          />
-          <img
-            src={'/cloudy.png'}
-            alt="cloud"
-            width={1024}
-            height={1024}
-            className="w-[150px] h-[150px] absolute bottom-1 left-10"
-          />
-          <h3 className="font-monsieur-lad text-4xl my-4 w-full">
-            <Separator position="left">
-              <span className="font-serif mb-2">Wedding</span>
-            </Separator>
-            Event
-          </h3>
-          <p className="font-poppins text-sm text-center mb-4 relative">
-            Tanpa mengurangi rasa hormat dengan ini kami mengundang
-            Bapak/Ibu/Saudara/i untuk hadir dalam acara Pernikahan Putra-Putri
-            kami pada
-          </p>
-          <div className="relative [&>*:not(:last-child)]:mb-10">
-            <Separator position="right">
-              <h4 className="font-cormorant text-4xl text-center mx-2.5 italic text-goldy">
-                Bali
-              </h4>
-            </Separator>
-            <EventCard
-              title="Pawiwahan"
-              bgImage={'/asset-sections/assets-event1.jpg'}
-              dayName="Rabu"
-              date="11 Juni 2025"
-              startAndEnd="07.00 - 12.00 WITA"
-              location="Kediaman Mempelai Pria Jl. Siligita No.1, Banjar, Peminge, Kabupaten Badung, Bali"
-              gMap="https://maps.app.goo.gl/DcMf4eq2qtz1kgzNA"
-            />
-            <EventCard
-              title="Resepsi"
-              bgImage={'/asset-sections/assets-event1.jpg'}
-              dayName="Rabu"
-              date="11 Juni 2025"
-              startAndEnd="12.00 - 17.00 WITA"
-              location="Kediaman Mempelai Pria Jl. Siligita No.1, Banjar, Peminge, Kabupaten Badung, Bali"
-              gMap="https://maps.app.goo.gl/DcMf4eq2qtz1kgzNA"
-            />
-            <Separator position="right">
-              <h4 className="font-cormorant text-4xl text-center mx-2.5 italic text-goldy">
-                Jakarta
-              </h4>
-            </Separator>
-            <EventCard
-              title="Resepsi"
-              bgImage={'/asset-sections/assets-event1.jpg'}
-              dayName="Rabu"
-              date="11 Juni 2025"
-              startAndEnd="07.00 - 12.00"
-              location="Kediaman Mempelai Pria Jl. Siligita No.1, Banjar, Peminge, Kabupaten Badung, Bali"
-              gMap="https://maps.app.goo.gl/DcMf4eq2qtz1kgzNA"
-            />
-          </div>
-          <div className="[&>*:not(:last-child)]:mb-5 mt-5 relative">
-            <p className="font-poppins text-sm text-center">
-              Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila
-              Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan do'a restu
-              kepada kedua mempelai.
-            </p>
-            <p className="text-center font-bold">Keluarga Besar</p>
-            <p className="text-center font-bold">I Made Damiartha</p>
-            <p className="text-center font-bold">Suwardi</p>
-          </div>
-        </div>
-      </SectionWrapper>
-      <GallerySection />
-      <GiftSection />
+      <SectionEvent />
+      <SectionGallery />
+      <SectionGift />
     </>
   );
 };
