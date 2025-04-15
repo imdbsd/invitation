@@ -3,6 +3,7 @@ import Skeleton from 'react-loading-skeleton';
 import SectionWrapper from './SectionWrapper';
 import Separator from './Separator';
 import {GalleryImages} from './Gallery';
+import {useMediaContext} from './MediaContext/Context';
 
 const Gallery = React.lazy(() => import('./Gallery'));
 const YoutubePlayer = React.lazy(() => import('./YoutubePlayer'));
@@ -13,6 +14,7 @@ const images: GalleryImages = [
 ];
 
 const GallerySection = () => {
+  const {isPlayingVideo, setPlayMedia} = useMediaContext();
   return (
     <SectionWrapper className="bg-[#00000069]">
       <div className="relative px-4 pt-4 pb-20 min-h-screen flex items-center flex-col justify-evenly">
@@ -26,7 +28,12 @@ const GallerySection = () => {
           <React.Suspense
             fallback={<Skeleton height={225} baseColor="#dadada" />}
           >
-            <YoutubePlayer url="https://youtu.be/L6SA8ml-j98" />
+            <YoutubePlayer
+              playing={isPlayingVideo}
+              url="https://youtu.be/L6SA8ml-j98"
+              onPlay={() => setPlayMedia('video', true)}
+              onPause={() => setPlayMedia('video', false)}
+            />
           </React.Suspense>
         </div>
         <React.Suspense

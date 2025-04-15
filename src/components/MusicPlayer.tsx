@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {Play, Pause} from 'lucide-react';
+import {useMediaContext} from './MediaContext/Context';
 
 interface Props {
   containerRef?: React.RefObject<HTMLDivElement | null>;
@@ -13,20 +14,23 @@ const MusicPlayer = (props: Props) => {
   const [xPosition, setXPosition] = React.useState<number | undefined>(
     undefined
   );
-  const [isPlaying, setIsPlaying] = React.useState(false);
+  const {isPlayingBGMusic, setPlayMedia} = useMediaContext();
 
-  const togglePlay = React.useCallback(() => {
+  const toggleAudioHTML = React.useCallback((isPlaying: boolean) => {
     if (audioRef.current) {
-      const newState = !isPlaying;
-      setIsPlaying(newState);
-
-      if (newState) {
+      if (isPlaying) {
         audioRef.current.play();
       } else {
         audioRef.current.pause();
       }
     }
-  }, [isPlaying]);
+  }, []);
+
+  const togglePlay = React.useCallback(() => {
+    const newState = !isPlayingBGMusic;
+    setPlayMedia('music', newState);
+    toggleAudioHTML(newState);
+  }, [isPlayingBGMusic, setPlayMedia, toggleAudioHTML]);
 
   const calculateXPos = React.useCallback(() => {
     if (props.containerRef?.current) {
@@ -47,6 +51,10 @@ const MusicPlayer = (props: Props) => {
     calculateXPos();
   }, [calculateXPos]);
 
+  React.useEffect(() => {
+    if (!isPlayingBGMusic) toggleAudioHTML(false);
+  }, [isPlayingBGMusic, toggleAudioHTML]);
+
   return (
     <>
       <button
@@ -56,7 +64,7 @@ const MusicPlayer = (props: Props) => {
           left: xPosition,
         }}
       >
-        {isPlaying ? (
+        {isPlayingBGMusic ? (
           <Pause color="#FFF" fill="#FFF" />
         ) : (
           <Play color="#FFF" fill="#FFF" />
