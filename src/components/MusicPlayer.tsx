@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {Play, Pause} from 'lucide-react';
 import {useMediaContext} from './MediaContext/Context';
+import { addBaseURL } from '../helpers/common';
 
 interface Props {
   containerRef?: React.RefObject<HTMLDivElement | null>;
@@ -71,7 +72,7 @@ const MusicPlayer = (props: Props) => {
         )}
       </button>
       <audio ref={audioRef} controls className="hidden" loop preload="metadata">
-        <source src="/bg-audio.mp3" type="audio/mp3" />
+        <source src={addBaseURL('bg-audio.mp3')} type="audio/mp3" />
       </audio>
     </>
   );
