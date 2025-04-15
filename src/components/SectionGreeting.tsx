@@ -10,10 +10,7 @@ const dDate = 'Wed Jun 11 2025 00:00:00 GMT+0800';
 
 const SectionGreeting = () => {
   return (
-    <SectionWrapper
-      className="md:min-h-[60vh]"
-      bgImage={{src: '/asset-sections/bg-image-2.jpg'}}
-    >
+    <SectionWrapper bgImage={{src: '/asset-sections/bg-image-2.jpg'}}>
       <div
         className="h-screen w-full mx-auto absolute"
         style={{

@@ -9,7 +9,7 @@ const GiftSection = () => {
   const [openGift, setOpenGift] = React.useState(false);
 
   return (
-    <SectionWrapper className="min-h-0" containerClassName="min-h-0">
+    <SectionWrapper className="min-h-0">
       <div className="relative bg-[#F2EEE8] px-4 py-16 text-center">
         <div className="absolute top-0 left-0 w-full border-l-transparent border-l-[100px] border-r-transparent border-r-[100px] border-t-[#dadada] border-t-[50px]" />
         <h2 className="text-3xl font-cormorant italic font-medium mb-6">
@@ -40,12 +40,12 @@ const GiftSection = () => {
             >
               <>
                 <ATMCard
-                  address="100101010176"
+                  address="8580099662"
                   name="I Made Budi Surya Darma"
                 />
                 <ATMCard
-                  address="100101010176"
-                  name="I Made Budi Surya Darma"
+                  address="5445150921"
+                  name="Apriyanti Nurcahyani"
                 />
               </>
             </React.Suspense>

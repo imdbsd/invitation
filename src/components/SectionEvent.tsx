@@ -34,7 +34,7 @@ const SectionEvent = () => {
           Bapak/Ibu/Saudara/i untuk hadir dalam acara Pernikahan Putra-Putri
           kami pada
         </p>
-        <div className="relative [&>*:not(:last-child)]:mb-10">
+        <div className="relative [&>*:not(:last-child)]:mb-10 w-full">
           <Separator position="right">
             <h4 className="font-cormorant text-4xl text-center mx-2.5 italic text-goldy">
               Bali
