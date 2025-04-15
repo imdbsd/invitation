@@ -9,6 +9,7 @@ import useSearchParams from './hooks/useSearchParams';
 
 import 'react-loading-skeleton/dist/skeleton.css';
 import SectionGreeting from './components/SectionGreeting';
+import {addBaseURL} from './helpers/common';
 
 /* https://support.google.com/calendar/thread/81344786/how-do-i-generate-add-to-calendar-link-from-our-own-website?hl=en */
 // https://decomaan.github.io/google-calendar-link-generator/
@@ -26,7 +27,7 @@ const Page = () => {
       >
         <SectionWrapper
           bgImage={{
-            src: '/galleries/gallery-3.jpg',
+            src: addBaseURL('galleries/gallery-3.jpg'),
             className: 'bg-[center_-150px]',
           }}
         >
@@ -58,7 +59,9 @@ const Page = () => {
           </div>
         </SectionWrapper>
         <SectionGreeting />
-        <SectionWrapper bgImage={{src: '/asset-sections/bg-image-3.jpg'}}>
+        <SectionWrapper
+          bgImage={{src: addBaseURL('asset-sections/bg-image-3.jpg')}}
+        >
           <div
             className="h-screen w-full mx-auto absolute"
             style={{
@@ -70,7 +73,7 @@ const Page = () => {
               Mempelai
             </h3>
             <img
-              src={'/asset-sections/mempelai.jpg'}
+              src={addBaseURL('asset-sections/mempelai.jpg')}
               alt="surya & apri"
               width={240}
               height={150}

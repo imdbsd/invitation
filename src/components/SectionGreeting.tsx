@@ -3,6 +3,7 @@ import Skeleton from 'react-loading-skeleton';
 import SectionWrapper from './SectionWrapper';
 import Separator from './Separator';
 import {Calendar} from 'lucide-react';
+import {addBaseURL} from '../helpers/common';
 
 const Countdown = React.lazy(() => import('./Countdown'));
 
@@ -10,7 +11,9 @@ const dDate = 'Wed Jun 11 2025 00:00:00 GMT+0800';
 
 const SectionGreeting = () => {
   return (
-    <SectionWrapper bgImage={{src: '/asset-sections/bg-image-2.jpg'}}>
+    <SectionWrapper
+      bgImage={{src: addBaseURL('asset-sections/bg-image-2.jpg')}}
+    >
       <div
         className="h-screen w-full mx-auto absolute"
         style={{
@@ -19,7 +22,7 @@ const SectionGreeting = () => {
       ></div>
       <div className="relative p-4 h-screen flex flex-col justify-around">
         <img
-          src={'/logo.png'}
+          src={addBaseURL('logo.png')}
           width={500}
           height={500}
           alt="logo"

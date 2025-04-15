@@ -39,14 +39,8 @@ const GiftSection = () => {
               }
             >
               <>
-                <ATMCard
-                  address="8580099662"
-                  name="I Made Budi Surya Darma"
-                />
-                <ATMCard
-                  address="5445150921"
-                  name="Apriyanti Nurcahyani"
-                />
+                <ATMCard address="8580099662" name="I Made Budi Surya Darma" />
+                <ATMCard address="5445150921" name="Apriyanti Nurcahyani" />
               </>
             </React.Suspense>
           </div>

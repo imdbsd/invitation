@@ -2,6 +2,7 @@ import * as React from 'react';
 import Skeleton from 'react-loading-skeleton';
 import SectionWrapper from './SectionWrapper';
 import Separator from './Separator';
+import {addBaseURL} from '../helpers/common';
 
 const EventCard = React.lazy(() => import('./EventCard'));
 
@@ -10,14 +11,14 @@ const SectionEvent = () => {
     <SectionWrapper>
       <div className="relative px-4 pt-4 pb-20 w-full min-h-screen flex items-center flex-col justify-evenly">
         <img
-          src={'/cloud.png'}
+          src={addBaseURL('cloud.png')}
           alt="cloud"
           width={300}
           height={300}
           className="w-[150px] h-[150px] absolute top-[10px] right-[-60px]"
         />
         <img
-          src={'/cloud.png'}
+          src={addBaseURL('cloud.png')}
           alt="cloud"
           width={300}
           height={300}
@@ -45,7 +46,7 @@ const SectionEvent = () => {
           >
             <EventCard
               title="Pawiwahan"
-              bgImage={'/asset-sections/assets-event1.jpg'}
+              bgImage={addBaseURL('asset-sections/assets-event1.jpg')}
               dayName="Rabu"
               date="11 Juni 2025"
               startAndEnd="07.00 - 12.00 WITA"
@@ -58,7 +59,7 @@ const SectionEvent = () => {
           >
             <EventCard
               title="Resepsi"
-              bgImage={'/asset-sections/assets-event1.jpg'}
+              bgImage={addBaseURL('asset-sections/assets-event1.jpg')}
               dayName="Rabu"
               date="11 Juni 2025"
               startAndEnd="12.00 - 17.00 WITA"
@@ -77,7 +78,7 @@ const SectionEvent = () => {
           >
             <EventCard
               title="Resepsi"
-              bgImage={'/asset-sections/assets-event1.jpg'}
+              bgImage={addBaseURL('asset-sections/assets-event1.jpg')}
               dayName="Rabu"
               date="11 Juni 2025"
               startAndEnd="07.00 - 12.00"

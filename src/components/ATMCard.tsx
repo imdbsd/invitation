@@ -6,6 +6,7 @@ import toast from 'react-simple-toasts';
 import 'react-simple-toasts/dist/style.css';
 import 'react-simple-toasts/dist/theme/pink-dawn.css';
 import 'react-simple-toasts/dist/theme/failure.css';
+import { addBaseURL } from '../helpers/common';
 
 interface Props {
   address: string;
@@ -31,16 +32,16 @@ const ATMCard = (props: Props) => {
       <div
         className="absolute top-0 left-0 right-0 bottom-0 m-1 rounded-xl"
         style={{
-          backgroundImage: `url('/card-bg.webp')`,
+          backgroundImage: `url('${addBaseURL('card-bg.webp')}')`,
           backgroundSize: '100% 250px',
         }}
       />
       <div className="relative flex flex-col h-full">
         <div className="flex justify-end w-full items-center flex-1">
-          <img src={'/logo-bca.png'} className="w-[100px] mr-3" />
+          <img src={addBaseURL('logo-bca.png')} className="w-[100px] mr-3" />
         </div>
         <div className="flex justify-start w-full flex-1 items-center">
-          <img src={'/atm-chip.png'} className="w-[40px] ml-3" />
+          <img src={addBaseURL('atm-chip.png')} className="w-[40px] ml-3" />
         </div>
         <div className="w-full text-left flex flex-col flex-1 justify-center pl-3">
           <div

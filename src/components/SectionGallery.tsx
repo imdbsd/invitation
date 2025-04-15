@@ -4,13 +4,14 @@ import SectionWrapper from './SectionWrapper';
 import Separator from './Separator';
 import {GalleryImages} from './Gallery';
 import {useMediaContext} from './MediaContext/Context';
+import {addBaseURL} from '../helpers/common';
 
 const Gallery = React.lazy(() => import('./Gallery'));
 const YoutubePlayer = React.lazy(() => import('./YoutubePlayer'));
 
 const images: GalleryImages = [
-  {src: '/galleries/gallery-1.jpg', width: 1920, height: 1080},
-  {src: '/galleries/gallery-2.jpg', width: 1080, height: 1920},
+  {src: addBaseURL('galleries/gallery-1.jpg'), width: 1920, height: 1080},
+  {src: addBaseURL('galleries/gallery-2.jpg'), width: 1080, height: 1920},
 ];
 
 const GallerySection = () => {
