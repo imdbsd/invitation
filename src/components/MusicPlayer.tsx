@@ -52,7 +52,7 @@ const MusicPlayer = (props: Props) => {
   }, [calculateXPos]);
 
   React.useEffect(() => {
-    if (!isPlayingBGMusic) toggleAudioHTML(false);
+    toggleAudioHTML(isPlayingBGMusic);
   }, [isPlayingBGMusic, toggleAudioHTML]);
 
   return (
