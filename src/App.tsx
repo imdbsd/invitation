@@ -11,6 +11,7 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import SectionGreeting from './components/SectionGreeting';
 
 /* https://support.google.com/calendar/thread/81344786/how-do-i-generate-add-to-calendar-link-from-our-own-website?hl=en */
+// https://decomaan.github.io/google-calendar-link-generator/
 
 const Page = () => {
   const params = useSearchParams<'to'>();
