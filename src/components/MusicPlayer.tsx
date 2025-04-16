@@ -8,7 +8,7 @@ interface Props {
 }
 
 const BUTTON_SIZE = 40;
-const PADDING_RIGHT = 20;
+const PADDING_RIGHT = 10;
 
 const MusicPlayer = (props: Props) => {
   const audioRef = React.useRef<HTMLAudioElement>(null);

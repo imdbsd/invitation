@@ -23,7 +23,7 @@ const Page = () => {
     <div className="w-full min-h-screen bg-yellow-beach relative">
       <div
         ref={containerRef}
-        className="mx-auto w-full max-w-[430px] bg-yellow-beach relative overflow-hidden"
+        className="mx-auto w-full max-w-[500px] bg-yellow-beach relative overflow-hidden"
       >
         <SectionWrapper
           bgImage={{
