@@ -2,16 +2,16 @@ import * as React from 'react';
 import {MediaContext} from './Context';
 
 const MediaContextProvider = (props: React.PropsWithChildren) => {
+  const [isPlayingBGMusic, setIsPlayingBGMusic] = React.useState(false);
+  const [isPlayingVideo, setIsPlayingVideo] = React.useState(false);
+
   const prevValue = React.useRef<{
     isPlayingBGMusic: boolean;
     isPlayingVideo: boolean;
   }>({
-    isPlayingBGMusic: false,
-    isPlayingVideo: false,
+    isPlayingBGMusic,
+    isPlayingVideo,
   });
-
-  const [isPlayingBGMusic, setIsPlayingBGMusic] = React.useState(false);
-  const [isPlayingVideo, setIsPlayingVideo] = React.useState(false);
   const setPlayMedia = React.useCallback(
     (type: 'music' | 'video', isPlaying: boolean) => {
       console.log({type, isPlaying});

@@ -10,6 +10,7 @@ import useSearchParams from './hooks/useSearchParams';
 import 'react-loading-skeleton/dist/skeleton.css';
 import SectionGreeting from './components/SectionGreeting';
 import {addBaseURL} from './helpers/common';
+import SectionWeddingWish from './components/SectionWeddingWish';
 
 /* https://support.google.com/calendar/thread/81344786/how-do-i-generate-add-to-calendar-link-from-our-own-website?hl=en */
 // https://decomaan.github.io/google-calendar-link-generator/
@@ -98,6 +99,7 @@ const Page = () => {
         </SectionWrapper>
         <SectionEvent />
         <SectionGallery />
+        <SectionWeddingWish />
         <SectionGift />
         <MusicPlayer containerRef={containerRef} />
       </div>

@@ -47,7 +47,7 @@ const MusicPlayer = (props: Props) => {
 
   React.useEffect(() => {
     if (audioRef.current) {
-      audioRef.current.volume = 0.2;
+      audioRef.current.volume = 0.5;
     }
     calculateXPos();
   }, [calculateXPos]);
@@ -71,7 +71,7 @@ const MusicPlayer = (props: Props) => {
           <Play color="#FFF" fill="#FFF" />
         )}
       </button>
-      <audio ref={audioRef} controls className="hidden" loop preload="metadata">
+      <audio autoPlay ref={audioRef} controls className="hidden" loop preload="metadata">
         <source src={addBaseURL('bg-audio.mp3')} type="audio/mp3" />
       </audio>
     </>
