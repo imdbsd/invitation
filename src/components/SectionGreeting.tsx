@@ -1,9 +1,11 @@
 import * as React from 'react';
 import Skeleton from 'react-loading-skeleton';
+import {InView} from 'react-intersection-observer';
 import SectionWrapper from './SectionWrapper';
 import Separator from './Separator';
 import {Calendar} from 'lucide-react';
 import {addBaseURL} from '../helpers/common';
+import {twMerge} from 'tailwind-merge';
 
 const Countdown = React.lazy(() => import('./Countdown'));
 
@@ -20,7 +22,7 @@ const SectionGreeting = () => {
           background: 'rgba(255, 241, 213, 0.5) 0%',
         }}
       ></div>
-      <div className="relative p-4 h-screen flex flex-col justify-around">
+      <div className="relative p-5 h-screen flex flex-col justify-around">
         <img
           src={addBaseURL('logo.png')}
           width={500}
@@ -29,20 +31,32 @@ const SectionGreeting = () => {
           className="w-[150px] h-[150px] mx-auto"
         />
 
-        <div>
-          <p className="font-cormorant italic text-center text-lg mb-2">
-            Ihaiva stam ma vi yaustam, visvam ayur vyasnutam, kridantau putrair
-            naptrbhih, modamanau sve grhe.
-          </p>
-          <p className="text-center font-cormorant text-lg mb-2">
-            (Rg Veda X.85.42)
-          </p>
-          <p className="font-cormorant">
-            Wahai pasangan suami-istri, semoga kalian tetap bersatu dan tidak
-            pernah terpisahkan. Semoga kalian mencapai hidup penuh kebahagiaan,
-            tinggal di rumah yang penuh kegembiraan bersama seluruh keturunanmu.
-          </p>
-        </div>
+        <InView threshold={0.9} triggerOnce>
+          {({inView, ref}) => (
+            <div
+              ref={ref}
+              className={twMerge('opacity-0', inView && 'opacity-100')}
+              style={{
+                transition: 'all 1s ease',
+              }}
+            >
+              <p className="font-cormorant italic text-center text-lg mb-2">
+                Ihaiva stam ma vi yaustam, visvam ayur vyasnutam, kridantau
+                putrair naptrbhih, modamanau sve grhe.
+              </p>
+              <p className="text-center font-cormorant text-lg mb-2">
+                (Rg Veda X.85.42)
+              </p>
+              <p className="font-cormorant">
+                Wahai pasangan suami-istri, semoga kalian tetap bersatu dan
+                tidak pernah terpisahkan. Semoga kalian mencapai hidup penuh
+                kebahagiaan, tinggal di rumah yang penuh kegembiraan bersama
+                seluruh keturunanmu.
+              </p>
+            </div>
+          )}
+        </InView>
+
         <div>
           <Separator>
             <p className="text-center font-cormorant text-xl mx-2">
@@ -50,7 +64,7 @@ const SectionGreeting = () => {
             </p>
           </Separator>
           <div className="[&>*:not(:last-child)]:mb-5">
-            <p className="text-center font-cormorant text-4xl italic font-bold">
+            <p className="text-center font-cormorant text-3xl italic font-bold">
               11 Juni 2025
             </p>
             <div className="flex justify-center">

@@ -2,11 +2,13 @@ import {Gallery as BaseGallery, Item} from 'react-photoswipe-gallery';
 import {useInView} from 'react-intersection-observer';
 
 import 'photoswipe/dist/photoswipe.css';
+import {twMerge} from 'tailwind-merge';
 
 export type GalleryImage = {
   src: string;
   width: string | number;
   height: number | string;
+  className?: string;
 };
 
 export type GalleryImages = Array<GalleryImage>;
@@ -44,7 +46,10 @@ const LazyGalleryItem = (props: {image: GalleryImage}) => {
         <div
           ref={ref}
           onClick={open}
-          className="cursor-pointer min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm"
+          className={twMerge(
+            'cursor-pointer min-h-[150px] w-full flex flex-1 bg-[center] bg-cover rounded-sm',
+            props.image.className
+          )}
           style={{
             backgroundImage: `url(${props.image.src})`,
           }}

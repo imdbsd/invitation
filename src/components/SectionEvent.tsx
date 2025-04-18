@@ -9,20 +9,20 @@ const EventCard = React.lazy(() => import('./EventCard'));
 const SectionEvent = () => {
   return (
     <SectionWrapper>
-      <div className="relative px-4 pt-4 pb-20 w-full min-h-screen flex items-center flex-col justify-evenly">
+      <div className="relative p-5 pb-20 w-full min-h-screen flex items-center flex-col justify-evenly">
         <img
           src={addBaseURL('cloud.png')}
           alt="cloud"
           width={300}
           height={300}
-          className="w-[150px] h-[150px] absolute top-[10px] right-[-60px]"
+          className="w-[150px] h-[150px] absolute top-[10px] right-[-60px] animate-up-and-down"
         />
         <img
           src={addBaseURL('cloud.png')}
           alt="cloud"
           width={300}
           height={300}
-          className="w-[150px] h-[150px] absolute bottom-1 left-10"
+          className="w-[150px] h-[150px] absolute bottom-1 left-10 animate-up-and-down"
         />
         <h3 className="font-monsieur-lad text-4xl my-4 w-full">
           <Separator position="left">
@@ -80,10 +80,10 @@ const SectionEvent = () => {
               title="Resepsi"
               bgImage={addBaseURL('asset-sections/assets-event1.jpg')}
               dayName="Rabu"
-              date="11 Juni 2025"
+              date="5 Juli 2025"
               startAndEnd="07.00 - 12.00"
-              location="Kediaman Mempelai Pria Jl. Siligita No.1, Banjar, Peminge, Kabupaten Badung, Bali"
-              gMap="https://maps.app.goo.gl/DcMf4eq2qtz1kgzNA"
+              location="Graha Masnoon by Zeinlucky. Poris Gaga, Kec. Cipondoh, Kota Tangerang"
+              gMap="https://maps.app.goo.gl/6pZGx8FnCUSA7HTBA"
             />
           </React.Suspense>
         </div>
@@ -95,6 +95,7 @@ const SectionEvent = () => {
           </p>
           <p className="text-center font-bold">Keluarga Besar</p>
           <p className="text-center font-bold">I Made Damiartha</p>
+          <p className="text-center font-bold">&</p>
           <p className="text-center font-bold">Suwardi</p>
         </div>
       </div>

@@ -6,11 +6,12 @@ import toast from 'react-simple-toasts';
 import 'react-simple-toasts/dist/style.css';
 import 'react-simple-toasts/dist/theme/pink-dawn.css';
 import 'react-simple-toasts/dist/theme/failure.css';
-import { addBaseURL } from '../helpers/common';
+import {addBaseURL} from '../helpers/common';
 
 interface Props {
   address: string;
   name: string;
+  bank: 'BCA' | 'BNI';
 }
 
 const ATMCard = (props: Props) => {
@@ -38,7 +39,14 @@ const ATMCard = (props: Props) => {
       />
       <div className="relative flex flex-col h-full">
         <div className="flex justify-end w-full items-center flex-1">
-          <img src={addBaseURL('logo-bca.png')} className="w-[100px] mr-3" />
+          <img
+            src={
+              props.bank === 'BCA'
+                ? addBaseURL('logo-bca.png')
+                : addBaseURL('logo-bni.png')
+            }
+            className="w-[100px] mr-3"
+          />
         </div>
         <div className="flex justify-start w-full flex-1 items-center">
           <img src={addBaseURL('atm-chip.png')} className="w-[40px] ml-3" />

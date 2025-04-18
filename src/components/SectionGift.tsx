@@ -10,7 +10,7 @@ const GiftSection = () => {
 
   return (
     <SectionWrapper className="min-h-[200px]">
-      <div className="relative bg-[#F2EEE8] px-4 py-16 text-center">
+      <div className="relative bg-[#F2EEE8] px-5 py-16 text-center">
         <div className="absolute top-0 left-0 w-full border-l-transparent border-l-[100px] border-r-transparent border-r-[100px] border-t-[#dadada] border-t-[50px]" />
         <h2 className="text-3xl font-cormorant italic font-medium mb-6">
           Wedding Gift
@@ -39,8 +39,21 @@ const GiftSection = () => {
               }
             >
               <>
-                <ATMCard address="8580099662" name="I Made Budi Surya Darma" />
-                <ATMCard address="5445150921" name="Apriyanti Nurcahyani" />
+                <ATMCard
+                  bank="BCA"
+                  address="8580099662"
+                  name="I Made Budi Surya Darma"
+                />
+                <ATMCard
+                  bank="BNI"
+                  address="1180314569"
+                  name="Apriyanti Nurcahyani"
+                />
+                <ATMCard
+                  bank="BCA"
+                  address="5445150921"
+                  name="Apriyanti Nurcahyani"
+                />
               </>
             </React.Suspense>
           </div>

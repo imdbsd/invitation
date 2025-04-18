@@ -2,11 +2,13 @@ import * as React from 'react';
 import {twMerge} from 'tailwind-merge';
 import {useInView} from 'react-intersection-observer';
 
-type Props = React.PropsWithChildren<
-  React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
-    bgImage?: {src: string; className?: string};
-  }
->;
+type Props = React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLElement>,
+  HTMLElement
+> & {
+  bgImage?: {src: string; className?: string};
+  children: React.ReactNode | ((inView: boolean) => React.ReactNode);
+};
 
 const SectionWrapper = (props: Props) => {
   const [ref, inView] = useInView({
@@ -34,7 +36,7 @@ const SectionWrapper = (props: Props) => {
               }}
             ></div>
           ) : null}
-          {children}
+          {typeof children === 'function' ? children(inView) : children}
         </>
       ) : null}
     </section>
