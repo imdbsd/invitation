@@ -18,6 +18,20 @@ const SectionWelcome = (props: {opened?: boolean; guest?: string}) => {
             'linear-gradient(to bottom, rgba(255, 241, 213, 0) 0%, rgba(255, 241, 213, 0.3) 70%, rgba(255, 241, 213, 1) 80%)',
         }}
       >
+        <img
+          src={addBaseURL('cloud.png')}
+          alt="cloud"
+          width={300}
+          height={300}
+          className="w-[150px] h-[150px] absolute top-1/12 left-[40px] animate-up-and-down animate-duration-2000 opacity-70"
+        />
+        <img
+          src={addBaseURL('cloud.png')}
+          alt="cloud"
+          width={300}
+          height={300}
+          className="w-[150px] h-[150px] absolute top-[10px] right-[-60px] animate-up-and-down animate-duration-2300 opacity-70"
+        />
         <div
           className={twMerge(
             'absolute bottom-[75px] right-0 left-0 flex flex-col justify-center items-center z-10 opacity-0',

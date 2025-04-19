@@ -50,6 +50,20 @@ const CoverPage = (props: {
               'linear-gradient(to bottom, rgba(255, 241, 213, 0) 0%, rgba(255, 241, 213, 0.3) 70%, rgba(255, 241, 213, 1) 80%)',
           }}
         >
+          <img
+            src={addBaseURL('cloud.png')}
+            alt="cloud"
+            width={300}
+            height={300}
+            className="w-[150px] h-[150px] absolute top-1/12 left-[40px] animate-up-and-down animate-duration-2000 opacity-70"
+          />
+          <img
+            src={addBaseURL('cloud.png')}
+            alt="cloud"
+            width={300}
+            height={300}
+            className="w-[150px] h-[150px] absolute top-[10px] right-[-60px] animate-up-and-down animate-duration-2300 opacity-70"
+          />          
           <div className="absolute top-0 bottom-0 left-0 right-0 items-center justify-center flex">
             <div className="h-2/3 w-3/4 rounded-full border-yellow-beach border-double border-[5px]" />
           </div>
