@@ -2,12 +2,12 @@ import * as React from 'react';
 import SectionWrapper from './SectionWrapper';
 import {twMerge} from 'tailwind-merge';
 import {useMediaContext} from './MediaContext/Context';
-import useSearchParams from '../hooks/useSearchParams';
 import {addBaseURL} from '../helpers/common';
 
-const CoverPage = (props: {children: (opened: boolean) => React.ReactNode}) => {
-  const params = useSearchParams<'to'>();
-  const guest = params?.to || '-';
+const CoverPage = (props: {
+  children: (opened: boolean) => React.ReactNode;
+  guest?: string;
+}) => {
   const [opened, setOpened] = React.useState(false);
   const [totalHide, setTotalHide] = React.useState(false);
   const {setPlayMedia} = useMediaContext();
@@ -39,8 +39,8 @@ const CoverPage = (props: {children: (opened: boolean) => React.ReactNode}) => {
         }}
         className={twMerge(
           'absolute top-0 left-0 right-0 bottom-0 z-[100]',
-          opened && 'opacity-0 transition-all duration-500 ease-out'
-          //   totalHide && 'hidden'
+          opened && 'opacity-0 transition-all duration-500 ease-out',
+          totalHide && 'hidden'
         )}
       >
         <div
@@ -68,9 +68,9 @@ const CoverPage = (props: {children: (opened: boolean) => React.ReactNode}) => {
               className="font-cormorant text-base font-normal bg-white p-3 rounded-sm mt-4 min-w-[100px] text-center cursor-pointer"
               onClick={toggleOpen}
             >
-              {guest}
+              {props.guest}
             </button>
-            <p className="text-xs my-2" onClick={toggleOpen}>
+            <p className="text-xs my-2 cursor-pointer" onClick={toggleOpen}>
               Buka Undangan.
             </p>
           </div>
