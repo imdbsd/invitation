@@ -13,26 +13,80 @@ const YoutubePlayer = React.lazy(() => import('./YoutubePlayer'));
 
 const vertical = {width: 1080, height: 1920};
 const horizontal = {width: 1920, height: 1080};
+const baseCaption = 'Apri & Surya ~ 11 Juni 2025';
 
 const images: GalleryImages = [
-  {src: addBaseURL('galleries/gallery-1.jpg'), ...horizontal},
-  {src: addBaseURL('galleries/gallery-2.jpg'), ...vertical},
+  {
+    src: addBaseURL('galleries/gallery-1.jpg'),
+    ...horizontal,
+    caption: baseCaption,
+  },
+  {
+    src: addBaseURL('galleries/gallery-2.jpg'),
+    ...vertical,
+    caption: baseCaption,
+  },
   {
     src: addBaseURL('galleries/gallery-3.jpg'),
     ...vertical,
     className: 'bg-[center_bottom]',
+    caption: baseCaption,
   },
-  {src: addBaseURL('galleries/gallery-4.jpg'), ...vertical},
-  {src: addBaseURL('galleries/gallery-5.jpg'), ...vertical},
-  {src: addBaseURL('galleries/gallery-6.jpg'), ...horizontal},
-  {src: addBaseURL('galleries/gallery-7.jpg'), ...horizontal},
-  {src: addBaseURL('galleries/gallery-8.jpg'), ...horizontal},
-  {src: addBaseURL('galleries/gallery-9.jpg'), ...horizontal},
-  {src: addBaseURL('galleries/gallery-10.jpg'), ...horizontal},
-  {src: addBaseURL('galleries/gallery-11.jpg'), ...horizontal},
-  {src: addBaseURL('galleries/gallery-12.jpg'), ...vertical},
-  {src: addBaseURL('galleries/gallery-13.jpg'), ...horizontal},
-  {src: addBaseURL('galleries/gallery-14.jpg'), ...horizontal},
+  {
+    src: addBaseURL('galleries/gallery-4.jpg'),
+    ...vertical,
+    caption: baseCaption,
+  },
+  {
+    src: addBaseURL('galleries/gallery-5.jpg'),
+    ...vertical,
+    caption: baseCaption,
+  },
+  {
+    src: addBaseURL('galleries/gallery-6.jpg'),
+    ...horizontal,
+    caption: baseCaption,
+  },
+  {
+    src: addBaseURL('galleries/gallery-7.jpg'),
+    ...horizontal,
+    caption: baseCaption,
+  },
+  {
+    src: addBaseURL('galleries/gallery-8.jpg'),
+    ...horizontal,
+    caption: baseCaption,
+  },
+  {
+    src: addBaseURL('galleries/gallery-9.jpg'),
+    ...horizontal,
+    caption: baseCaption,
+  },
+  {
+    src: addBaseURL('galleries/gallery-10.jpg'),
+    ...horizontal,
+    caption: baseCaption,
+  },
+  {
+    src: addBaseURL('galleries/gallery-11.jpg'),
+    ...horizontal,
+    caption: baseCaption,
+  },
+  {
+    src: addBaseURL('galleries/gallery-12.jpg'),
+    ...vertical,
+    caption: baseCaption,
+  },
+  {
+    src: addBaseURL('galleries/gallery-13.jpg'),
+    ...horizontal,
+    caption: baseCaption,
+  },
+  {
+    src: addBaseURL('galleries/gallery-14.jpg'),
+    ...horizontal,
+    caption: baseCaption,
+  },
 ];
 
 const GallerySection = () => {
@@ -52,10 +106,7 @@ const GallerySection = () => {
           >
             <InView triggerOnce threshold={0.2}>
               {({ref, inView}) => (
-                <div
-                  ref={ref}
-                  className={twMerge(inView && 'animate-fade-up')}
-                >
+                <div ref={ref} className={twMerge(inView && 'animate-fade-up')}>
                   <YoutubePlayer
                     playing={isPlayingVideo}
                     url="https://youtu.be/L6SA8ml-j98"

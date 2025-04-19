@@ -7,6 +7,7 @@ import {twMerge} from 'tailwind-merge';
 export type GalleryImage = {
   src: string;
   width: string | number;
+  caption?: string;
   height: number | string;
   className?: string;
 };
@@ -41,6 +42,7 @@ const LazyGalleryItem = (props: {image: GalleryImage}) => {
       original={props.image.src}
       height={props.image.height}
       width={props.image.width}
+      alt={props.image.caption}
     >
       {({ref, open}) => (
         <div
@@ -65,6 +67,7 @@ const Gallery = (props: Props) => {
     <div className="grid grid-cols-2 gap-3 w-full">
       <BaseGallery
         withDownloadButton
+        withCaption
         options={{
           zoom: true,
           padding: {
