@@ -22,7 +22,7 @@ const SectionCouples = () => {
             <img
               ref={ref}
               src={addBaseURL('asset-sections/mempelai.jpg')}
-              alt="surya & apri"
+              alt="Image Couple - Apri & Surya"
               width={240}
               height={150}
               className={twMerge(
