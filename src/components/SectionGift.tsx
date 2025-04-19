@@ -2,6 +2,7 @@ import * as React from 'react';
 import Skeleton from 'react-loading-skeleton';
 import {Gift} from 'lucide-react';
 import SectionWrapper from './SectionWrapper';
+import GoPayCard from './GoPayCard';
 
 const ATMCard = React.lazy(() => import('./ATMCard'));
 
@@ -45,6 +46,9 @@ const GiftSection = () => {
                     address="8580099662"
                     name="I Made Budi Surya Darma"
                   />
+                </div>
+                <div className="animate-fade-up">
+                  <GoPayCard />
                 </div>
                 <div className="animate-fade-up">
                   <ATMCard
