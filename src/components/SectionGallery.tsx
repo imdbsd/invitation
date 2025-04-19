@@ -5,6 +5,8 @@ import Separator from './Separator';
 import {GalleryImages} from './Gallery';
 import {useMediaContext} from './MediaContext/Context';
 import {addBaseURL} from '../helpers/common';
+import {InView} from 'react-intersection-observer';
+import {twMerge} from 'tailwind-merge';
 
 const Gallery = React.lazy(() => import('./Gallery'));
 const YoutubePlayer = React.lazy(() => import('./YoutubePlayer'));
@@ -36,7 +38,7 @@ const images: GalleryImages = [
 const GallerySection = () => {
   const {isPlayingVideo, setPlayMedia} = useMediaContext();
   return (
-    <SectionWrapper className="bg-[#00000069]">
+    <SectionWrapper className="bg-[#00000069]" id="section-gallery">
       <div className="relative p-5 pb-20 min-h-screen flex items-center flex-col justify-evenly">
         <h3 className="font-monsieur-lad text-4xl my-4 text-right w-full text-white">
           <Separator position="right" color="bg-white">
@@ -48,12 +50,21 @@ const GallerySection = () => {
           <React.Suspense
             fallback={<Skeleton height={225} baseColor="#dadada" />}
           >
-            <YoutubePlayer
-              playing={isPlayingVideo}
-              url="https://youtu.be/L6SA8ml-j98"
-              onPlay={() => setPlayMedia('video', true)}
-              onPause={() => setPlayMedia('video', false)}
-            />
+            <InView triggerOnce threshold={0.2}>
+              {({ref, inView}) => (
+                <div
+                  ref={ref}
+                  className={twMerge(inView && 'animate-fade-up')}
+                >
+                  <YoutubePlayer
+                    playing={isPlayingVideo}
+                    url="https://youtu.be/L6SA8ml-j98"
+                    onPlay={() => setPlayMedia('video', true)}
+                    onPause={() => setPlayMedia('video', false)}
+                  />
+                </div>
+              )}
+            </InView>
           </React.Suspense>
         </div>
         <React.Suspense

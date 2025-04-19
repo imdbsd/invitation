@@ -6,6 +6,7 @@ import {twMerge} from 'tailwind-merge';
 const SectionCouples = () => {
   return (
     <SectionWrapper
+      id="section-couples"
       bgImage={{src: addBaseURL('asset-sections/bg-image-3.jpg')}}
     >
       <div
@@ -26,25 +27,19 @@ const SectionCouples = () => {
               height={150}
               className={twMerge(
                 'rounded-xl w-[480px] border-double border-[3px] border-yellow-beach opacity-0',
-                inView && 'animate-slide-up-fade-in'
+                inView && 'animate-fade-up'
               )}
             />
           )}
         </InView>
-        <div className="text-center">
-          <div className="text-center">
-            <p className="text-goldy text-3xl font-cormorant">
-              I Made Budi Surya Darma
-            </p>
-            <p>Putra dari Bapak I Made Damiartha & Ibu Ni Ketut Bukti</p>
-          </div>
-          <p className="text-goldy text-3xl font-cormorant">&</p>
-          <div className="text-center">
-            <p className="text-goldy text-3xl font-cormorant">
-              Apriyanti Nurcahyani
-            </p>
-            <p>Putri dari Bapak. Suwardi & Ibu Parnasih</p>
-          </div>
+        <div className="text-center text-goldy font-cormorant">
+          <p className="text-3xl">I Made Budi Surya Darma</p>
+          <p className="text-white">
+            Putra dari Bapak I Made Damiartha & Ibu Ni Ketut Bukti
+          </p>
+          <p className="text-3xl">&</p>
+          <p className="text-3xl">Apriyanti Nurcahyani</p>
+          <p className="text-white">Putri dari Bapak. Suwardi & Ibu Parnasih</p>
         </div>
       </div>
     </SectionWrapper>

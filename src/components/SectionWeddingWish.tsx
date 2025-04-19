@@ -6,7 +6,10 @@ const WishWidget = React.lazy(() => import('./WishWidget'));
 
 const SectionWeddingWish = () => {
   return (
-    <SectionWrapper className="bg-[#00000069] min-h-[200px]">
+    <SectionWrapper
+      className="bg-[#00000069] min-h-[200px]"
+      id="section-wedding-wish"
+    >
       <div className="relative p-5 w-full flex items-center flex-col justify-evenly">
         <h3 className="font-monsieur-lad text-4xl my-4 w-full">
           <Separator position="center" color="bg-white">
@@ -23,7 +26,9 @@ const SectionWeddingWish = () => {
             </div>
           }
         >
-          <WishWidget />
+          <div className="animate-fade-up w-full">
+            <WishWidget />
+          </div>
         </React.Suspense>
       </div>
     </SectionWrapper>

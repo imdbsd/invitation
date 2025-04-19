@@ -5,6 +5,7 @@ import SectionWrapper from './SectionWrapper';
 const SectionWelcome = (props: {opened?: boolean; guest?: string}) => {
   return (
     <SectionWrapper
+      id="section-welcome"
       bgImage={{
         src: addBaseURL('galleries/gallery-3.jpg'),
         className: 'bg-[center_-150px]',

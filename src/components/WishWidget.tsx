@@ -16,7 +16,7 @@ import Skeleton from 'react-loading-skeleton';
 
 const WishCard = (props: Wish) => {
   return (
-    <div className="flex flex-col font-poppins px-3 py-3 [&>*:not(:last-child)]:mb-2">
+    <div className="flex flex-col font-poppins px-3 py-3 [&>*:not(:last-child)]:mb-2 animate-fade-left">
       <div>
         <span className="text-[#7b6945] font-bold">{props.name}</span>
       </div>
@@ -176,7 +176,7 @@ const WishWidget = () => {
       <div
         className={twMerge(
           'min-h-[300px] [&>*:not(:last-child)]:border-b-[#7b6945] [&>*:not(:last-child)]:border-b-[1px]',
-          !loading && !data?.length  && 'flex justify-center items-center'
+          !loading && !data?.length && 'flex justify-center items-center'
         )}
       >
         {loading ? (
@@ -197,10 +197,12 @@ const WishWidget = () => {
               nextEnabled ? endIndex : undefined
             )
             .map((wish, index) => {
-              return <WishCard key={`wish-${index}`} {...wish} />;
+              return (
+                <WishCard key={`wish-${index}-${wish.createdAt}`} {...wish} />
+              );
             })
         ) : (
-            <span className="ml-2 text-sm text-[#7b6945] font-cormorant">
+          <span className="ml-2 text-sm text-[#7b6945] font-cormorant">
             Belum ada ucapan
           </span>
         )}

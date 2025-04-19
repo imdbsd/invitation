@@ -47,7 +47,7 @@ const LazyGalleryItem = (props: {image: GalleryImage}) => {
           ref={ref}
           onClick={open}
           className={twMerge(
-            'cursor-pointer min-h-[150px] w-full flex flex-1 bg-[center] bg-cover rounded-sm',
+            'cursor-pointer min-h-[150px] w-full flex flex-1 bg-[center] bg-cover rounded-sm animate-fade-left',
             props.image.className
           )}
           style={{

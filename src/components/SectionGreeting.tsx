@@ -14,6 +14,7 @@ const dDate = 'Wed Jun 11 2025 00:00:00 GMT+0800';
 const SectionGreeting = () => {
   return (
     <SectionWrapper
+      id="section-greeting"
       bgImage={{src: addBaseURL('asset-sections/bg-image-2.jpg')}}
     >
       <div
