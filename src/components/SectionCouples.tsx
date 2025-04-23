@@ -21,7 +21,7 @@ const SectionCouples = () => {
           {({inView, ref}) => (
             <img
               ref={ref}
-              src={addBaseURL('asset-sections/mempelai.jpg')}
+              src={addBaseURL('asset-sections/mempelai-2.jpg')}
               alt="Image Couple - Apri & Surya"
               width={240}
               height={150}
