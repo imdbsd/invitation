@@ -22,13 +22,10 @@ const CoverPage = (props: {
   }, []);
 
   React.useEffect(() => {
-    console.log('typeof: ', typeof document);
     if (typeof document !== 'undefined') {
       document.body.style.overflow = 'hidden';
     }
   }, []);
-
-  if (totalHide) return props.children(opened);
 
   return (
     <>
@@ -63,7 +60,7 @@ const CoverPage = (props: {
             width={300}
             height={300}
             className="w-[150px] h-[150px] absolute top-[10px] right-[-60px] animate-up-and-down animate-duration-2300 opacity-70"
-          />          
+          />
           <div className="absolute top-0 bottom-0 left-0 right-0 items-center justify-center flex">
             <div className="h-2/3 w-3/4 rounded-full border-yellow-beach border-double border-[5px]" />
           </div>

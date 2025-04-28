@@ -1,9 +1,11 @@
+import * as React from 'react';
 import SectionWrapper from './SectionWrapper';
 import {addBaseURL} from '../helpers/common';
 import {InView} from 'react-intersection-observer';
 import {twMerge} from 'tailwind-merge';
 
 const SectionCouples = () => {
+  const [imgLoaded, setImgLoaded] = React.useState(false);
   return (
     <SectionWrapper
       id="section-couples"
@@ -27,8 +29,17 @@ const SectionCouples = () => {
               height={150}
               className={twMerge(
                 'rounded-xl w-[480px] border-double border-[3px] border-yellow-beach opacity-0',
-                inView && 'animate-fade-up'
+                inView && imgLoaded && 'animate-fade-up'
               )}
+              onLoad={(event) => {
+                console.log(
+                  'event.currentTarget.complete: ',
+                  event.currentTarget.complete
+                );
+                if (event.currentTarget.complete) {
+                  setImgLoaded(true);
+                }
+              }}
             />
           )}
         </InView>

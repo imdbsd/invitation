@@ -10,6 +10,7 @@ const SectionWelcome = (props: {opened?: boolean; guest?: string}) => {
         src: addBaseURL('galleries/gallery-3.jpg'),
         className: 'bg-[center_-150px]',
       }}
+      className={twMerge(props.opened ? undefined : 'invisible')}
     >
       <div
         className="h-screen w-full mx-auto relative z-20"

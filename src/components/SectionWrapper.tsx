@@ -15,6 +15,7 @@ const SectionWrapper = (props: Props) => {
     triggerOnce: true,
     threshold: 0.1,
   });
+  const [imgLoaded, setImgLoaded] = React.useState(false);
   const {children, className, bgImage, ...rest} = props;
 
   return (
@@ -29,12 +30,24 @@ const SectionWrapper = (props: Props) => {
             <div
               className={twMerge(
                 'h-screen w-full bg-cover bg-[center_bottom] absolute',
-                bgImage.className
+                bgImage.className,
+                'opacity-0',
+                imgLoaded && 'animate-fade'
               )}
               style={{
                 backgroundImage: `url(${bgImage.src})`,
               }}
-            ></div>
+            >
+              <img
+                src={bgImage.src}
+                className="hidden"
+                onLoad={(event) => {
+                  if (event.currentTarget.complete) {
+                    setImgLoaded(true);
+                  }
+                }}
+              />
+            </div>
           ) : null}
           {typeof children === 'function' ? children(inView) : children}
         </>

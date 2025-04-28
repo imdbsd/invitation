@@ -1,3 +1,4 @@
+import * as React from 'react';
 import {Gallery as BaseGallery, Item} from 'react-photoswipe-gallery';
 import {useInView} from 'react-intersection-observer';
 
@@ -28,12 +29,14 @@ const LazyGalleryItem = (props: {image: GalleryImage}) => {
     threshold: 0.1,
   });
 
+  const [imgLoaded, setImgLoaded] = React.useState(false);
+
   if (!inView) {
     return (
       <div
         ref={ref}
         className="cursor-pointer min-h-[150px] w-full flex flex-1 bg-center bg-cover rounded-sm bg-gray-200"
-      />
+      ></div>
     );
   }
 
@@ -49,13 +52,34 @@ const LazyGalleryItem = (props: {image: GalleryImage}) => {
           ref={ref}
           onClick={open}
           className={twMerge(
-            'cursor-pointer min-h-[150px] w-full flex flex-1 bg-[center] bg-cover rounded-sm animate-fade-left',
-            props.image.className
+            'cursor-pointer min-h-[150px] w-full flex flex-1 bg-[center] bg-cover rounded-sm',
+            props.image.className,
+            imgLoaded ? 'bg-transparent' : 'bg-gray-200'
           )}
-          style={{
-            backgroundImage: `url(${props.image.src})`,
-          }}
-        />
+        >
+          <div
+            ref={ref}
+            onClick={open}
+            className={twMerge(
+              'min-h-[150px] w-full flex flex-1 bg-[center] bg-cover rounded-sm',
+              imgLoaded ? 'animate-fade-left' : undefined
+            )}
+            style={{
+              backgroundImage: imgLoaded
+                ? `url(${props.image.src})`
+                : undefined,
+            }}
+          />
+          <img
+            className="hidden"
+            src={props.image.src}
+            onLoad={(event) => {
+              if (event.currentTarget.complete) {
+                setImgLoaded(true);
+              }
+            }}
+          />
+        </div>
       )}
     </Item>
   );
