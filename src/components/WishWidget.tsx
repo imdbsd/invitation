@@ -200,7 +200,7 @@ const WishWidget = () => {
               startIndex === 0 ? startIndex : startIndex - 1,
               nextEnabled ? endIndex : undefined
             )
-            .map((wish, index) => {
+            .map((wish) => {
               return <WishCard key={`wish-${wish.createdAt}`} {...wish} />;
             })
         ) : (
