@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {WishListSchema, WishList} from '../schema';
+import {WishListSchema, WishList, Wish, WishSchema} from '../schema';
 import {BASE_SCRIPT_URL} from './configs';
 
 const useFetchWish = (option?: {skip?: boolean}) => {
@@ -10,7 +10,9 @@ const useFetchWish = (option?: {skip?: boolean}) => {
     try {
       if (!loading) {
         setLoading(true);
-        const response = await fetch(`${BASE_SCRIPT_URL}?path=Sheet1&action=read`);
+        const response = await fetch(
+          `${BASE_SCRIPT_URL}?path=Sheet1&action=read`
+        );
         const responseData = await response.json();
 
         if ('data' in responseData && responseData.data instanceof Array) {
@@ -30,11 +32,20 @@ const useFetchWish = (option?: {skip?: boolean}) => {
     setLoading(false);
   });
 
+  const pushWishToCache = React.useCallback(async (wish: Wish) => {
+    const parsed = await WishSchema.safeParseAsync(wish);
+    if (parsed.success) {
+      setData((current) =>
+        current ? [parsed.data, ...current] : [parsed.data]
+      );
+    }
+  }, []);
+
   React.useEffect(() => {
     if (!option?.skip) fetchWishRef.current();
   }, [option?.skip]);
 
-  return [data, loading] as const;
+  return [data, loading, pushWishToCache] as const;
 };
 
 export default useFetchWish;

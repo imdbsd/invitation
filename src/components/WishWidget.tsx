@@ -13,6 +13,7 @@ import 'react-simple-toasts/dist/style.css';
 import 'react-simple-toasts/dist/theme/success.css';
 import 'react-simple-toasts/dist/theme/failure.css';
 import Skeleton from 'react-loading-skeleton';
+import {formatToUTC} from '../helpers/common';
 
 const WishCard = (props: Wish) => {
   return (
@@ -40,11 +41,9 @@ const WishWidget = () => {
     name: '',
     wish: '',
   });
-  const [data, loading] = useFetchWish({skip: false});
+  const [data, loading, pushWishToCache] = useFetchWish({skip: false});
 
   const [submitWish, loadingSubmit] = useSubmitWish();
-
-  console.log('error: ', error);
 
   const {
     currentPage,
@@ -73,6 +72,11 @@ const WishWidget = () => {
             setName('');
             setWish('');
             setError({name: '', wish: ''});
+            pushWishToCache({
+              name: parsed.data.name,
+              wish: parsed.data.wish,
+              createdAt: formatToUTC(new Date()),
+            });
           })
           .catch(() => toast('Gagal Mengirim Pesan!', {theme: 'failure'}));
       } else {
@@ -83,7 +87,7 @@ const WishWidget = () => {
         toast('Gagal Mengirim Pesan!', {theme: 'failure'});
       }
     },
-    [name, wish, submitWish]
+    [name, wish, submitWish, pushWishToCache]
   );
 
   return (
@@ -197,9 +201,7 @@ const WishWidget = () => {
               nextEnabled ? endIndex : undefined
             )
             .map((wish, index) => {
-              return (
-                <WishCard key={`wish-${index}-${wish.createdAt}`} {...wish} />
-              );
+              return <WishCard key={`wish-${wish.createdAt}`} {...wish} />;
             })
         ) : (
           <span className="ml-2 text-sm text-[#7b6945] font-cormorant">
