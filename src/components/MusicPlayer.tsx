@@ -79,7 +79,7 @@ const MusicPlayer = (props: Props) => {
         loop
         preload="metadata"
       >
-        <source src={addBaseURL('bg-audio.mp3')} type="audio/mp3" />
+        <source src={addBaseURL('bg-audio-2.mp3')} type="audio/mp3" />
       </audio>
     </>
   );
