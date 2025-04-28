@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "publish:ghp": "gh-pages -d dist"
+    "publish:ghp": "gh-pages -d dist --cname suryaapritiedtheknot.site"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.11",
