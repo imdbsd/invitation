@@ -13,7 +13,7 @@ const YoutubePlayer = React.lazy(() => import('./YoutubePlayer'));
 
 const vertical = {width: 1080, height: 1920};
 const horizontal = {width: 1920, height: 1080};
-const baseCaption = 'Apri & Surya ~ 11 Juni 2025';
+const baseCaption = 'Surya & Apri ~ 11 Juni 2025';
 
 const images: GalleryImages = [
   {

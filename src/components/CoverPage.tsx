@@ -69,7 +69,7 @@ const CoverPage = (props: {
               <span>THE WEDDING OF</span>
             </h1>
             <p className="block text-4xl text-[#4B3B2A] font-cormorant">
-              Apri & Surya
+              Surya & Apri
             </p>
             <p className="text-[#4B3B2A] text-center text-sm tracking-[2px] font-normal">
               <span className="block">Kepada Yth.</span>

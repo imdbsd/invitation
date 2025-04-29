@@ -24,7 +24,7 @@ const SectionCouples = () => {
             <img
               ref={ref}
               src={addBaseURL('asset-sections/mempelai-2.jpg')}
-              alt="Image Couple - Apri & Surya"
+              alt="Image Couple - Surya & Apri"
               width={240}
               height={150}
               className={twMerge(
@@ -50,7 +50,7 @@ const SectionCouples = () => {
           </p>
           <p className="text-3xl">&</p>
           <p className="text-3xl">Apriyanti Nurcahyani</p>
-          <p className="text-white">Putri dari Bapak. Suwardi & Ibu Parnasih</p>
+          <p className="text-white">Putri dari Bapak Suwardi & Ibu Parnasih</p>
         </div>
       </div>
     </SectionWrapper>
