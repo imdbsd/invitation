@@ -11,7 +11,7 @@ const Countdown = React.lazy(() => import('./Countdown'));
 
 const dDate = 'Wed Jun 11 2025 00:00:00 GMT+0800';
 
-const SectionGreeting = () => {
+const SectionGreeting = (props: {guest?: string}) => {
   return (
     <SectionWrapper
       id="section-greeting"
@@ -70,7 +70,11 @@ const SectionGreeting = () => {
             </p>
             <div className="flex justify-center">
               <a
-                href="https://www.google.com/calendar/render?action=TEMPLATE&text=Pawiwahan+%28Nikahan%29+Surya&location=https%3A%2F%2Fmaps.app.goo.gl%2FDcMf4eq2qtz1kgzNA&dates=20250610T220000Z%2F20250611T040000Z"
+                href={`https://www.google.com/calendar/render?action=TEMPLATE&text=Surya+%26+Apri+Tied+The+Knot&details=Pernikahan+Surya+%26+Apri.+More+at+https%3A%2F%2Fsuryaapritiedtheknot.site${
+                  props.guest
+                    ? `%2F%3Fto%3D${decodeURIComponent(props.guest)}`
+                    : ''
+                }%0A%0A%23suryaapritiedtheknot&location=https%3A%2F%2Fmaps.app.goo.gl%2FDcMf4eq2qtz1kgzNA&dates=20250610T230000Z%2F20250611T040000Z`}
                 className="flex flex-row items-center bg-white p-2 rounded-sm text-xs font-poppins"
                 target="_blank"
               >

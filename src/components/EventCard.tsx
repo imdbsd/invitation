@@ -1,4 +1,4 @@
-import {Clock, MapPin} from 'lucide-react';
+import {Calendar, Clock, MapPin} from 'lucide-react';
 
 interface Props {
   title: string;
@@ -8,6 +8,7 @@ interface Props {
   startAndEnd: string;
   location: string;
   gMap: string;
+  calendarFormat?: string;
 }
 
 const EventCard = (props: Props) => {
@@ -39,14 +40,26 @@ const EventCard = (props: Props) => {
           <span className="text-white text-center text-sm">
             {props.location}
           </span>
-          <a
-            href={props.gMap}
-            className="flex flex-row items-center bg-white p-2 rounded-sm text-xs font-poppins"
-            target="_blank"
-          >
-            <MapPin className="mr-2" width={16} height={16} />
-            <span>Google Map</span>
-          </a>
+          <div className="flex flex-row w-full justify-evenly">
+            <a
+              href={props.gMap}
+              className="flex flex-row items-center bg-white p-2 rounded-sm text-xs font-poppins"
+              target="_blank"
+            >
+              <MapPin className="mr-2" width={16} height={16} />
+              <span>Google Map</span>
+            </a>
+            {props.calendarFormat ? (
+              <a
+                href={props.calendarFormat}
+                className="flex flex-row items-center bg-white p-2 rounded-sm text-xs font-poppins"
+                target="_blank"
+              >
+                <Calendar className="mr-2" width={16} height={16} />
+                <span>Add to Calendar</span>
+              </a>
+            ) : null}
+          </div>
         </div>
       </div>
     </div>

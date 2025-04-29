@@ -31,9 +31,9 @@ const Page = () => {
             return (
               <>
                 <SectionWelcome opened={opened} guest={guest} />
-                <SectionGreeting />
+                <SectionGreeting guest={guest} />
                 <SectionCouples />
-                <SectionEvent />
+                <SectionEvent guest={guest} />
                 <SectionGallery />
                 <SectionWeddingWish />
                 <SectionGift />

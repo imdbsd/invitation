@@ -8,7 +8,7 @@ import {InView} from 'react-intersection-observer';
 
 const EventCard = React.lazy(() => import('./EventCard'));
 
-const SectionEvent = () => {
+const SectionEvent = (props: {guest?: string}) => {
   return (
     <SectionWrapper id="section-event">
       <div className="relative p-5 pb-20 w-full min-h-screen flex items-center flex-col justify-evenly">
@@ -119,6 +119,11 @@ const SectionEvent = () => {
                     startAndEnd="11.00 - 17.00 WIB"
                     location="Graha Masnoon by Zeinlucky. Poris Gaga, Kec. Cipondoh, Kota Tangerang"
                     gMap="https://maps.app.goo.gl/6pZGx8FnCUSA7HTBA"
+                    calendarFormat={`https://www.google.com/calendar/render?action=TEMPLATE&text=Surya+%26+Apri+Tied+The+Knot+%28Jakarta%29&details=Pernikahan+Surya+%26+Apri.+More+at+https%3A%2F%2Fsuryaapritiedtheknot.site${
+                      props.guest
+                        ? `%2F%3Fto%3D${decodeURIComponent(props.guest)}`
+                        : ''
+                    }%0A%0A%23suryaapritiedtheknot&location=https%3A%2F%2Fmaps.app.goo.gl%2F6pZGx8FnCUSA7HTBA&dates=20250705T030000Z%2F20250705T090000Z`}
                   />
                 </div>
               )}
