@@ -116,7 +116,7 @@ const SectionEvent = () => {
                     bgImage={addBaseURL('asset-sections/assets-event1.jpg')}
                     dayName="Rabu"
                     date="5 Juli 2025"
-                    startAndEnd="07.00 - 12.00"
+                    startAndEnd="11.00 - 17.00 WIB"
                     location="Graha Masnoon by Zeinlucky. Poris Gaga, Kec. Cipondoh, Kota Tangerang"
                     gMap="https://maps.app.goo.gl/6pZGx8FnCUSA7HTBA"
                   />
