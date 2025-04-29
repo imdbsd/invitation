@@ -11,6 +11,7 @@ import SectionWeddingWish from './components/SectionWeddingWish';
 import CoverPage from './components/CoverPage';
 import SectionCouples from './components/SectionCouples';
 import SectionWelcome from './components/SectionWelcome';
+import SectionPhotoResult from './components/SectionPhotoResult';
 
 /* https://support.google.com/calendar/thread/81344786/how-do-i-generate-add-to-calendar-link-from-our-own-website?hl=en */
 // https://decomaan.github.io/google-calendar-link-generator/
@@ -35,8 +36,9 @@ const Page = () => {
                 <SectionCouples />
                 <SectionEvent guest={guest} />
                 <SectionGallery />
-                <SectionWeddingWish />
+                <SectionWeddingWish />                
                 <SectionGift />
+                <SectionPhotoResult />
               </>
             );
           }}
