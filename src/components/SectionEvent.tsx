@@ -114,7 +114,7 @@ const SectionEvent = (props: {guest?: string}) => {
                   <EventCard
                     title="Resepsi"
                     bgImage={addBaseURL('asset-sections/assets-event1.jpg')}
-                    dayName="Rabu"
+                    dayName="Sabtu"
                     date="5 Juli 2025"
                     startAndEnd="11.00 - 17.00 WIB"
                     location="Graha Masnoon by Zeinlucky. Poris Gaga, Kec. Cipondoh, Kota Tangerang"
