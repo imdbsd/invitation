@@ -64,7 +64,7 @@ const CoverPage = (props: {
           <div className="absolute top-0 bottom-0 left-0 right-0 items-center justify-center flex">
             <div className="h-2/3 w-3/4 rounded-full border-yellow-beach border-double border-[5px]" />
           </div>
-          <div className="absolute bottom-[75px] right-0 left-0 flex flex-col justify-center items-center z-10">
+          <div className="fixed bottom-[75px] right-0 left-0 flex flex-col justify-center items-center z-10">
             <h1 className="flex flex-col items-center text-[#4B3B2A] text-sm tracking-[2px] font-normal">
               <span>THE WEDDING OF</span>
             </h1>
@@ -82,7 +82,7 @@ const CoverPage = (props: {
               {props.guest}
             </button>
             <p className="text-xs my-2 cursor-pointer" onClick={toggleOpen}>
-              Buka Undangan.
+              Click untuk membuka undangan.
             </p>
           </div>
         </div>
