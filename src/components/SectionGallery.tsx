@@ -35,11 +35,13 @@ const images: GalleryImages = [
   {
     src: addBaseURL('galleries/gallery-4.jpg'),
     ...vertical,
+    className: 'bg-[center_210px]',
     caption: baseCaption,
   },
   {
     src: addBaseURL('galleries/gallery-5.jpg'),
     ...vertical,
+    className: 'bg-[center_200px]',
     caption: baseCaption,
   },
   {

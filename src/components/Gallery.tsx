@@ -52,8 +52,7 @@ const LazyGalleryItem = (props: {image: GalleryImage}) => {
           ref={ref}
           onClick={open}
           className={twMerge(
-            'cursor-pointer min-h-[150px] w-full flex flex-1 bg-[center] bg-cover rounded-sm',
-            props.image.className,
+            'cursor-pointer min-h-[150px] w-full flex flex-1 bg-[center] bg-cover rounded-sm',            
             imgLoaded ? 'bg-transparent' : 'bg-gray-200'
           )}
         >
@@ -62,6 +61,7 @@ const LazyGalleryItem = (props: {image: GalleryImage}) => {
             onClick={open}
             className={twMerge(
               'min-h-[150px] w-full flex flex-1 bg-[center] bg-cover rounded-sm',
+              props.image.className,
               imgLoaded ? 'animate-fade-left' : undefined
             )}
             style={{
