@@ -1,10 +1,17 @@
+import { useLocation } from "react-router";
 type Params<TKey extends string = string> = Record<TKey, string | null>;
 
 const useSearchParams = <TKey extends string = string>():
   | Params<TKey>
   | undefined => {
+    const location = useLocation()
   if (typeof window !== 'undefined') {
-    const search = window.location.search;
+    let search = window.location.search;
+
+    if(!search && location.search) {
+      search = location.search;
+    }
+
     const params = new URLSearchParams(search);
 
     const keys = [...params.keys()];
