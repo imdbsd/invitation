@@ -49,14 +49,14 @@ const CoverPage = (props: {
           }}
         >
           <img
-            src={addBaseURL('cloud.png')}
+            src={addBaseURL('cloud_small.png')}
             alt="cloud"
             width={300}
             height={300}
             className="w-[150px] h-[150px] absolute top-1/12 left-[40px] animate-up-and-down animate-duration-2000 opacity-70"
           />
           <img
-            src={addBaseURL('cloud.png')}
+            src={addBaseURL('cloud_small.png')}
             alt="cloud"
             width={300}
             height={300}

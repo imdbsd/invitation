@@ -7,7 +7,8 @@ import SectionCouples from '../components/SectionCouples';
 import SectionWelcome from '../components/SectionWelcome';
 
 import useSearchParams from '../hooks/useSearchParams';
-import MusicPlayer from '../components/MusicPlayer';
+
+const MusicPlayer = React.lazy(() => import('../components/MusicPlayer'));
 
 const SiramanPage = () => {
   const params = useSearchParams<'to'>();
@@ -37,11 +38,13 @@ const SiramanPage = () => {
                   <p className="text-xs font-cormorant">Terimakasih.</p>
                   <h3 className="font-cormorant font-bold">Surya & Apri</h3>
                 </div>
+                <React.Suspense fallback={null}>
+                  {opened && <MusicPlayer containerRef={containerRef} />}
+                </React.Suspense>
               </>
             );
           }}
         </CoverPage>
-        <MusicPlayer containerRef={containerRef} />
       </div>
     </div>
   );

@@ -13,20 +13,20 @@ const SectionEvent = (props: {guest?: string}) => {
     <SectionWrapper id="section-event">
       <div className="relative p-5 pb-20 w-full min-h-screen flex items-center flex-col justify-evenly">
         <img
-          src={addBaseURL('cloud.png')}
+          src={addBaseURL('cloud_small.png')}
           alt="cloud"
           width={300}
           height={300}
           className="w-[150px] h-[150px] absolute top-[10px] right-[-60px] animate-up-and-down"
         />
         <img
-          src={addBaseURL('cloud.png')}
+          src={addBaseURL('cloud_small.png')}
           alt="cloud"
           width={300}
           height={300}
           className="w-[150px] h-[150px] absolute bottom-1 left-10 animate-up-and-down"
         />
-        <h3 className="font-monsieur-lad text-4xl my-4 w-full">
+        <h3 className="font-pinyon-script text-4xl my-4 w-full">
           <Separator position="left">
             <span className="font-serif mb-2">Wedding</span>
           </Separator>

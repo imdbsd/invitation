@@ -11,7 +11,7 @@ const SectionWeddingWish = () => {
       id="section-wedding-wish"
     >
       <div className="relative p-5 w-full flex items-center flex-col justify-evenly">
-        <h3 className="font-monsieur-lad text-4xl my-4 w-full">
+        <h3 className="text-4xl my-4 w-full">
           <Separator position="center" color="bg-white">
             <span className="font-cormorant mx-2 text-white">
               Wedding <span className="font-pinyon-script">Wish</span>

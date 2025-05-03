@@ -96,7 +96,7 @@ const GallerySection = () => {
   return (
     <SectionWrapper className="bg-[#00000069]" id="section-gallery">
       <div className="relative p-5 pb-20 min-h-screen flex items-center flex-col justify-evenly">
-        <h3 className="font-monsieur-lad text-4xl my-4 text-right w-full text-white">
+        <h3 className="font-pinyon-script text-4xl my-4 text-right w-full text-white">
           <Separator position="right" color="bg-white">
             <span className="font-serif mb-2 text-white ml-2">Wedding</span>
           </Separator>

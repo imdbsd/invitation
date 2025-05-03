@@ -2,7 +2,6 @@ import * as React from 'react';
 import SectionEvent from '../components/SectionEvent';
 import SectionGallery from '../components/SectionGallery';
 import SectionGift from '../components/SectionGift';
-import MusicPlayer from '../components/MusicPlayer';
 
 import SectionGreeting from '../components/SectionGreeting';
 import SectionWeddingWish from '../components/SectionWeddingWish';
@@ -11,6 +10,8 @@ import SectionCouples from '../components/SectionCouples';
 import SectionWelcome from '../components/SectionWelcome';
 
 import useSearchParams from '../hooks/useSearchParams';
+
+const MusicPlayer = React.lazy(() => import('../components/MusicPlayer'));
 
 /* https://support.google.com/calendar/thread/81344786/how-do-i-generate-add-to-calendar-link-from-our-own-website?hl=en */
 // https://decomaan.github.io/google-calendar-link-generator/
@@ -37,11 +38,13 @@ const HomePage = () => {
                 <SectionGallery />
                 <SectionWeddingWish />
                 <SectionGift />
+                <React.Suspense fallback={null}>
+                  {opened && <MusicPlayer containerRef={containerRef} />}
+                </React.Suspense>
               </>
             );
           }}
         </CoverPage>
-        <MusicPlayer containerRef={containerRef} />
       </div>
     </div>
   );

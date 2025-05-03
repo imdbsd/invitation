@@ -18,7 +18,7 @@ const SectionCouples = () => {
         }}
       />
       <div className="relative text-white p-5 h-screen w-full flex items-center flex-col justify-evenly">
-        <h3 className="font-cormorant text-4xl text-center my-2">Mempelai</h3>
+        <h3 className="font-pinyon-script text-4xl text-center my-2">Mempelai</h3>
         <InView threshold={0.5} triggerOnce>
           {({inView, ref}) => (
             <img
