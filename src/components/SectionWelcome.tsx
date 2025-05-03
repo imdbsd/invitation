@@ -10,10 +10,10 @@ const SectionWelcome = (props: {
   return (
     <SectionWrapper
       id="section-welcome"
-      bgImage={{
+      bgImage={props.opened ? {
         src: addBaseURL('galleries/gallery-3.jpg'),
         className: 'bg-[center_-150px]',
-      }}
+      } : undefined}
       className={twMerge(props.opened ? undefined : 'invisible')}
     >
       <div
