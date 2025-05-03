@@ -1,13 +1,12 @@
-import {createBrowserRouter, RouterProvider} from 'react-router';
+import {createHashRouter, RouterProvider} from 'react-router';
 
 import HomePage from './pages/HomePage';
 import Siraman from './pages/SiramanPage';
 import RouteError from './components/RouteError';
 
-const routerConfigs = createBrowserRouter([
+const routerConfigs = createHashRouter([
   {
     path: '/',
-    // errorElement:<h1>opps</h1>, 
     ErrorBoundary: RouteError,
     children: [
       {index: true, Component: HomePage},
