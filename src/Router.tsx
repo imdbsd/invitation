@@ -2,13 +2,18 @@ import {createBrowserRouter, RouterProvider} from 'react-router';
 
 import HomePage from './pages/HomePage';
 import Siraman from './pages/SiramanPage';
+import RouteError from './components/RouteError';
 
 const routerConfigs = createBrowserRouter([
   {
     path: '/',
-    Component: HomePage,
+    // errorElement:<h1>opps</h1>, 
+    ErrorBoundary: RouteError,
+    children: [
+      {index: true, Component: HomePage},
+      {path: 'siraman', Component: Siraman},
+    ],
   },
-  {path: '/siraman', Component: Siraman},
 ]);
 
 const Router = () => {

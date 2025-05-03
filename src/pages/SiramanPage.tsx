@@ -20,11 +20,11 @@ const SiramanPage = () => {
         ref={containerRef}
         className="mx-auto w-full max-w-[500px] bg-yellow-beach relative overflow-hidden"
       >
-        <CoverPage guest={guest}>
+        <CoverPage guest={guest} title='LAMARAN & SIRAMAN'>
           {(opened) => {
             return (
               <>
-                <SectionWelcome opened={opened} guest={guest} />
+                <SectionWelcome opened={opened} guest={guest} title='LAMARAN & SIRAMAN' />
                 <SectionGreeting guest={guest} />
                 <SectionCouples />
                 <SectionEventSiraman guest={guest} />

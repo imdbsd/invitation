@@ -32,10 +32,6 @@ const SectionCouples = () => {
                 inView && imgLoaded && 'animate-fade-up'
               )}
               onLoad={(event) => {
-                console.log(
-                  'event.currentTarget.complete: ',
-                  event.currentTarget.complete
-                );
                 if (event.currentTarget.complete) {
                   setImgLoaded(true);
                 }

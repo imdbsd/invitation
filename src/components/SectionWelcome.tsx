@@ -2,7 +2,11 @@ import {twMerge} from 'tailwind-merge';
 import {addBaseURL} from '../helpers/common';
 import SectionWrapper from './SectionWrapper';
 
-const SectionWelcome = (props: {opened?: boolean; guest?: string}) => {
+const SectionWelcome = (props: {
+  opened?: boolean;
+  guest?: string;
+  title?: string;
+}) => {
   return (
     <SectionWrapper
       id="section-welcome"
@@ -40,7 +44,7 @@ const SectionWelcome = (props: {opened?: boolean; guest?: string}) => {
           )}
         >
           <h1 className="flex flex-col items-center text-[#4B3B2A] text-sm tracking-[2px] font-normal">
-            <span>THE WEDDING OF</span>
+            <span>{props.title || 'THE WEDDING OF'}</span>
           </h1>
           <p className="block text-4xl text-[#4B3B2A] font-cormorant">
             Surya & Apri

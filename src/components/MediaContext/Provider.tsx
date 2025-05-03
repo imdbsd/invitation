@@ -14,7 +14,6 @@ const MediaContextProvider = (props: React.PropsWithChildren) => {
   });
   const setPlayMedia = React.useCallback(
     (type: 'music' | 'video', isPlaying: boolean) => {
-      console.log({type, isPlaying});
       switch (type) {
         case 'music': {
           if (isPlaying) {
