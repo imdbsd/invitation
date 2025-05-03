@@ -2,6 +2,7 @@ import {Calendar, Clock, MapPin} from 'lucide-react';
 
 interface Props {
   title: string;
+  sub?: React.ReactNode
   bgImage: string;
   dayName: string;
   date: string;
@@ -30,9 +31,9 @@ const EventCard = (props: Props) => {
         <h4 className="font-poppins text-2xl font-bold text-goldy mb-2">
           {props.title}
         </h4>
+        {props.sub}
         <div className="[&>*:not(:last-child)]:mb-2 flex flex-1 flex-col items-center justify-evenly">
-          <span className="text-white text-lg">{props.dayName}</span>
-          <span className="text-white text-lg">{props.date}</span>
+          <span className="text-white text-sm">{props.dayName} {props.date}</span>
           <div className="flex flex-row text-sm items-center">
             <Clock className="text-white mr-2" width={16} height={16} />
             <span className="text-white text-sm">{props.startAndEnd}</span>

@@ -57,7 +57,8 @@ const GiftSection = () => {
             </React.Suspense>
           </div>
         ) : null}
-        <p className="text-xs mt-4">Terimakasih.</p>
+        <p className="text-xs font-cormorant mt-4">Terimakasih.</p>
+        <h3 className="font-cormorant font-bold">Surya & Apri</h3>
       </div>
     </SectionWrapper>
   );
