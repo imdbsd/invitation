@@ -112,6 +112,69 @@ const SectionEvent = (props: {guest?: string}) => {
                   )}
                 >
                   <EventCard
+                    title="Lamaran"
+                    bgImage={addBaseURL('asset-sections/assets-event1.jpg')}
+                    dayName="Minggu"
+                    date="1 Juni 2025"
+                    startAndEnd="08.00 - 09.30 WIB"
+                    location="Griya bintang mekarsari, gang rosela 1, blok i5 no 12, RT.008 RW.004 Rajek Mulya, Kec. Rajek, Kab. Tangerang"
+                    gMap="https://maps.app.goo.gl/VEXVVgM17RxCHXbP7"
+                  />
+                </div>
+              )}
+            </InView>
+          </React.Suspense>
+          <React.Suspense
+            fallback={<Skeleton height={350} baseColor="#dadada" />}
+          >
+            <InView threshold={0.3} triggerOnce>
+              {({inView, ref}) => (
+                <div
+                  ref={ref}
+                  className={twMerge(
+                    'opacity-0',
+                    inView && 'animate-fade-up animate-duration-1500'
+                  )}
+                >
+                  <EventCard
+                    title="Siraman Mempelai Wanita"
+                    sub={
+                      <p className="font-cormorant text-xl text-center my-4 w-full text-white">
+                        Apriyanti Nurcahyani
+                      </p>
+                    }
+                    bgImage={addBaseURL('asset-sections/assets-event2.jpg')}
+                    dayName="Minggu"
+                    date="1 Juni 2025"
+                    startAndEnd="10.30 WIB s/d Selesai"
+                    location="Griya bintang mekarsari, gang rosela 1, blok i5 no 12, RT.008 RW.004 Rajek Mulya, Kec. Rajek, Kab. Tangerang"
+                    gMap="https://maps.app.goo.gl/VEXVVgM17RxCHXbP7"
+                    calendarFormat={`https://www.google.com/calendar/render?action=TEMPLATE&text=Siraman+Apriyanti+Nurcahyani&details=Pernikahan+Surya+%26+Apri.+More+at+https%3A%2F%2Fsuryaapritiedtheknot.site%2F%3F
+                                %3D${
+                                  props.guest
+                                    ? `%2F%3Fto%3D${decodeURIComponent(
+                                        props.guest
+                                      )}`
+                                    : ''
+                                }%0A%0A%23suryaapritiedtheknot&location=https%3A%2F%2Fmaps.app.goo.gl%2FVEXVVgM17RxCHXbP7&dates=20250601T013000Z%2F20250601T040000Z`}
+                  />
+                </div>
+              )}
+            </InView>
+          </React.Suspense>
+          <React.Suspense
+            fallback={<Skeleton height={350} baseColor="#dadada" />}
+          >
+            <InView threshold={0.3} triggerOnce>
+              {({inView, ref}) => (
+                <div
+                  ref={ref}
+                  className={twMerge(
+                    'opacity-0',
+                    inView && 'animate-fade-up animate-duration-1500'
+                  )}
+                >
+                  <EventCard
                     title="Resepsi"
                     bgImage={addBaseURL('asset-sections/assets-event1.jpg')}
                     dayName="Sabtu"
