@@ -74,7 +74,7 @@ const SectionGreeting = (props: {guest?: string}) => {
                   props.guest
                     ? `%2F%3Fto%3D${decodeURIComponent(props.guest)}`
                     : ''
-                }%0A%0A%23suryaapritiedtheknot&location=https%3A%2F%2Fmaps.app.goo.gl%2FDcMf4eq2qtz1kgzNA&dates=20250610T230000Z%2F20250611T040000Z`}
+                }%0A%0A%23SAyIDo&location=https%3A%2F%2Fmaps.app.goo.gl%2FDcMf4eq2qtz1kgzNA&dates=20250610T230000Z%2F20250611T040000Z`}
                 className="flex flex-row items-center bg-white p-2 rounded-sm text-xs font-poppins"
                 target="_blank"
               >

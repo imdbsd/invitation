@@ -97,7 +97,7 @@ const SectionEventSiraman = (props: {guest?: string}) => {
                         props.guest
                           ? `%2F%3Fto%3D${decodeURIComponent(props.guest)}`
                           : ''
-                      }%0A%0A%23suryaapritiedtheknot&location=https%3A%2F%2Fmaps.app.goo.gl%2FVEXVVgM17RxCHXbP7&dates=20250601T013000Z%2F20250601T040000Z`}
+                      }%0A%0A%23SAyIDo&location=https%3A%2F%2Fmaps.app.goo.gl%2FVEXVVgM17RxCHXbP7&dates=20250601T013000Z%2F20250601T040000Z`}
                   />
                 </div>
               )}
@@ -110,8 +110,14 @@ const SectionEventSiraman = (props: {guest?: string}) => {
             Bapak/Ibu/Saudara/i, berkenan hadir pada acara lamaran dan siraman
             menjelang pawiwahan putri kami
           </p>
-          <p className="text-center font-bold">Keluarga Besar</p>
+          <p className="text-center underline">Keluarga Besar</p>
+          <p className="text-center font-bold">I Made Damiartha</p>
+          <p className="text-center">&</p>
           <p className="text-center font-bold">Suwardi</p>
+          <p className="text-center underline">Turut Mengundang</p>
+          <p className="text-center font-bold">Bpk. Wardi</p>
+          <p className="text-center font-bold">Bpk. Harjanto</p>
+          <p className="text-center font-bold">Bpk. Ustad Rebin (Ketua RT)</p>
         </div>
       </div>
     </SectionWrapper>
