@@ -40,6 +40,7 @@ const CoverPage = (props: {
           opened && 'opacity-0 transition-all duration-500 ease-out',
           totalHide && 'hidden'
         )}
+        onClick={toggleOpen}
       >
         <div
           className="h-screen w-full mx-auto relative z-20"
@@ -76,13 +77,10 @@ const CoverPage = (props: {
               <span className="block">Kepada Yth.</span>
               <span className="block">Bapak/ Ibu/ Saudara/ i</span>
             </p>
-            <button
-              className="font-cormorant text-base font-normal bg-white p-3 rounded-sm mt-4 min-w-[100px] text-center cursor-pointer"
-              onClick={toggleOpen}
-            >
+            <button className="font-cormorant text-base font-normal bg-white p-3 rounded-sm mt-4 min-w-[100px] text-center cursor-pointer">
               {props.guest}
             </button>
-            <p className="text-xs my-2 cursor-pointer" onClick={toggleOpen}>
+            <p className="text-xs my-2 cursor-pointer">
               Click untuk membuka undangan.
             </p>
           </div>
