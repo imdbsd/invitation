@@ -2,6 +2,7 @@ import * as React from 'react';
 import Skeleton from 'react-loading-skeleton';
 import {Gift} from 'lucide-react';
 import SectionWrapper from './SectionWrapper';
+import EndView from './EndView';
 
 const ATMCard = React.lazy(() => import('./ATMCard'));
 
@@ -57,8 +58,7 @@ const GiftSection = () => {
             </React.Suspense>
           </div>
         ) : null}
-        <p className="text-xs font-cormorant mt-4">Terimakasih.</p>
-        <h3 className="font-cormorant font-bold">Surya & Apri</h3>
+        <EndView />
       </div>
     </SectionWrapper>
   );

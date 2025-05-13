@@ -7,6 +7,7 @@ import SectionCouples from '../components/SectionCouples';
 import SectionWelcome from '../components/SectionWelcome';
 
 import useSearchParams from '../hooks/useSearchParams';
+import EndView from '../components/EndView';
 
 const MusicPlayer = React.lazy(() => import('../components/MusicPlayer'));
 
@@ -35,8 +36,7 @@ const SiramanPage = () => {
                 <SectionEventSiraman guest={guest} />
                 <SectionGallery />
                 <div className="relative bg-[#F2EEE8] px-5 py-5 text-center">
-                  <p className="text-xs font-cormorant">Terimakasih.</p>
-                  <h3 className="font-cormorant font-bold">Surya & Apri</h3>
+                  <EndView />
                 </div>
                 <React.Suspense fallback={null}>
                   {opened && <MusicPlayer containerRef={containerRef} />}

@@ -5,10 +5,12 @@ import {BASE_SCRIPT_URL} from './configs';
 const useFetchWish = (option?: {skip?: boolean}) => {
   const [loading, setLoading] = React.useState(false);
   const [data, setData] = React.useState<WishList | undefined>();
+  const isFetching = React.useRef(false);
 
   const fetchWishRef = React.useRef(async () => {
     try {
-      if (!loading) {
+      if (!loading && !isFetching.current) {
+        isFetching.current = true;
         setLoading(true);
         const response = await fetch(
           `${BASE_SCRIPT_URL}?path=Sheet1&action=read`
@@ -29,6 +31,7 @@ const useFetchWish = (option?: {skip?: boolean}) => {
     } catch (err) {
       console.error(err);
     }
+    isFetching.current = false;
     setLoading(false);
   });
 

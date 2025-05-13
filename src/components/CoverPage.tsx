@@ -3,6 +3,7 @@ import SectionWrapper from './SectionWrapper';
 import {twMerge} from 'tailwind-merge';
 import {useMediaContext} from './MediaContext/Context';
 import {addBaseURL} from '../helpers/common';
+import useTrack from '../hooks/useTrack';
 
 const CoverPage = (props: {
   children: (opened: boolean) => React.ReactNode;
@@ -11,9 +12,12 @@ const CoverPage = (props: {
 }) => {
   const [opened, setOpened] = React.useState(false);
   const [totalHide, setTotalHide] = React.useState(false);
+  const [trackVisit] = useTrack('Visit');
+  const [trackOpen] = useTrack('Open');
   const {setPlayMedia} = useMediaContext();
   const toggleOpen = React.useCallback(() => {
     setOpened(true);
+    trackOpen(props.guest);
     document.body.style.overflow = 'auto';
     history.scrollRestoration = 'manual';
     setTimeout(() => {
@@ -25,6 +29,7 @@ const CoverPage = (props: {
   React.useEffect(() => {
     if (typeof document !== 'undefined') {
       document.body.style.overflow = 'hidden';
+      trackVisit(props.guest);
     }
   }, []);
 
