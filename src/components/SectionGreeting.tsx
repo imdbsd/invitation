@@ -6,12 +6,14 @@ import Separator from './Separator';
 import {Calendar} from 'lucide-react';
 import {addBaseURL} from '../helpers/common';
 import {twMerge} from 'tailwind-merge';
+import formatDate from '../helpers/formatDate';
 
 const Countdown = React.lazy(() => import('./Countdown'));
 
-const dDate = 'Wed Jun 11 2025 00:00:00 GMT+0800';
+export const WEDDING_DATE = 'Wed Jun 11 2025 00:00:00 GMT+0800';
+export const SIRAMAN_DATE = 'Wed Jun 01 2025 00:00:00 GMT+0800';
 
-const SectionGreeting = (props: {guest?: string}) => {
+const SectionGreeting = (props: {guest?: string, date: string}) => {
   return (
     <SectionWrapper
       id="section-greeting"
@@ -66,7 +68,7 @@ const SectionGreeting = (props: {guest?: string}) => {
           </Separator>
           <div className="[&>*:not(:last-child)]:mb-5">
             <p className="text-center font-cormorant text-3xl italic font-bold">
-              11 Juni 2025
+              {formatDate(new Date(props.date), 'dd MMMM yyyy')}
             </p>
             <div className="flex justify-center">
               <a
@@ -85,7 +87,7 @@ const SectionGreeting = (props: {guest?: string}) => {
             <React.Suspense
               fallback={<Skeleton height={80} baseColor="#dadada" />}
             >
-              <Countdown startValue={dDate} />
+              <Countdown startValue={props.date} />
             </React.Suspense>
           </div>
         </div>

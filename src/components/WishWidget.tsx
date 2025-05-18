@@ -4,7 +4,6 @@ import {usePagination} from 'react-use-pagination';
 import toast from 'react-simple-toasts';
 import {twMerge} from 'tailwind-merge';
 import TextArea from 'react-textarea-autosize';
-import {format} from 'date-fns';
 import useFetchWish from '../hooks/useFetchWish';
 import useSubmitWish from '../hooks/useSubmitWish';
 import {Wish, WishForm, WishFormSchema} from '../schema';
@@ -14,6 +13,7 @@ import 'react-simple-toasts/dist/theme/success.css';
 import 'react-simple-toasts/dist/theme/failure.css';
 import Skeleton from 'react-loading-skeleton';
 import {formatToUTC} from '../helpers/common';
+import formatDate from '../helpers/formatDate';
 
 const WishCard = (props: Wish) => {
   return (
@@ -24,7 +24,7 @@ const WishCard = (props: Wish) => {
       <div className="flex items-center">
         <Clock width={12} height={12} stroke="#99a1af" />{' '}
         <span className="text-xs ml-2 text-gray-400">
-          {format(new Date(props.createdAt), 'cccc, do MMM yyyy - HH:mm aaaa')}
+          {formatDate(new Date(props.createdAt), 'cccc, do MMM yyyy - HH:mm aaaa')}
         </span>
       </div>
       <div>

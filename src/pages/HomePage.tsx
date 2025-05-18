@@ -3,7 +3,7 @@ import SectionEvent from '../components/SectionEvent';
 import SectionGallery from '../components/SectionGallery';
 import SectionGift from '../components/SectionGift';
 
-import SectionGreeting from '../components/SectionGreeting';
+import SectionGreeting, {WEDDING_DATE} from '../components/SectionGreeting';
 import SectionWeddingWish from '../components/SectionWeddingWish';
 import CoverPage from '../components/CoverPage';
 import SectionCouples from '../components/SectionCouples';
@@ -32,7 +32,7 @@ const HomePage = () => {
             return (
               <>
                 <SectionWelcome opened={opened} guest={guest} />
-                <SectionGreeting guest={guest} />
+                <SectionGreeting guest={guest} date={WEDDING_DATE} />
                 <SectionCouples />
                 <SectionEvent guest={guest} />
                 <SectionGallery />

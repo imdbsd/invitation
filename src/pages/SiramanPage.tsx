@@ -1,6 +1,6 @@
 import * as React from 'react';
 import SectionGallery from '../components/SectionGallery';
-import SectionGreeting from '../components/SectionGreeting';
+import SectionGreeting, {SIRAMAN_DATE} from '../components/SectionGreeting';
 import SectionEventSiraman from '../components/SectionEventSiraman';
 import CoverPage from '../components/CoverPage';
 import SectionCouples from '../components/SectionCouples';
@@ -31,7 +31,7 @@ const SiramanPage = () => {
                   guest={guest}
                   title="LAMARAN & SIRAMAN"
                 />
-                <SectionGreeting guest={guest} />
+                <SectionGreeting guest={guest} date={SIRAMAN_DATE} />
                 <SectionCouples />
                 <SectionEventSiraman guest={guest} />
                 <SectionGallery />
