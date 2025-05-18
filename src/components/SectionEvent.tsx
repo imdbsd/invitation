@@ -81,7 +81,7 @@ const SectionEvent = (props: {guest?: string}) => {
                   )}
                 >
                   <EventCard
-                    title="Resepsi"
+                    title="Resepsi (Bali)"
                     bgImage={addBaseURL('asset-sections/assets-event1.jpg')}
                     dayName="Rabu"
                     date="11 Juni 2025"
@@ -175,7 +175,7 @@ const SectionEvent = (props: {guest?: string}) => {
                   )}
                 >
                   <EventCard
-                    title="Resepsi"
+                    title="Resepsi (Jakarta)"
                     bgImage={addBaseURL('asset-sections/assets-event1.jpg')}
                     dayName="Sabtu"
                     date="5 Juli 2025"
