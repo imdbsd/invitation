@@ -8,6 +8,8 @@ import SectionWelcome from '../components/SectionWelcome';
 
 import useSearchParams from '../hooks/useSearchParams';
 import EndView from '../components/EndView';
+import useCaptureElement from '../hooks/useCapture';
+import IGShareTemplate from '../components/IGShareTemplate';
 
 const MusicPlayer = React.lazy(() => import('../components/MusicPlayer'));
 
@@ -15,38 +17,47 @@ const SiramanPage = () => {
   const params = useSearchParams<'to'>();
   const guest = params?.to || '-';
 
+  const {capturedFile, elementRef} = useCaptureElement({
+    fileName: 'surya-apri-ig-share',
+  });
+
+  console.log('capturedFile: ', capturedFile);
+
   const containerRef = React.useRef<HTMLDivElement>(null);
   return (
-    <div className="w-full min-h-screen bg-yellow-beach relative">
-      <div
-        ref={containerRef}
-        className="mx-auto w-full max-w-[500px] bg-yellow-beach relative overflow-hidden"
-      >
-        <CoverPage guest={guest} title="LAMARAN & SIRAMAN">
-          {(opened) => {
-            return (
-              <>
-                <SectionWelcome
-                  opened={opened}
-                  guest={guest}
-                  title="LAMARAN & SIRAMAN"
-                />
-                <SectionGreeting guest={guest} date={SIRAMAN_DATE} />
-                <SectionCouples />
-                <SectionEventSiraman guest={guest} />
-                <SectionGallery />
-                <div className="relative bg-[#F2EEE8] px-5 py-5 text-center">
-                  <EndView />
-                </div>
-                <React.Suspense fallback={null}>
-                  {opened && <MusicPlayer containerRef={containerRef} />}
-                </React.Suspense>
-              </>
-            );
-          }}
-        </CoverPage>
+    <>
+      <IGShareTemplate containerRef={elementRef} />
+      <div className="w-full min-h-screen bg-yellow-beach relative">
+        <div
+          ref={containerRef}
+          className="mx-auto w-full max-w-[500px] bg-yellow-beach relative overflow-hidden"
+        >
+          <CoverPage guest={guest} title="LAMARAN & SIRAMAN">
+            {(opened) => {
+              return (
+                <>
+                  <SectionWelcome
+                    opened={opened}
+                    guest={guest}
+                    title="LAMARAN & SIRAMAN"
+                  />
+                  <SectionGreeting guest={guest} date={SIRAMAN_DATE} />
+                  <SectionCouples />
+                  <SectionEventSiraman guest={guest} />
+                  <SectionGallery capturedFile={capturedFile} />
+                  <div className="relative bg-[#F2EEE8] px-5 py-5 text-center">
+                    <EndView />
+                  </div>
+                  <React.Suspense fallback={null}>
+                    {opened && <MusicPlayer containerRef={containerRef} />}
+                  </React.Suspense>
+                </>
+              );
+            }}
+          </CoverPage>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

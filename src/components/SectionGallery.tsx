@@ -91,8 +91,38 @@ const images: GalleryImages = [
   },
 ];
 
-const GallerySection = () => {
+const GallerySection = (props: {capturedFile: File | null}) => {
+  const {capturedFile} = props;
   const {isPlayingVideo, setPlayMedia} = useMediaContext();
+  const isSupportShareToIG = React.useMemo(() => {
+    if (!capturedFile) {
+      console.error('Generating template');
+      return false;
+    }
+    if (
+      typeof navigator !== 'undefined' &&
+      capturedFile &&
+      navigator.canShare &&
+      navigator.canShare({files: [capturedFile]})
+    ) {
+      return true;
+    }
+    console.error('Web Share API is not supported on this browser');
+    return false;
+  }, [capturedFile]);
+
+  const shareToIG = React.useCallback(() => {
+    if (capturedFile) {
+      navigator
+        .share({
+          files: [capturedFile],
+          title: 'The Wedding of Surya & Apri',
+        })
+        .catch(() => {
+          console.error('Web Share API is not supported on this browser');
+        });
+    }
+  }, [capturedFile]);
   return (
     <SectionWrapper className="bg-[#00000069]" id="section-gallery">
       <div className="relative p-5 pb-20 min-h-screen flex items-center flex-col justify-evenly">
@@ -130,6 +160,12 @@ const GallerySection = () => {
         >
           <Gallery images={images} />
         </React.Suspense>
+        {isSupportShareToIG ? (
+          <button onClick={shareToIG} className="mt-10 flex flex-row items-center bg-yellow-beach p-2 rounded-sm text-xs font-poppins">
+            Share to{' '}
+            <img className="ml-2 w-6" src={addBaseURL('instagram.svg')} />
+          </button>
+        ) : null}
       </div>
     </SectionWrapper>
   );

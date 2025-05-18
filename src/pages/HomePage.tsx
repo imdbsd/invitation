@@ -10,6 +10,8 @@ import SectionCouples from '../components/SectionCouples';
 import SectionWelcome from '../components/SectionWelcome';
 
 import useSearchParams from '../hooks/useSearchParams';
+import IGShareTemplate from '../components/IGShareTemplate';
+import useCaptureElement from '../hooks/useCapture';
 
 const MusicPlayer = React.lazy(() => import('../components/MusicPlayer'));
 
@@ -21,32 +23,40 @@ const HomePage = () => {
   const guest = params?.to || '-';
 
   const containerRef = React.useRef<HTMLDivElement>(null);
+  const {capturedFile, elementRef} = useCaptureElement({
+    fileName: 'surya-apri-ig-share',
+  });
+
+  // console.log('capturedFile: ', capturedFile);
   return (
-    <div className="w-full min-h-screen bg-yellow-beach relative">
-      <div
-        ref={containerRef}
-        className="mx-auto w-full max-w-[500px] bg-yellow-beach relative overflow-hidden"
-      >
-        <CoverPage guest={guest}>
-          {(opened) => {
-            return (
-              <>
-                <SectionWelcome opened={opened} guest={guest} />
-                <SectionGreeting guest={guest} date={WEDDING_DATE} />
-                <SectionCouples />
-                <SectionEvent guest={guest} />
-                <SectionGallery />
-                <SectionWeddingWish />
-                <SectionGift />
-                <React.Suspense fallback={null}>
-                  {opened && <MusicPlayer containerRef={containerRef} />}
-                </React.Suspense>
-              </>
-            );
-          }}
-        </CoverPage>
+    <>
+      <IGShareTemplate containerRef={elementRef} />
+      <div className="w-full min-h-screen bg-yellow-beach relative">
+        <div
+          ref={containerRef}
+          className="mx-auto w-full max-w-[500px] bg-yellow-beach relative overflow-hidden"
+        >
+          <CoverPage guest={guest}>
+            {(opened) => {
+              return (
+                <>
+                  <SectionWelcome opened={opened} guest={guest} />
+                  <SectionGreeting guest={guest} date={WEDDING_DATE} />
+                  <SectionCouples />
+                  <SectionEvent guest={guest} />
+                  <SectionGallery capturedFile={capturedFile} />
+                  <SectionWeddingWish />
+                  <SectionGift />
+                  <React.Suspense fallback={null}>
+                    {opened && <MusicPlayer containerRef={containerRef} />}
+                  </React.Suspense>
+                </>
+              );
+            }}
+          </CoverPage>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
