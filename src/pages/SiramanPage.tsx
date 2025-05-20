@@ -26,7 +26,6 @@ const SiramanPage = () => {
   const containerRef = React.useRef<HTMLDivElement>(null);
   return (
     <>
-      <IGShareTemplate containerRef={elementRef} />
       <div className="w-full min-h-screen bg-yellow-beach relative">
         <div
           ref={containerRef}
@@ -36,6 +35,7 @@ const SiramanPage = () => {
             {(opened) => {
               return (
                 <>
+                  {opened && <IGShareTemplate containerRef={elementRef} />}
                   <SectionWelcome
                     opened={opened}
                     guest={guest}

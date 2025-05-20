@@ -42,11 +42,11 @@ const SectionCouples = () => {
         <div className="text-center text-goldy font-cormorant">
           <p className="text-3xl">I Made Budi Surya Darma</p>
           <p className="text-white">
-            Putra dari Bapak I Made Damiartha & Ibu Ni Ketut Bukti
+            Putra kedua dari Bapak I Made Damiartha & Ibu Ni Ketut Bukti
           </p>
           <p className="text-3xl">&</p>
           <p className="text-3xl">Apriyanti Nurcahyani</p>
-          <p className="text-white">Putri dari Bapak Suwardi & Ibu Parnasih</p>
+          <p className="text-white">Putri pertama dari Bapak Suwardi & Ibu Parnasih</p>
         </div>
       </div>
     </SectionWrapper>

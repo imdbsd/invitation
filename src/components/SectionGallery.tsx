@@ -161,7 +161,7 @@ const GallerySection = (props: {capturedFile: File | null}) => {
           <Gallery images={images} />
         </React.Suspense>
         {isSupportShareToIG ? (
-          <button onClick={shareToIG} className="mt-10 flex flex-row items-center bg-yellow-beach p-2 rounded-sm text-xs font-poppins">
+          <button onClick={shareToIG} className="mt-10 flex flex-row items-center bg-yellow-beach p-2 rounded-sm text-xs font-poppins cursor-pointer">
             Share to{' '}
             <img className="ml-2 w-6" src={addBaseURL('instagram.svg')} />
           </button>

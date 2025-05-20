@@ -27,10 +27,8 @@ const HomePage = () => {
     fileName: 'surya-apri-ig-share',
   });
 
-  // console.log('capturedFile: ', capturedFile);
   return (
     <>
-      <IGShareTemplate containerRef={elementRef} />
       <div className="w-full min-h-screen bg-yellow-beach relative">
         <div
           ref={containerRef}
@@ -40,6 +38,7 @@ const HomePage = () => {
             {(opened) => {
               return (
                 <>
+                  {opened && <IGShareTemplate containerRef={elementRef} />}
                   <SectionWelcome opened={opened} guest={guest} />
                   <SectionGreeting guest={guest} date={WEDDING_DATE} />
                   <SectionCouples />

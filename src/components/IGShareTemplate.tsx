@@ -9,7 +9,7 @@ const IGShareTemplate = (props: {
   return (
     <section
       ref={props.containerRef}
-      className={`${classNameSize} fixed top-0 left-0`}
+      className={`${classNameSize} fixed top-0 left-9999999`}
       id="ig-share-template"
     >
       <div className="w-full h-full relative">
@@ -28,7 +28,7 @@ const IGShareTemplate = (props: {
         >
           <div
             className={
-              'absolute bottom-[75px] right-0 left-0 flex flex-col justify-center items-center z-10'
+              'absolute bottom-[90px] right-0 left-0 flex flex-col justify-center items-center z-10'
             }
           >
             <h1 className="flex flex-col items-center text-[#4B3B2A] text-sm tracking-[2px] font-normal">
