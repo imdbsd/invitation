@@ -1,5 +1,9 @@
 import * as React from 'react';
 import html2canvas from 'html2canvas';
+import toast from 'react-simple-toasts';
+
+import 'react-simple-toasts/dist/style.css';
+import 'react-simple-toasts/dist/theme/failure.css';
 
 type Props = {
   fileName?: string;
@@ -38,7 +42,7 @@ const useCaptureElement = (props: Props = {}) => {
       }, 'image/jpeg');
     } catch (error) {
       if (error instanceof Error) {
-        console.log(error)        
+        toast('Failed to share!', {theme: 'failure'});
       }
     } finally {
       setLoading(false);
