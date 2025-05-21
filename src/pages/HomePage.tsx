@@ -10,8 +10,6 @@ import SectionCouples from '../components/SectionCouples';
 import SectionWelcome from '../components/SectionWelcome';
 
 import useSearchParams from '../hooks/useSearchParams';
-import IGShareTemplate from '../components/IGShareTemplate';
-import useCaptureElement from '../hooks/useCapture';
 
 const MusicPlayer = React.lazy(() => import('../components/MusicPlayer'));
 
@@ -22,11 +20,7 @@ const HomePage = () => {
   const params = useSearchParams<'to'>();
   const guest = params?.to || '-';
 
-  const containerRef = React.useRef<HTMLDivElement>(null);
-  const {capturedFile, elementRef} = useCaptureElement({
-    fileName: 'surya-apri-ig-share',
-  });
-
+  const containerRef = React.useRef<HTMLDivElement>(null);  
   return (
     <>
       <div className="w-full min-h-screen bg-yellow-beach relative">
@@ -37,13 +31,12 @@ const HomePage = () => {
           <CoverPage guest={guest}>
             {(opened) => {
               return (
-                <>
-                  {opened && <IGShareTemplate containerRef={elementRef} />}
+                <>                  
                   <SectionWelcome opened={opened} guest={guest} />
                   <SectionGreeting guest={guest} date={WEDDING_DATE} />
                   <SectionCouples />
                   <SectionEvent guest={guest} />
-                  <SectionGallery capturedFile={capturedFile} />
+                  <SectionGallery />
                   <SectionWeddingWish />
                   <SectionGift />
                   <React.Suspense fallback={null}>

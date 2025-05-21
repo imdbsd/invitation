@@ -7,6 +7,7 @@ import {useMediaContext} from './MediaContext/Context';
 import {addBaseURL} from '../helpers/common';
 import {InView} from 'react-intersection-observer';
 import {twMerge} from 'tailwind-merge';
+import ShareToInstagram from './ShareToInstagram';
 
 const Gallery = React.lazy(() => import('./Gallery'));
 const YoutubePlayer = React.lazy(() => import('./YoutubePlayer'));
@@ -91,40 +92,12 @@ const images: GalleryImages = [
   },
 ];
 
-const GallerySection = (props: {capturedFile: File | null}) => {
-  const {capturedFile} = props;
+const GallerySection = () => {  
   const {isPlayingVideo, setPlayMedia} = useMediaContext();
-  const isSupportShareToIG = React.useMemo(() => {
-    if (!capturedFile) {
-      console.error('Generating template');
-      return false;
-    }
-    if (
-      typeof navigator !== 'undefined' &&
-      capturedFile &&
-      navigator.canShare &&
-      navigator.canShare({files: [capturedFile]})
-    ) {
-      return true;
-    }
-    console.error('Web Share API is not supported on this browser');
-    return false;
-  }, [capturedFile]);
 
-  const shareToIG = React.useCallback(() => {
-    if (capturedFile) {
-      navigator
-        .share({
-          files: [capturedFile],
-          title: 'The Wedding of Surya & Apri',
-        })
-        .catch(() => {
-          console.error('Web Share API is not supported on this browser');
-        });
-    }
-  }, [capturedFile]);
   return (
-    <SectionWrapper className="bg-[#00000069]" id="section-gallery">
+    <>    
+    <SectionWrapper className="bg-[#00000069]" id="section-gallery">      
       <div className="relative p-5 pb-20 min-h-screen flex items-center flex-col justify-evenly">
         <h3 className="font-pinyon-script text-4xl my-4 text-right w-full text-white">
           <Separator position="right" color="bg-white">
@@ -159,15 +132,13 @@ const GallerySection = (props: {capturedFile: File | null}) => {
           }
         >
           <Gallery images={images} />
-        </React.Suspense>
-        {isSupportShareToIG ? (
-          <button onClick={shareToIG} className="mt-10 flex flex-row items-center bg-yellow-beach p-2 rounded-sm text-xs font-poppins cursor-pointer">
-            Share to{' '}
-            <img className="ml-2 w-6" src={addBaseURL('instagram.svg')} />
-          </button>
-        ) : null}
-      </div>
+        </React.Suspense>        
+        <div className='mt-4'>
+          <ShareToInstagram />
+        </div>
+      </div>      
     </SectionWrapper>
+    </>
   );
 };
 
