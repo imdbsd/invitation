@@ -24,34 +24,36 @@ const HomePage = () => {
 
   const containerRef = React.useRef<HTMLDivElement>(null);
   return (
-    <AppProvider>
+    <>
       <BaseHelmet meta={WEDDING_META} />
-      <div className="w-full min-h-screen bg-yellow-beach relative">
-        <div
-          ref={containerRef}
-          className="mx-auto w-full max-w-[500px] bg-yellow-beach relative overflow-hidden"
-        >
-          <CoverPage guest={guest}>
-            {(opened) => {
-              return (
-                <>
-                  <SectionWelcome opened={opened} guest={guest} />
-                  <SectionGreeting guest={guest} date={WEDDING_DATE} />
-                  <SectionCouples />
-                  <SectionEvent guest={guest} />
-                  <SectionGallery />
-                  <SectionWeddingWish />
-                  <SectionGift />
-                  <React.Suspense fallback={null}>
-                    {opened && <MusicPlayer containerRef={containerRef} />}
-                  </React.Suspense>
-                </>
-              );
-            }}
-          </CoverPage>
+      <AppProvider>
+        <div className="w-full min-h-screen bg-yellow-beach relative">
+          <div
+            ref={containerRef}
+            className="mx-auto w-full max-w-[500px] bg-yellow-beach relative overflow-hidden"
+          >
+            <CoverPage guest={guest}>
+              {(opened) => {
+                return (
+                  <>
+                    <SectionWelcome opened={opened} guest={guest} />
+                    <SectionGreeting guest={guest} date={WEDDING_DATE} />
+                    <SectionCouples />
+                    <SectionEvent guest={guest} />
+                    <SectionGallery />
+                    <SectionWeddingWish />
+                    <SectionGift />
+                    <React.Suspense fallback={null}>
+                      {opened && <MusicPlayer containerRef={containerRef} />}
+                    </React.Suspense>
+                  </>
+                );
+              }}
+            </CoverPage>
+          </div>
         </div>
-      </div>
-    </AppProvider>
+      </AppProvider>
+    </>
   );
 };
 

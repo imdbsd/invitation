@@ -2,6 +2,7 @@ import {Head} from 'vite-react-ssg';
 
 interface OGMeta {
   title: string;
+  url: string;
   description: string;
   image: {
     src: string;
@@ -12,6 +13,7 @@ interface OGMeta {
 
 export const WEDDING_META: OGMeta = {
   title: 'Surya & Apri Tied The Knot at 11 Juni 2025',
+  url: 'https://suryaapritiedtheknot.site',
   description:
     'Celebrating the love of Surya & Apri — 11 Juni 2025. View their story and wedding moments',
   image: {
@@ -23,6 +25,7 @@ export const WEDDING_META: OGMeta = {
 
 export const SIRAMAN_META: OGMeta = {
   title: 'Surya & Apri Tied The Knot at 1 Juni 2025',
+  url: 'https://suryaapritiedtheknot.site/siraman',
   description:
     'Celebrating the love of Surya & Apri — 1 Juni 2025. View their story and wedding moments',
   image: {
@@ -37,12 +40,12 @@ const BaseHelmet = ({meta}: {meta: OGMeta}) => {
     <Head>
       <title>{meta.title}</title>
       <meta property="description" content={meta.description} />
-      <link rel="canonical" href="https://suryaapritiedtheknot.site/" />
+      <link rel="canonical" href={meta.url} />
       <meta property="og:title" content={meta.title} />
       <meta property="og:image" content={meta.image.src} />
       <meta property="og:image:width" content={meta.image.width} />
       <meta property="og:image:height" content={meta.image.height} />
-      <meta property="og:url" content="https://suryaapritiedtheknot.site/" />
+      <meta property="og:url" content={meta.url} />
       <meta property="twitter:title" content={meta.title} />
       <meta property="twitter:description" content={meta.description} />
       <meta property="twitter:image" content={meta.image.src} />
