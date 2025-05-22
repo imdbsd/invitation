@@ -9,6 +9,7 @@ import SectionGallery from '../components/SectionGallery';
 import useSearchParams from '../hooks/useSearchParams';
 import EndView from '../components/EndView';
 import AppProvider from '../components/AppProvider';
+import BaseHelmet, {SIRAMAN_META} from '../components/BaseHelmet';
 
 const MusicPlayer = React.lazy(() => import('../components/MusicPlayer'));
 
@@ -19,6 +20,7 @@ const SiramanPage = () => {
   const containerRef = React.useRef<HTMLDivElement>(null);
   return (
     <AppProvider>
+      <BaseHelmet meta={SIRAMAN_META} />
       <div className="w-full min-h-screen bg-yellow-beach relative">
         <div
           ref={containerRef}
