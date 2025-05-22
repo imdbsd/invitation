@@ -10,6 +10,7 @@ import SectionCouples from '../components/SectionCouples';
 import SectionWelcome from '../components/SectionWelcome';
 
 import useSearchParams from '../hooks/useSearchParams';
+import AppProvider from '../components/AppProvider';
 
 const MusicPlayer = React.lazy(() => import('../components/MusicPlayer'));
 
@@ -20,9 +21,9 @@ const HomePage = () => {
   const params = useSearchParams<'to'>();
   const guest = params?.to || '-';
 
-  const containerRef = React.useRef<HTMLDivElement>(null);  
+  const containerRef = React.useRef<HTMLDivElement>(null);
   return (
-    <>
+    <AppProvider>
       <div className="w-full min-h-screen bg-yellow-beach relative">
         <div
           ref={containerRef}
@@ -31,7 +32,7 @@ const HomePage = () => {
           <CoverPage guest={guest}>
             {(opened) => {
               return (
-                <>                  
+                <>
                   <SectionWelcome opened={opened} guest={guest} />
                   <SectionGreeting guest={guest} date={WEDDING_DATE} />
                   <SectionCouples />
@@ -48,7 +49,7 @@ const HomePage = () => {
           </CoverPage>
         </div>
       </div>
-    </>
+    </AppProvider>
   );
 };
 

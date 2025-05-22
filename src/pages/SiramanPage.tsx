@@ -8,6 +8,7 @@ import SectionGallery from '../components/SectionGallery';
 
 import useSearchParams from '../hooks/useSearchParams';
 import EndView from '../components/EndView';
+import AppProvider from '../components/AppProvider';
 
 const MusicPlayer = React.lazy(() => import('../components/MusicPlayer'));
 
@@ -17,7 +18,7 @@ const SiramanPage = () => {
 
   const containerRef = React.useRef<HTMLDivElement>(null);
   return (
-    <>
+    <AppProvider>
       <div className="w-full min-h-screen bg-yellow-beach relative">
         <div
           ref={containerRef}
@@ -48,7 +49,7 @@ const SiramanPage = () => {
           </CoverPage>
         </div>
       </div>
-    </>
+    </AppProvider>
   );
 };
 
