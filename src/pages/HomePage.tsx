@@ -10,6 +10,8 @@ import SectionCouples from '../components/SectionCouples';
 import SectionWelcome from '../components/SectionWelcome';
 
 import useSearchParams from '../hooks/useSearchParams';
+import AppProvider from '../components/AppProvider';
+import BaseHelmet, {WEDDING_META} from '../components/BaseHelmet';
 
 const MusicPlayer = React.lazy(() => import('../components/MusicPlayer'));
 
@@ -20,34 +22,37 @@ const HomePage = () => {
   const params = useSearchParams<'to'>();
   const guest = params?.to || '-';
 
-  const containerRef = React.useRef<HTMLDivElement>(null);  
+  const containerRef = React.useRef<HTMLDivElement>(null);
   return (
     <>
-      <div className="w-full min-h-screen bg-yellow-beach relative">
-        <div
-          ref={containerRef}
-          className="mx-auto w-full max-w-[500px] bg-yellow-beach relative overflow-hidden"
-        >
-          <CoverPage guest={guest}>
-            {(opened) => {
-              return (
-                <>                  
-                  <SectionWelcome opened={opened} guest={guest} />
-                  <SectionGreeting guest={guest} date={WEDDING_DATE} />
-                  <SectionCouples />
-                  <SectionEvent guest={guest} />
-                  <SectionGallery />
-                  <SectionWeddingWish />
-                  <SectionGift />
-                  <React.Suspense fallback={null}>
-                    {opened && <MusicPlayer containerRef={containerRef} />}
-                  </React.Suspense>
-                </>
-              );
-            }}
-          </CoverPage>
+      <BaseHelmet meta={WEDDING_META} />
+      <AppProvider>
+        <div className="w-full min-h-screen bg-yellow-beach relative">
+          <div
+            ref={containerRef}
+            className="mx-auto w-full max-w-[500px] bg-yellow-beach relative overflow-hidden"
+          >
+            <CoverPage guest={guest}>
+              {(opened) => {
+                return (
+                  <>
+                    <SectionWelcome opened={opened} guest={guest} />
+                    <SectionGreeting guest={guest} date={WEDDING_DATE} />
+                    <SectionCouples />
+                    <SectionEvent guest={guest} />
+                    <SectionGallery />
+                    <SectionWeddingWish />
+                    <SectionGift />
+                    <React.Suspense fallback={null}>
+                      {opened && <MusicPlayer containerRef={containerRef} />}
+                    </React.Suspense>
+                  </>
+                );
+              }}
+            </CoverPage>
+          </div>
         </div>
-      </div>
+      </AppProvider>
     </>
   );
 };

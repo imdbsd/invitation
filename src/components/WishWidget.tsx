@@ -1,16 +1,12 @@
 import * as React from 'react';
 import {Mail, Clock, ChevronLeft, ChevronRight} from 'lucide-react';
 import {usePagination} from 'react-use-pagination';
-import toast from 'react-simple-toasts';
 import {twMerge} from 'tailwind-merge';
 import TextArea from 'react-textarea-autosize';
 import useFetchWish from '../hooks/useFetchWish';
 import useSubmitWish from '../hooks/useSubmitWish';
 import {Wish, WishForm, WishFormSchema} from '../schema';
-
-import 'react-simple-toasts/dist/style.css';
-import 'react-simple-toasts/dist/theme/success.css';
-import 'react-simple-toasts/dist/theme/failure.css';
+import {useToast} from './ToastContext/Context';
 import Skeleton from 'react-loading-skeleton';
 import {formatToUTC} from '../helpers/common';
 import formatDate from '../helpers/formatDate';
@@ -24,7 +20,10 @@ const WishCard = (props: Wish) => {
       <div className="flex items-center">
         <Clock width={12} height={12} stroke="#99a1af" />{' '}
         <span className="text-xs ml-2 text-gray-400">
-          {formatDate(new Date(props.createdAt), 'cccc, do MMM yyyy - HH:mm aaaa')}
+          {formatDate(
+            new Date(props.createdAt),
+            'cccc, do MMM yyyy - HH:mm aaaa'
+          )}
         </span>
       </div>
       <div>
@@ -35,6 +34,7 @@ const WishCard = (props: Wish) => {
 };
 
 const WishWidget = () => {
+  const {toast} = useToast();
   const [name, setName] = React.useState<string>('');
   const [wish, setWish] = React.useState<string>('');
   const [error, setError] = React.useState<undefined | WishForm>({
@@ -68,7 +68,7 @@ const WishWidget = () => {
       if (parsed.success) {
         submitWish(parsed.data.name, parsed.data.wish)
           .then(() => {
-            toast('Pesan terkirim!', {theme: 'success'});
+            toast('Pesan terkirim!', 'success');
             setName('');
             setWish('');
             setError({name: '', wish: ''});
@@ -78,13 +78,15 @@ const WishWidget = () => {
               createdAt: formatToUTC(new Date()),
             });
           })
-          .catch(() => toast('Gagal Mengirim Pesan!', {theme: 'failure'}));
+          .catch(() => {
+            toast('Gagal Mengirim Pesan!', 'error');
+          });
       } else {
         setError({
           name: parsed.error.format().name?._errors[0] || '',
           wish: parsed.error.format().wish?._errors[0] || '',
         });
-        toast('Gagal Mengirim Pesan!', {theme: 'failure'});
+        toast('Gagal Mengirim Pesan!', 'error');
       }
     },
     [name, wish, submitWish, pushWishToCache]

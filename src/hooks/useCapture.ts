@@ -1,9 +1,6 @@
 import * as React from 'react';
 import html2canvas from 'html2canvas';
-import toast from 'react-simple-toasts';
-
-import 'react-simple-toasts/dist/style.css';
-import 'react-simple-toasts/dist/theme/failure.css';
+import {useToast} from '../components/ToastContext/Context';
 
 type Props = {
   fileName?: string;
@@ -11,6 +8,7 @@ type Props = {
 };
 
 const useCaptureElement = (props: Props = {}) => {
+  const {toast} = useToast();
   const elementRef = React.useRef<HTMLDivElement | null>(null);
   const [capturedFile, setCapturedFile] = React.useState<File | null>(null);
   const [loading, setLoading] = React.useState<boolean>(false);
@@ -42,7 +40,7 @@ const useCaptureElement = (props: Props = {}) => {
       }, 'image/jpeg');
     } catch (error) {
       if (error instanceof Error) {
-        toast('Failed to share!', {theme: 'failure'});
+        toast('Failed to share!', 'error');
       }
     } finally {
       setLoading(false);
