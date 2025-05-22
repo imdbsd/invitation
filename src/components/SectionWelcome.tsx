@@ -12,7 +12,7 @@ const SectionWelcome = (props: {
       id="section-welcome"
       bgImage={props.opened ? {
         src: addBaseURL('galleries/gallery-3.jpg'),
-        className: 'bg-[center_-150px]',
+        className: 'bg-[center_-50px] sm:bg-[center_-80px] bg-cover bg-no-repeat'
       } : undefined}
       className={twMerge(props.opened ? undefined : 'invisible')}
     >
@@ -20,7 +20,7 @@ const SectionWelcome = (props: {
         className="h-screen w-full mx-auto relative z-20"
         style={{
           background:
-            'linear-gradient(to bottom, rgba(255, 241, 213, 0) 0%, rgba(255, 241, 213, 0.3) 70%, rgba(255, 241, 213, 1) 80%)',
+            'linear-gradient(to bottom, rgba(255, 241, 213, 0) 0%, rgba(255, 241, 213, 0.3) 80%, rgba(255, 241, 213, 1) 90%)',
         }}
       >
         <img
