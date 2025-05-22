@@ -9,7 +9,7 @@ const IGShareTemplate = (props: {
   return (
     <section
       ref={props.containerRef}
-      className={`${classNameSize} fixed top-0 left-9999999`}
+      className={`${classNameSize} fixed top-0 left-0`}
       id="ig-share-template"
     >
       <div className="w-full h-full relative">
@@ -28,16 +28,16 @@ const IGShareTemplate = (props: {
         >
           <div
             className={
-              'absolute bottom-[90px] right-0 left-0 flex flex-col justify-center items-center z-10'
+              'absolute bottom-[90px] right-0 left-0 flex flex-col z-10'
             }
           >
-            <h1 className="flex flex-col items-center text-[#4B3B2A] text-sm tracking-[2px] font-normal">
+            <h1 className="flex flex-col text-[#4B3B2A] text-sm tracking-[2px] font-normal text-center">
               <span>{'THE WEDDING OF'}</span>
             </h1>
-            <p className="block text-4xl text-[#4B3B2A] font-cormorant">
+            <p className="block text-4xl text-[#4B3B2A] font-cormorant text-center">
               Surya & Apri
             </p>
-            <p className="block text-xl text-[#4B3B2A] font-cormorant">
+            <p className="block text-xl text-[#4B3B2A] font-cormorant text-center">
               11 Juni 2025 - #SAyIDo
             </p>
           </div>
