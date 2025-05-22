@@ -3,3 +3,6 @@ export const BASE_SCRIPT_URL =
 
 export const BASE_SCRIPT_TRACKING =
   'https://script.google.com/macros/s/AKfycbzB6GYvLbXYBC1u41j7ufthVI6yThlcnC3LrZmQa61fJDZNmm_n1rtfQuJFxXQF_3UM/exec';
+
+export const isDevelopment = import.meta.env.DEV;
+export const isProduction = import.meta.env.SSR;

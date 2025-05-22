@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {formatToUTC} from '../helpers/common';
-import {BASE_SCRIPT_TRACKING} from './configs';
+import {BASE_SCRIPT_TRACKING, isDevelopment} from './configs';
 import useSearchParams from './useSearchParams';
 
 export interface Wish {
@@ -15,15 +15,20 @@ const useTrack = (sheetName: string) => {
   const tracked = React.useRef(false);
 
   const submit = React.useRef(async (name?: string | null) => {
+    const shareId = params?.shareId || 'Unknown';
     const trackingName = name === '-' || !name ? 'Unknown' : name;
+    const time = formatToUTC(new Date());
+
+    if (isDevelopment) {
+      console.info('track data: ', {sheetName, trackingName, shareId, time});
+      return;
+    }
     try {
       if (!loading && !tracked.current) {
         tracked.current = true;
         setLoading(true);
         await fetch(
-          `${BASE_SCRIPT_TRACKING}?path=${sheetName}&action=write&name=${trackingName}&shareId=${
-            params?.shareId || 'Unknown'
-          }&time=${formatToUTC(new Date())}`
+          `${BASE_SCRIPT_TRACKING}?path=${sheetName}&action=write&name=${trackingName}&shareId=${shareId}&time=${time}`
         );
         setLoading(false);
       }
