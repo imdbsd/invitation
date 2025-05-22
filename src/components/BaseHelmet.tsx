@@ -24,7 +24,7 @@ export const WEDDING_META: OGMeta = {
 };
 
 export const SIRAMAN_META: OGMeta = {
-  title: 'Siraman Surya & Apri Tied The Knot at 1 Juni 2025',
+  title: 'Surya & Apri Tied The Knot at 1 Juni 2025',
   url: 'https://suryaapritiedtheknot.site/siraman',
   description:
     'Celebrating the love of Surya & Apri — 1 Juni 2025. View their story and wedding moments',
