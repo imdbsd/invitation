@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {formatToUTC} from '../helpers/common';
 import {BASE_SCRIPT_TRACKING, isDevelopment} from './configs';
-import useSearchParams from './useSearchParams';
+import { useTrackContext } from '../components/TrackProvider/Context';
 
 export interface Wish {
   name: string;
@@ -9,13 +9,13 @@ export interface Wish {
   createdAt: string;
 }
 
-const useTrack = (sheetName: string) => {
-  const params = useSearchParams<'shareId'>();
+const useTrack = (sheetName: string) => {  
+  const {uuid} = useTrackContext()
   const [loading, setLoading] = React.useState(false);
   const tracked = React.useRef(false);
 
   const submit = React.useRef(async (name?: string | null) => {
-    const shareId = params?.shareId || 'Unknown';
+    const shareId = uuid || 'Unknown';
     const trackingName = name === '-' || !name ? 'Unknown' : name;
     const time = formatToUTC(new Date());
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {WishListSchema, WishList, Wish, WishSchema} from '../schema';
-import {BASE_SCRIPT_URL} from './configs';
+import {BASE_SCRIPT_WISH} from './configs';
 
 const useFetchWish = (option?: {skip?: boolean}) => {
   const [loading, setLoading] = React.useState(false);
@@ -13,7 +13,7 @@ const useFetchWish = (option?: {skip?: boolean}) => {
         isFetching.current = true;
         setLoading(true);
         const response = await fetch(
-          `${BASE_SCRIPT_URL}?path=Sheet1&action=read`
+          `${BASE_SCRIPT_WISH}?path=Sheet1&action=read`
         );
         const responseData = await response.json();
 
