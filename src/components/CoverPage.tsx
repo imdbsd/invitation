@@ -72,13 +72,13 @@ const CoverPage = (props: {
             <div className="h-2/3 w-3/4 rounded-full border-yellow-beach border-double border-[5px]" />
           </div>
           <div className="fixed bottom-[75px] right-0 left-0 flex flex-col justify-center items-center z-10">
-            <h1 className="flex flex-col items-center text-[#4B3B2A] text-sm tracking-[2px] font-normal">
-              <span>{props.title || 'THE WEDDING OF'}</span>
+            <h1 className="flex flex-col items-center text-[#4B3B2A] text-sm tracking-[2px] font-normal text-shadowing">
+              <span className='text-shadow-lg'>{props.title || 'THE WEDDING OF'}</span>
             </h1>
-            <p className="block text-4xl text-[#4B3B2A] font-cormorant">
+            <p className="block text-4xl text-[#4B3B2A] font-cormorant text-shadowing">
               Surya & Apri
             </p>
-            <p className="text-[#4B3B2A] text-center text-sm tracking-[2px] font-normal">
+            <p className="text-[#4B3B2A] text-center text-sm tracking-[2px] font-normal text-shadowing">
               <span className="block">Kepada Yth.</span>
               <span className="block">Bapak/ Ibu/ Saudara/ i</span>
             </p>

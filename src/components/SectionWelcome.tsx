@@ -43,17 +43,17 @@ const SectionWelcome = (props: {
             props.opened && 'opacity-100'
           )}
         >
-          <h1 className="flex flex-col items-center text-[#4B3B2A] text-sm tracking-[2px] font-normal">
+          <h1 className="flex flex-col items-center text-[#4B3B2A] text-sm tracking-[2px] font-normal text-shadowing">
             <span>{props.title || 'THE WEDDING OF'}</span>
           </h1>
-          <p className="block text-4xl text-[#4B3B2A] font-cormorant">
+          <p className="block text-4xl text-[#4B3B2A] font-cormorant text-shadowing">
             Surya & Apri
           </p>
-          <p className="text-[#4B3B2A] text-center text-sm tracking-[2px] font-normal">
+          <p className="text-[#4B3B2A] text-center text-sm tracking-[2px] font-normal text-shadowing">
             <span className="block">Kepada Yth.</span>
             <span className="block">Bapak/ Ibu/ Saudara/ i</span>
           </p>
-          <p className="font-cormorant text-base font-normal bg-white p-3 rounded-sm mt-4 min-w-[100px] text-center">
+          <p className="font-cormorant text-base font-normal bg-white p-3 rounded-sm mt-4 min-w-[100px] text-center text-shadowing">
             {props.guest}
           </p>
         </div>

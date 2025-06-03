@@ -36,3 +36,7 @@
       }
   }
 }
+
+.text-shadowing {
+  text-shadow: -0.25px -0.25px 0 #fff1d5,     0.25px -0.25px 0 #fff1d5,    -0.25px  0.25px 0 #fff1d5,     0.25px  0.25px 0 #fff1d5;
+}
