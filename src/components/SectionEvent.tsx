@@ -117,7 +117,7 @@ const SectionEvent = (props: {guest?: string}) => {
         </p>
         <div className="relative w-full">
           {EVENTS(props.guest).map(([sectionName, events]) => (
-            <>
+            <div key={`section-event-${sectionName}`}>
               <div className="mb-10">
                 <Separator position="right">
                   <h4 className="font-cormorant text-4xl text-center mx-2.5 italic text-goldy">
@@ -125,8 +125,9 @@ const SectionEvent = (props: {guest?: string}) => {
                   </h4>
                 </Separator>
               </div>
-              {events.map((eventProps) => (
+              {events.map((eventProps, index) => (
                 <React.Suspense
+                  key={`${sectionName}-${index}`}
                   fallback={<Skeleton height={350} baseColor="#dadada" />}
                 >
                   <InView threshold={0.3} triggerOnce>
@@ -144,8 +145,8 @@ const SectionEvent = (props: {guest?: string}) => {
                   </InView>
                 </React.Suspense>
               ))}
-            </>
-          ))}          
+            </div>
+          ))}
         </div>
         <div className="mt-5 relative">
           <p className="mb-5 font-poppins text-sm text-center">
