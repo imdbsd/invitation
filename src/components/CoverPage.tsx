@@ -86,7 +86,7 @@ const CoverPage = (props: {
               {props.guest}
             </button>
             <p className="text-xl font-cormorant my-2 cursor-pointer">
-              Click untuk membuka undangan.
+              Ketuk layar untuk membuka undangan.
             </p>
           </div>
         </div>
