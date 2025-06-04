@@ -13,11 +13,11 @@ import formatDate from '../helpers/formatDate';
 
 const WishCard = (props: Wish) => {
   return (
-    <div className="flex flex-col font-poppins px-3 py-3 [&>*:not(:last-child)]:mb-2 animate-fade-left">
-      <div>
+    <div className="flex flex-col font-poppins px-3 py-3 animate-fade-left">
+      <div className="mb-2">
         <span className="text-[#7b6945] font-bold">{props.name}</span>
       </div>
-      <div className="flex items-center">
+      <div className="flex items-center mb-2">
         <Clock width={12} height={12} stroke="#99a1af" />{' '}
         <span className="text-xs ml-2 text-gray-400">
           {formatDate(
@@ -92,6 +92,14 @@ const WishWidget = () => {
     [name, wish, submitWish, pushWishToCache]
   );
 
+  const slicedWish = data?.length
+    ? // bug start index and end index not accurad
+      data?.slice(
+        startIndex === 0 ? startIndex : startIndex - 1,
+        nextEnabled ? endIndex : undefined
+      )
+    : undefined;
+
   return (
     <div className="bg-[#F2EEE8] w-full rounded-2xl">
       {/* Header */}
@@ -104,9 +112,9 @@ const WishWidget = () => {
       {/* Wish Editor */}
       <form
         onSubmit={onSubmit}
-        className="border-b-[#7b6945] border-b-[1px] p-4 [&>*:not(:last-child)]:mb-5"
+        className="border-b-[#7b6945] border-b-[1px] p-4"
       >
-        <div>
+        <div className="mb-5">
           <label htmlFor="name">
             <span className="font-poppins text-sm">Nama anda:</span>
           </label>
@@ -136,8 +144,8 @@ const WishWidget = () => {
             <span className="text-xs text-[#99a1af]">{name.length} / 60</span>
           </div>
         </div>
-        <div>
-          <label htmlFor="name">
+        <div className="mb-5">
+          <label htmlFor="wish">
             <span className="font-poppins text-sm">Ucapan & Doa:</span>
           </label>
           <TextArea
@@ -181,7 +189,7 @@ const WishWidget = () => {
       {/* Content List */}
       <div
         className={twMerge(
-          'min-h-[300px] [&>*:not(:last-child)]:border-b-[#7b6945] [&>*:not(:last-child)]:border-b-[1px]',
+          'min-h-[300px]',
           !loading && !data?.length && 'flex justify-center items-center'
         )}
       >
@@ -195,16 +203,21 @@ const WishWidget = () => {
               );
             })}
           </div>
-        ) : data?.length ? (
-          // bug start index and end index not accurad
-          data
-            ?.slice(
-              startIndex === 0 ? startIndex : startIndex - 1,
-              nextEnabled ? endIndex : undefined
-            )
-            .map((wish) => {
-              return <WishCard key={`wish-${wish.createdAt}`} {...wish} />;
-            })
+        ) : slicedWish ? (
+          slicedWish.map((wish, index) => {
+            return (
+              <div
+                key={`wish-${wish.createdAt}`}
+                className={
+                  index < slicedWish.length - 1
+                    ? 'border-b-[#7b6945] border-b-[1px]'
+                    : ''
+                }
+              >
+                <WishCard {...wish} />
+              </div>
+            );
+          })
         ) : (
           <span className="ml-2 text-sm text-[#7b6945] font-cormorant">
             Belum ada ucapan

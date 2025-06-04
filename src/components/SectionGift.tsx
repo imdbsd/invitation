@@ -30,7 +30,7 @@ const GiftSection = () => {
           <Gift /> Kirim Hadiah
         </button>
         {openGift ? (
-          <div className="my-5 [&>*:not(:last-child)]:mb-5">
+          <div className="my-5">
             <React.Suspense
               fallback={
                 <>
@@ -40,7 +40,7 @@ const GiftSection = () => {
               }
             >
               <>
-                <div className="animate-fade-up">
+                <div className="animate-fade-up mb-5">
                   <ATMCard
                     bank="BCA"
                     address="8580099662"

@@ -66,11 +66,11 @@ const SectionGreeting = (props: {guest?: string, date: string}) => {
               Countdown to:
             </p>
           </Separator>
-          <div className="[&>*:not(:last-child)]:mb-5">
-            <p className="text-center font-cormorant text-3xl italic font-bold">
+          <div>
+            <p className="text-center font-cormorant text-3xl italic font-bold mb-5">
               {formatDate(new Date(props.date), 'dd MMMM yyyy')}
             </p>
-            <div className="flex justify-center">
+            <div className="flex justify-center mb-5">
               <a
                 href={`https://www.google.com/calendar/render?action=TEMPLATE&text=Surya+%26+Apri+Tied+The+Knot&details=Pernikahan+Surya+%26+Apri.+More+at+https%3A%2F%2Fsuryaapritiedtheknot.site${
                   props.guest
