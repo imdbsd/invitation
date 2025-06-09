@@ -22,7 +22,7 @@ const WishCard = (props: Wish) => {
         <span className="text-xs ml-2 text-gray-400">
           {formatDate(
             new Date(props.createdAt),
-            'cccc, do MMM yyyy - HH:mm aaaa'
+            'cccc, d MMM yyyy - HH:mm aaaa'
           )}
         </span>
       </div>
