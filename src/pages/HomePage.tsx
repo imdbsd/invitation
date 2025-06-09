@@ -42,7 +42,7 @@ const HomePage = () => {
                     <SectionEvent guest={guest} />
                     <SectionGallery />
                     <SectionWeddingWish />
-                    <SectionGift />
+                    <SectionGift guest={guest} />
                     <React.Suspense fallback={null}>
                       {opened && <MusicPlayer containerRef={containerRef} />}
                     </React.Suspense>

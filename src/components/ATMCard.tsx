@@ -8,13 +8,15 @@ interface Props {
   address: string;
   name: string;
   bank: 'BCA' | 'BNI';
+  onClick?: () => void
 }
 
-const ATMCard = (props: Props) => {
+const ATMCard = (props: Props) => {  
   const [, copy] = useCopyToClipboard();
   const {toast} = useToast();
 
   const handleCopy = React.useCallback(() => {    
+    props.onClick?.()
     copy(props.address)
       .then(() => {
         toast('Copied!', 'success');
@@ -23,7 +25,7 @@ const ATMCard = (props: Props) => {
         console.error('Failed to copy!', error);
         toast('Failed to copy!!', 'error');
       });
-  }, [props.address]);
+  }, [props.address, props.onClick]);
 
   return (
     <div

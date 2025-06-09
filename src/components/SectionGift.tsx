@@ -3,10 +3,13 @@ import Skeleton from 'react-loading-skeleton';
 import {Gift} from 'lucide-react';
 import SectionWrapper from './SectionWrapper';
 import EndView from './EndView';
+import useTrack from '../hooks/useTrack';
 
 const ATMCard = React.lazy(() => import('./ATMCard'));
 
-const GiftSection = () => {
+const GiftSection = (props: {guest?: string | undefined}) => {
+  const [trackTfSurya] = useTrack('TfSurya')
+  const [trackTfAep] = useTrack('TfAep')
   const [openGift, setOpenGift] = React.useState(false);
 
   return (
@@ -45,6 +48,9 @@ const GiftSection = () => {
                     bank="BCA"
                     address="8580099662"
                     name="I Made Budi Surya Darma"
+                    onClick={() => {
+                      trackTfSurya(props.guest)
+                    }}
                   />
                 </div>
                 <div className="animate-fade-up">
@@ -52,6 +58,9 @@ const GiftSection = () => {
                     bank="BNI"
                     address="1180314569"
                     name="Apriyanti Nurcahyani"
+                    onClick={() => {
+                      trackTfAep(props.guest)
+                    }}
                   />
                 </div>
               </>
