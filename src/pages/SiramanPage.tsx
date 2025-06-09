@@ -5,6 +5,7 @@ import CoverPage from '../components/CoverPage';
 import SectionCouples from '../components/SectionCouples';
 import SectionWelcome from '../components/SectionWelcome';
 import SectionGallery from '../components/SectionGallery';
+import SectionPhotoshoot from '../components/SectionPhotoshoot';
 
 import useSearchParams from '../hooks/useSearchParams';
 import EndView from '../components/EndView';
@@ -39,6 +40,7 @@ const SiramanPage = () => {
                   <SectionCouples />
                   <SectionEventSiraman guest={guest} />
                   <SectionGallery />
+                  <SectionPhotoshoot />
                   <div className="relative bg-[#F2EEE8] px-5 py-5 text-center">
                     <EndView />
                   </div>

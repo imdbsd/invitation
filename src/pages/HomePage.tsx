@@ -12,6 +12,7 @@ import SectionWelcome from '../components/SectionWelcome';
 import useSearchParams from '../hooks/useSearchParams';
 import AppProvider from '../components/AppProvider';
 import BaseHelmet, {WEDDING_META} from '../components/BaseHelmet';
+import SectionPhotoshoot from '../components/SectionPhotoshoot';
 
 const MusicPlayer = React.lazy(() => import('../components/MusicPlayer'));
 
@@ -41,7 +42,8 @@ const HomePage = () => {
                     <SectionCouples />
                     <SectionEvent guest={guest} />
                     <SectionGallery />
-                    <SectionWeddingWish />
+                    <SectionPhotoshoot />
+                    <SectionWeddingWish />                    
                     <SectionGift guest={guest} />
                     <React.Suspense fallback={null}>
                       {opened && <MusicPlayer containerRef={containerRef} />}
