@@ -11,6 +11,18 @@ interface OGMeta {
   };
 }
 
+export const WEDDING_RECEPTION_META: OGMeta = {
+  title: 'Surya & Apri Tied The Knot at 5 July 2025',
+  url: 'https://suryaapritiedtheknot.site',
+  description:
+    'Celebrating the love of Surya & Apri — 5 July 2025. View their story and wedding moments',
+  image: {
+    src: `https://raw.githubusercontent.com/imdbsd/invitation/refs/heads/main/public/og_image_reception.jpg`,
+    width: '600',
+    height: '325',
+  },
+};
+
 export const WEDDING_META: OGMeta = {
   title: 'Surya & Apri Tied The Knot at 11 Juni 2025',
   url: 'https://suryaapritiedtheknot.site',

@@ -11,7 +11,7 @@ import SectionWelcome from '../components/SectionWelcome';
 
 import useSearchParams from '../hooks/useSearchParams';
 import AppProvider from '../components/AppProvider';
-import BaseHelmet, {WEDDING_META} from '../components/BaseHelmet';
+import BaseHelmet, {WEDDING_RECEPTION_META} from '../components/BaseHelmet';
 import SectionPhotoshoot from '../components/SectionPhotoshoot';
 
 const MusicPlayer = React.lazy(() => import('../components/MusicPlayer'));
@@ -26,7 +26,7 @@ const HomePage = () => {
   const containerRef = React.useRef<HTMLDivElement>(null);
   return (
     <>
-      <BaseHelmet meta={WEDDING_META} />
+      <BaseHelmet meta={WEDDING_RECEPTION_META} />
       <AppProvider>
         <div className="w-full min-h-screen bg-yellow-beach relative">
           <div
