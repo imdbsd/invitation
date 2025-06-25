@@ -15,8 +15,50 @@ const YoutubePlayer = React.lazy(() => import('./YoutubePlayer'));
 const vertical = {width: 1080, height: 1920};
 const horizontal = {width: 1920, height: 1080};
 const baseCaption = 'Surya & Apri ~ 11 Juni 2025';
+const mekalanKalanCaption = 'Mekalan - kalan ~ 8 Juni 2025';
+const puncakCaption = 'Natab ~ 11 Juni 2025';
 
 const images: GalleryImages = [
+  {
+    src: addBaseURL('galleries/gallery-21.jpg'),
+    ...horizontal,
+    caption: puncakCaption,
+  },
+  {
+    src: addBaseURL('galleries/gallery-22.jpg'),
+    ...vertical,
+    caption: puncakCaption,
+  },
+  {
+    src: addBaseURL('galleries/gallery-15.jpg'),
+    ...horizontal,
+    caption: mekalanKalanCaption,
+  },
+  {
+    src: addBaseURL('galleries/gallery-16.jpg'),
+    ...horizontal,
+    caption: mekalanKalanCaption,
+  },
+  {
+    src: addBaseURL('galleries/gallery-17.jpg'),
+    ...horizontal,
+    caption: mekalanKalanCaption,
+  },
+  {
+    src: addBaseURL('galleries/gallery-18.jpg'),
+    ...horizontal,
+    caption: mekalanKalanCaption,
+  },
+  {
+    src: addBaseURL('galleries/gallery-19.jpg'),
+    ...horizontal,
+    caption: puncakCaption,
+  },
+  {
+    src: addBaseURL('galleries/gallery-20.jpg'),
+    ...vertical,
+    caption: puncakCaption,
+  },
   {
     src: addBaseURL('galleries/gallery-1.jpg'),
     ...horizontal,
@@ -89,7 +131,7 @@ const images: GalleryImages = [
     src: addBaseURL('galleries/gallery-14.jpg'),
     ...horizontal,
     caption: baseCaption,
-  },
+  },  
 ];
 
 const GallerySection = () => {  
