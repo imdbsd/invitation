@@ -12,6 +12,11 @@ const PHOTOSHOOTS = [
     qr: addBaseURL('qr-mekalan-kalan.png'),
     link: 'https://drive.google.com/drive/folders/1jrHzlEeO8A0--DlTOiVBqCujgc3hRfSM',
   },
+  {
+    title: 'Puncak (11 Juni 2025)',
+    qr: addBaseURL('qr-puncak.png'),
+    link: 'https://drive.google.com/drive/folders/1TknL2Z0nKYQADU3GlXX9fuP8Z-LPCnin?usp=drive_link',
+  },
 ] as const;
 
 const SectionPhotoshoot = () => {

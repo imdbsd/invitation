@@ -32,13 +32,15 @@ const IGShareTemplate = (props: {
             }
           >
             <h1 className="flex flex-col text-[#4B3B2A] text-sm tracking-[2px] font-normal text-center">
-              <span>{'THE WEDDING OF'}</span>
+              {/* <span>{'THE WEDDING OF'}</span> */}
+              <span>The Wedding Reception of</span>
             </h1>
             <p className="block text-4xl text-[#4B3B2A] font-cormorant text-center">
               Surya & Apri
             </p>
             <p className="block text-xl text-[#4B3B2A] font-cormorant text-center">
-              11 Juni 2025 - #SAyIDo
+              {/* 11 Juni 2025 - #SAyIDo */}
+              5 Juli 2025 - #SAyIDo
             </p>
           </div>
         </div>

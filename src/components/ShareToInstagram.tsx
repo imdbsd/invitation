@@ -41,7 +41,8 @@ const ShareToInstagram = () => {
       navigator
         .share({
           files: [capturedFile],
-          title: 'The Wedding of Surya & Apri',
+          // title: 'The Wedding of Surya & Apri',
+          title: 'The Wedding Reception of Surya & Apri'
         })
         .catch(() => {
           console.error('Web Share API is not supported on this browser');

@@ -10,65 +10,65 @@ import {Props as EventCardProps} from './EventCard';
 const EventCard = React.lazy(() => import('./EventCard'));
 
 const EVENTS = (guest?: string): Array<[string, Array<EventCardProps>]> => [
-  [
-    'Bali',
-    [
-      {
-        title: 'Pawiwahan',
-        bgImage: addBaseURL('asset-sections/assets-event1.jpg'),
-        dayName: 'Rabu',
-        date: '11 Juni 2025',
-        startAndEnd: '07.00 - 12.00 WITA',
-        location:
-          'Kediaman Mempelai Pria Jl. Siligita No.1, Banjar, Peminge, Kabupaten Badung, Bali',
-        gMap: 'https://maps.app.goo.gl/DcMf4eq2qtz1kgzNA',
-      },
-      {
-        title: 'Resepsi (Bali)',
-        bgImage: addBaseURL('asset-sections/assets-event1.jpg'),
-        dayName: 'Rabu',
-        date: '11 Juni 2025',
-        startAndEnd: '12.00 - 17.00 WITA',
-        location:
-          'Kediaman Mempelai Pria Jl. Siligita No.1, Banjar, Peminge, Kabupaten Badung, Bali',
-        gMap: 'https://maps.app.goo.gl/DcMf4eq2qtz1kgzNA',
-      },
-    ],
-  ],
+  // [
+  //   'Bali',
+  //   [
+  //     {
+  //       title: 'Pawiwahan',
+  //       bgImage: addBaseURL('asset-sections/assets-event1.jpg'),
+  //       dayName: 'Rabu',
+  //       date: '11 Juni 2025',
+  //       startAndEnd: '07.00 - 12.00 WITA',
+  //       location:
+  //         'Kediaman Mempelai Pria Jl. Siligita No.1, Banjar, Peminge, Kabupaten Badung, Bali',
+  //       gMap: 'https://maps.app.goo.gl/DcMf4eq2qtz1kgzNA',
+  //     },
+  //     {
+  //       title: 'Resepsi (Bali)',
+  //       bgImage: addBaseURL('asset-sections/assets-event1.jpg'),
+  //       dayName: 'Rabu',
+  //       date: '11 Juni 2025',
+  //       startAndEnd: '12.00 - 17.00 WITA',
+  //       location:
+  //         'Kediaman Mempelai Pria Jl. Siligita No.1, Banjar, Peminge, Kabupaten Badung, Bali',
+  //       gMap: 'https://maps.app.goo.gl/DcMf4eq2qtz1kgzNA',
+  //     },
+  //   ],
+  // ],
   [
     'Jakarta',
     [
-      {
-        title: 'Lamaran',
-        bgImage: addBaseURL('asset-sections/assets-event1.jpg'),
-        dayName: 'Minggu',
-        date: '1 Juni 2025',
-        startAndEnd: '08.00 - 09.30 WIB',
-        location:
-          'Griya bintang mekarsari, gang rosela 1, blok i5 no 12, RT.008 RW.004 Rajek Mulya, Kec. Rajek, Kab. Tangerang',
-        gMap: 'https://maps.app.goo.gl/VEXVVgM17RxCHXbP7',
-      },
-      {
-        title: 'Siraman Mempelai Wanita',
-        sub: (
-          <p className="font-cormorant text-xl text-center my-4 w-full text-white">
-            Apriyanti Nurcahyani
-          </p>
-        ),
-        bgImage: addBaseURL('asset-sections/assets-event1.jpg'),
-        dayName: 'Minggu',
-        date: '1 Juni 2025',
-        startAndEnd: '08.00 - 09.30 WIB',
-        location:
-          'Griya bintang mekarsari, gang rosela 1, blok i5 no 12, RT.008 RW.004 Rajek Mulya, Kec. Rajek, Kab. Tangerang',
-        gMap: 'https://maps.app.goo.gl/VEXVVgM17RxCHXbP7',
-        calendarFormat: `https://www.google.com/calendar/render?action=TEMPLATE&text=Siraman+Apriyanti+Nurcahyani&details=Pernikahan+Surya+%26+Apri.+More+at+https%3A%2F%2Fsuryaapritiedtheknot.site%2F%3F
-                                %3D${
-                                  guest
-                                    ? `%2F%3Fto%3D${decodeURIComponent(guest)}`
-                                    : ''
-                                }%0A%0A%23SAyIDo&location=https%3A%2F%2Fmaps.app.goo.gl%2FVEXVVgM17RxCHXbP7&dates=20250601T013000Z%2F20250601T040000Z`,
-      },
+      // {
+      //   title: 'Lamaran',
+      //   bgImage: addBaseURL('asset-sections/assets-event1.jpg'),
+      //   dayName: 'Minggu',
+      //   date: '1 Juni 2025',
+      //   startAndEnd: '08.00 - 09.30 WIB',
+      //   location:
+      //     'Griya bintang mekarsari, gang rosela 1, blok i5 no 12, RT.008 RW.004 Rajek Mulya, Kec. Rajek, Kab. Tangerang',
+      //   gMap: 'https://maps.app.goo.gl/VEXVVgM17RxCHXbP7',
+      // },
+      // {
+      //   title: 'Siraman Mempelai Wanita',
+      //   sub: (
+      //     <p className="font-cormorant text-xl text-center my-4 w-full text-white">
+      //       Apriyanti Nurcahyani
+      //     </p>
+      //   ),
+      //   bgImage: addBaseURL('asset-sections/assets-event1.jpg'),
+      //   dayName: 'Minggu',
+      //   date: '1 Juni 2025',
+      //   startAndEnd: '08.00 - 09.30 WIB',
+      //   location:
+      //     'Griya bintang mekarsari, gang rosela 1, blok i5 no 12, RT.008 RW.004 Rajek Mulya, Kec. Rajek, Kab. Tangerang',
+      //   gMap: 'https://maps.app.goo.gl/VEXVVgM17RxCHXbP7',
+      //   calendarFormat: `https://www.google.com/calendar/render?action=TEMPLATE&text=Siraman+Apriyanti+Nurcahyani&details=Pernikahan+Surya+%26+Apri.+More+at+https%3A%2F%2Fsuryaapritiedtheknot.site%2F%3F
+      //                           %3D${
+      //                             guest
+      //                               ? `%2F%3Fto%3D${decodeURIComponent(guest)}`
+      //                               : ''
+      //                           }%0A%0A%23SAyIDo&location=https%3A%2F%2Fmaps.app.goo.gl%2FVEXVVgM17RxCHXbP7&dates=20250601T013000Z%2F20250601T040000Z`,
+      // },
       {
         title: 'Resepsi (Jakarta)',
         bgImage: addBaseURL('asset-sections/assets-event1.jpg'),

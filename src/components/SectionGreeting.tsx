@@ -12,6 +12,7 @@ const Countdown = React.lazy(() => import('./Countdown'));
 
 export const WEDDING_DATE = 'Wed Jun 11 2025 00:00:00 GMT+0800';
 export const SIRAMAN_DATE = 'Sun Jun 01 2025 00:00:00 GMT+0700';
+export const WEDDING_RECEPTION_DATE = 'Sat Jul 05 2025 11:00:00 GMT+0700';
 
 const SectionGreeting = (props: {guest?: string, date: string}) => {
   return (

@@ -3,7 +3,7 @@ import SectionEvent from '../components/SectionEvent';
 import SectionGallery from '../components/SectionGallery';
 import SectionGift from '../components/SectionGift';
 
-import SectionGreeting, {WEDDING_DATE} from '../components/SectionGreeting';
+import SectionGreeting, {WEDDING_RECEPTION_DATE} from '../components/SectionGreeting';
 import SectionWeddingWish from '../components/SectionWeddingWish';
 import CoverPage from '../components/CoverPage';
 import SectionCouples from '../components/SectionCouples';
@@ -33,12 +33,12 @@ const HomePage = () => {
             ref={containerRef}
             className="mx-auto w-full max-w-[500px] bg-yellow-beach relative overflow-hidden"
           >
-            <CoverPage guest={guest}>
+            <CoverPage title='The Wedding Reception of' guest={guest}>
               {(opened) => {
                 return (
                   <>
-                    <SectionWelcome opened={opened} guest={guest} />
-                    <SectionGreeting guest={guest} date={WEDDING_DATE} />
+                    <SectionWelcome title='The Wedding Reception of' opened={opened} guest={guest} />
+                    <SectionGreeting guest={guest} date={WEDDING_RECEPTION_DATE} />
                     <SectionCouples />
                     <SectionEvent guest={guest} />
                     <SectionGallery />
