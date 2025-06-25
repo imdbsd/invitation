@@ -8,6 +8,7 @@ import {addBaseURL} from '../helpers/common';
 import {InView} from 'react-intersection-observer';
 import {twMerge} from 'tailwind-merge';
 import ShareToInstagram from './ShareToInstagram';
+import useTrack from '../hooks/useTrack';
 
 const Gallery = React.lazy(() => import('./Gallery'));
 const YoutubePlayer = React.lazy(() => import('./YoutubePlayer'));
@@ -131,55 +132,62 @@ const images: GalleryImages = [
     src: addBaseURL('galleries/gallery-14.jpg'),
     ...horizontal,
     caption: baseCaption,
-  },  
+  },
 ];
 
-const GallerySection = () => {  
+const GallerySection = (props: {guest?: string}) => {
   const {isPlayingVideo, setPlayMedia} = useMediaContext();
+  const [trackPlayVideo] = useTrack('PlayVideo');
 
   return (
-    <>    
-    <SectionWrapper className="bg-[#00000069]" id="section-gallery">      
-      <div className="relative p-5 pb-20 min-h-screen flex items-center flex-col justify-evenly">
-        <h3 className="font-pinyon-script text-4xl my-4 text-right w-full text-white">
-          <Separator position="right" color="bg-white">
-            <span className="font-serif mb-2 text-white ml-2">Wedding</span>
-          </Separator>
-          Gallery
-        </h3>
-        <div className="w-full mb-5">
+    <>
+      <SectionWrapper className="bg-[#00000069]" id="section-gallery">
+        <div className="relative p-5 pb-20 min-h-screen flex items-center flex-col justify-evenly">
+          <h3 className="font-pinyon-script text-4xl my-4 text-right w-full text-white">
+            <Separator position="right" color="bg-white">
+              <span className="font-serif mb-2 text-white ml-2">Wedding</span>
+            </Separator>
+            Gallery
+          </h3>
+          <div className="w-full mb-5">
+            <React.Suspense
+              fallback={<Skeleton height={225} baseColor="#dadada" />}
+            >
+              <InView triggerOnce threshold={0.2}>
+                {({ref, inView}) => (
+                  <div
+                    ref={ref}
+                    className={twMerge(inView && 'animate-fade-up')}
+                  >
+                    <YoutubePlayer
+                      playing={isPlayingVideo}
+                      url="https://youtu.be/L6SA8ml-j98"
+                      onPlay={() => {
+                        setPlayMedia('video', true);
+                        trackPlayVideo(props.guest);
+                      }}
+                      onPause={() => setPlayMedia('video', false)}
+                    />
+                  </div>
+                )}
+              </InView>
+            </React.Suspense>
+          </div>
           <React.Suspense
-            fallback={<Skeleton height={225} baseColor="#dadada" />}
+            fallback={
+              <div className="grid grid-cols-2 gap-3 w-full">
+                <Skeleton height={150} baseColor="#dadada" />
+                <Skeleton height={150} baseColor="#dadada" />
+              </div>
+            }
           >
-            <InView triggerOnce threshold={0.2}>
-              {({ref, inView}) => (
-                <div ref={ref} className={twMerge(inView && 'animate-fade-up')}>
-                  <YoutubePlayer
-                    playing={isPlayingVideo}
-                    url="https://youtu.be/L6SA8ml-j98"
-                    onPlay={() => setPlayMedia('video', true)}
-                    onPause={() => setPlayMedia('video', false)}
-                  />
-                </div>
-              )}
-            </InView>
+            <Gallery images={images} />
           </React.Suspense>
+          <div className="mt-4">
+            <ShareToInstagram />
+          </div>
         </div>
-        <React.Suspense
-          fallback={
-            <div className="grid grid-cols-2 gap-3 w-full">
-              <Skeleton height={150} baseColor="#dadada" />
-              <Skeleton height={150} baseColor="#dadada" />
-            </div>
-          }
-        >
-          <Gallery images={images} />
-        </React.Suspense>        
-        <div className='mt-4'>
-          <ShareToInstagram />
-        </div>
-      </div>      
-    </SectionWrapper>
+      </SectionWrapper>
     </>
   );
 };

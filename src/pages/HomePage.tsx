@@ -41,7 +41,7 @@ const HomePage = () => {
                     <SectionGreeting guest={guest} date={WEDDING_RECEPTION_DATE} />
                     <SectionCouples />
                     <SectionEvent guest={guest} />
-                    <SectionGallery />
+                    <SectionGallery guest={guest} />
                     <SectionPhotoshoot />
                     <SectionWeddingWish />                    
                     <SectionGift guest={guest} />
