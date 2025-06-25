@@ -16,7 +16,7 @@ const IGShareTemplate = (props: {
         <div
           className={`${classNameSize} bg-cover bg-[center_-150px] absolute`}
           style={{
-            backgroundImage: `url(${addBaseURL('galleries/gallery-3.jpg')})`,
+            backgroundImage: `url(${addBaseURL('ig-background.jpg')})`,
           }}
         />
         <div
