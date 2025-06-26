@@ -112,7 +112,7 @@ const SectionEvent = (props: {guest?: string}) => {
         </h3>
         <p className="font-poppins text-sm text-center mb-4 relative">
           Tanpa mengurangi rasa hormat dengan ini kami mengundang
-          Bapak/Ibu/Saudara/i untuk hadir dalam acara Pernikahan Putra-Putri
+          Bapak/Ibu/Saudara/i untuk hadir dalam acara Resepsi Pernikahan Putra-Putri
           kami pada
         </p>
         <div className="relative w-full">
