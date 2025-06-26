@@ -37,7 +37,7 @@ const CoverPage = (props: {
     <>
       <SectionWrapper
         bgImage={{
-          src: addBaseURL('asset-sections/bg-image-4.jpg'),
+          src: addBaseURL('bg-cover.jpg'),
           className: 'bg-[center_-50px] sm:bg-[center_-80px] bg-cover bg-no-repeat'
         }}
         className={twMerge(
@@ -51,26 +51,9 @@ const CoverPage = (props: {
           className="h-screen w-full mx-auto relative z-20"
           style={{
             background:
-              'linear-gradient(to bottom, rgba(255, 241, 213, 0) 0%, rgba(255, 241, 213, 0.3) 80%, rgba(255, 241, 213, 1) 90%)',
+              'linear-gradient(to bottom, rgba(255, 241, 213, 0) 0%, rgba(255, 241, 213, 0.3) 60%, rgba(255, 241, 213, 1) 90%)',
           }}
         >
-          <img
-            src={addBaseURL('cloud_small.png')}
-            alt="cloud"
-            width={300}
-            height={300}
-            className="w-[150px] h-[150px] absolute top-1/12 left-[40px] animate-up-and-down animate-duration-2000 opacity-70"
-          />
-          <img
-            src={addBaseURL('cloud_small.png')}
-            alt="cloud"
-            width={300}
-            height={300}
-            className="w-[150px] h-[150px] absolute top-[10px] right-[-60px] animate-up-and-down animate-duration-2300 opacity-70"
-          />
-          <div className="absolute top-0 bottom-0 left-0 right-0 items-center justify-center flex">
-            <div className="h-2/3 w-3/4 rounded-full border-yellow-beach border-double border-[5px]" />
-          </div>
           <div className="fixed bottom-[75px] right-0 left-0 flex flex-col justify-center items-center z-10">
             <h1 className="flex flex-col items-center text-[#4B3B2A] text-sm tracking-[2px] font-normal text-shadowing">
               <span className='text-shadow-lg'>{props.title || 'THE WEDDING OF'}</span>
