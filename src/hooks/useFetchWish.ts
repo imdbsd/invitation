@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {isAfter, isBefore} from 'date-fns';
+import {isBefore} from 'date-fns';
 import {WishListSchema, WishList, Wish, WishSchema} from '../schema';
 import {BASE_SCRIPT_WISH} from './configs';
 
