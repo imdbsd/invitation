@@ -72,7 +72,7 @@ const MusicPlayer = (props: Props) => {
         )}
       </button>
       <audio
-        autoPlay
+        autoPlay={isPlayingBGMusic}
         ref={audioRef}
         controls
         className="hidden"
