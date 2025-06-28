@@ -1,4 +1,5 @@
 import * as React from 'react';
+import isAfter from 'date-fns/isAfter';
 import {WishListSchema, WishList, Wish, WishSchema} from '../schema';
 import {BASE_SCRIPT_WISH} from './configs';
 
@@ -21,9 +22,16 @@ const useFetchWish = (option?: {skip?: boolean}) => {
           const parsed = await WishListSchema.safeParseAsync(responseData.data);
           if (parsed.success) {
             setData(
-              parsed.data.filter((wishData) =>
-                Boolean(wishData.name && wishData.wish && wishData.createdAt)
-              )
+              parsed.data
+                .filter((wishData) =>
+                  Boolean(wishData.name && wishData.wish && wishData.createdAt)
+                )
+                .sort((dataA, dataB) => {
+                  if (isAfter(dataA, dataB)) {
+                    return 1;
+                  }
+                  return -1;
+                })
             );
           }
         }
