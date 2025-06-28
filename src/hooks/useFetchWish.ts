@@ -1,5 +1,5 @@
 import * as React from 'react';
-import isAfter from 'date-fns/isAfter';
+import {isAfter, isBefore} from 'date-fns';
 import {WishListSchema, WishList, Wish, WishSchema} from '../schema';
 import {BASE_SCRIPT_WISH} from './configs';
 
@@ -27,7 +27,7 @@ const useFetchWish = (option?: {skip?: boolean}) => {
                   Boolean(wishData.name && wishData.wish && wishData.createdAt)
                 )
                 .sort((dataA, dataB) => {
-                  if (isAfter(dataA, dataB)) {
+                  if (isBefore(dataA.createdAt, dataB.createdAt)) {
                     return 1;
                   }
                   return -1;
