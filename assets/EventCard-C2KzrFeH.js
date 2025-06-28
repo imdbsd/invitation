@@ -1,4 +1,4 @@
-import{c as t,j as e,C as l}from"./app-CM2LYZcE.js";import{C as a}from"./clock-B0L0nZ5J.js";/**
+import{c as t,j as e,C as l}from"./app-DFhxN7pV.js";import{C as a}from"./clock-Bou2c_U0.js";/**
  * @license lucide-react v0.487.0 - ISC
  *
  * This source code is licensed under the ISC license.
